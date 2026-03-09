@@ -5,13 +5,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: "https://blueprintaihq.com",
+      url: "https://sidebarai.us",
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,
     },
     ...industries.map((slug) => ({
-      url: `https://blueprintaihq.com/${slug}`,
+      url: `https://sidebarai.us/${slug}`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.9,

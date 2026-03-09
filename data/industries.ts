@@ -118,74 +118,74 @@ const lawFirms: IndustryConfig = {
   clientNounPlural: "firms",
   badge: "AI Consulting for Law Firms",
   headline: "Your attorneys practice law.",
-  accentHeadline: "We automate everything else.",
+  accentHeadline: "We build the AI behind it.",
   subheadline:
-    'Your attorneys bill <span class="font-semibold text-neutral-800">2.9 hours</span> of an 8-hour day. The rest disappears into intake, billing, emails, and admin. We show you the dozens of tasks AI can already handle, set up tools that write in your firm\'s voice, and leave your team with a simple system they run on their own.',
+    'We consult on your workflows, build AI tools that read your contracts and flag what matters, and connect everything to iManage, Clio, or NetDocuments. Then we train your team to run it all. No coding. No disruption.',
   heroStats: [
-    { value: 63, suffix: "%", label: "of an attorney's day is non-billable work", source: "Clio 2024 Legal Trends" },
-    { value: 60, suffix: "%", label: "of firms don't answer the phone", source: "Clio 2024 Secret Shopper" },
-    { value: 50, suffix: "K+", label: "lost per lawyer yearly from billing delays", source: "LawBillity industry estimates" },
-    { value: 53, suffix: "%", label: "of small firms now use AI — is yours one?", source: "ABA 2024 Tech Survey" },
+    { value: 80, suffix: "%+", label: "faster first-pass contract review", source: "Based on workflow testing" },
+    { value: 100, suffix: "+", label: "page documents triaged in minutes", source: "Smart Skim document triage" },
+    { value: 0, suffix: "", label: "unverified outputs shipped", source: "Multi-pass verification pipeline" },
+    { value: 53, suffix: "%", label: "of firms now use AI — is yours one?", source: "ABA 2024 Tech Survey" },
   ],
   heroDemoCard: {
-    headerLabel: "Billing Narrative Template",
+    headerLabel: "Contract Change Analysis",
     beforeLabel: "Before",
-    beforeTime: "30 min per batch",
+    beforeTime: "2-3 hours manual review",
     beforeLines: [
-      "1/15 - 1.5h - call w/ client re: contract terms",
-      "1/16 - 2.0h - reviewed draft, redlined sec 4-7",
-      "1/17 - 0.5h - emails w/ opposing counsel",
+      "§4.2 — indemnification cap changed, need to check impact",
+      "§7.1 — cure period looks shorter, verify against v3",
+      "§9.3 — non-compete scope expanded, flag for partner review",
     ],
-    processingLabel: "Processed by Claude in seconds",
+    processingLabel: "Analyzed by AI in seconds",
     afterLabel: "After",
-    afterTime: "5 min — ready for invoice",
-    afterTitle: "Professional Services — Chen v. Pacific Properties LLC",
+    afterTime: "5 min — risk brief ready",
+    afterTitle: "Supply Agreement v3 → v4 — Change Analysis",
     afterLines: [
-      { date: "1/15/2025 — 1.5 hrs", hours: "", description: "Telephone conference with client regarding contract terms; analyzed indemnification provisions and liability allocation." },
-      { date: "1/16/2025 — 2.0 hrs", hours: "", description: "Comprehensive review of opposing party's draft; prepared redline of Sections 4-7, including payment terms and dispute resolution." },
-      { date: "1/17/2025 — 0.5 hrs", hours: "", description: "Correspondence with opposing counsel regarding scheduling of mediation; coordinated availability." },
+      { date: "§4.2 Indemnification — HIGH RISK", hours: "", description: "Liability cap removed. Previous draft capped at 2x contract value. Exposure now unlimited. Suggested response: reinstate cap or propose mutual carve-outs." },
+      { date: "§7.1 Termination — REVIEW", hours: "", description: "Cure period shortened from 30 to 10 days. May be insufficient for complex breaches. Propose 20-day period with written notice." },
+      { date: "§2.1 Payment Terms — STANDARD", hours: "", description: "Net 30 changed to Net 45. Minor change, favorable to client. No action needed." },
     ],
-    footerStat: "83%",
-    footerStatLabel: "Time saved",
-    footerStatus: "Invoice-ready",
+    footerStat: "~80%",
+    footerStatLabel: "First-pass time saved",
+    footerStatus: "All citations verified",
   },
   painPoints: [
     {
-      stat: "63%",
-      title: "of your day is non-billable",
-      description: "Attorneys average just 2.9 billable hours out of an 8-hour day. The rest goes to emails, scheduling, formatting, and admin that doesn't generate revenue.",
-      source: "Clio 2024 Legal Trends Report",
-      tools: "We set up AI templates so your team drafts emails, formats documents, and summarizes notes in seconds.",
+      stat: "3+ hrs",
+      title: "per redline — just to understand what changed",
+      description: "Every round of contract negotiation, attorneys manually compare versions, read through hundreds of changes, and write a summary memo explaining what shifted and why it matters. This happens every round, every deal, every attorney.",
+      source: "Thomson Reuters / law firm workflow data",
+      tools: "Contract Change Analysis reads both versions and explains every change with risk direction, exposure impact, and pushback language — in minutes.",
       color: "text-rose-500",
       bg: "bg-rose-50",
       border: "border-rose-100",
     },
     {
-      stat: "$50K+",
-      title: "lost per lawyer, per year",
-      description: "Delayed time entries cause massive revenue leakage. Waiting until week's end loses up to 50% of billable hours.",
-      source: "LawBillity / LeanLaw industry estimates",
-      tools: "We build billing templates: paste time entries, get clean professional billing language back in seconds.",
+      stat: "0",
+      title: "tools explain WHY contract changes matter",
+      description: "Litera Compare and Word Compare show what changed. No tool explains the legal significance — the risk direction, who it favors, or how to respond. That analysis is entirely manual today.",
+      source: "Market gap — verified against Litera, Word Compare, Draftable",
+      tools: "Our Change Analysis doesn't just detect redlines — it explains risk direction, exposure impact, and drafts pushback language for each change.",
       color: "text-amber-600",
       bg: "bg-amber-50",
       border: "border-amber-100",
     },
     {
-      stat: "60%",
-      title: "of calls go unanswered",
-      description: "Only 40% of law firms answer client calls. Every missed call is a missed client. The average web lead response time is 17 hours.",
-      source: "Clio 2024 Secret Shopper Study",
-      tools: "We build follow-up email templates so your team responds to every inquiry within minutes.",
+      stat: "Invisible",
+      title: "cross-document dependencies in every deal",
+      description: "When a defined term changes in the purchase agreement, it silently affects the escrow agreement, TSA, IP license, and every other ancillary document. No tool tracks these cascading dependencies. Attorneys catch them by memory — or miss them entirely.",
+      source: "Standard M&A documentation structure — ABA Model Stock Purchase Agreement",
+      tools: "Deal Context Graph maps how a single term change cascades across every document in the deal, flagging which documents need conforming amendments.",
       color: "text-sky-600",
       bg: "bg-sky-50",
       border: "border-sky-100",
     },
     {
-      stat: "51%",
-      title: "burnout rate for associates",
-      description: "Over half of mid-level associates experience burnout from repetitive operational busywork — not the practice of law itself.",
-      source: "Bloomberg Law 2024 Attorney Workload Survey",
-      tools: "Ready-made templates let your team offload repetitive work so they focus on actual legal work.",
+      stat: "100%",
+      title: "of deal history walks out with departing partners",
+      description: "How the firm argued for a client, what opposing counsel conceded, which strategies worked — this institutional knowledge lives in partners' heads. When they leave, years of deal intelligence disappears.",
+      source: "Law firm knowledge management — industry consensus",
+      tools: "Client Intelligence builds per-client knowledge bases with ethical wall isolation, so deal history and opposing counsel patterns are always available.",
       color: "text-violet-600",
       bg: "bg-violet-50",
       border: "border-violet-100",
@@ -193,136 +193,151 @@ const lawFirms: IndustryConfig = {
   ],
   sectionLabel: "every law firm",
   roles: [
-    { name: "Paralegals", description: "Intake processing, document summaries, deadline reminders" },
-    { name: "Office Managers", description: "Internal emails, vendor letters, weekly reports" },
-    { name: "Marketing", description: "Newsletters, social posts, client outreach" },
-    { name: "Billing Staff", description: "Billing narratives, collection emails, invoice prep" },
-    { name: "Legal Assistants", description: "Client emails, follow-ups, scheduling confirmations" },
-    { name: "Partners", description: "Meeting summaries, firm updates, strategy drafts" },
+    { name: "M&A Associates", description: "Contract change analysis, redline summaries, closing checklist tracking" },
+    { name: "Corporate Partners", description: "Deal oversight, negotiation strategy, opposing counsel intelligence" },
+    { name: "Transaction Paralegals", description: "Document triage, closing condition tracking, cross-document impact checks" },
+    { name: "In-House Counsel", description: "Vendor contract review, compliance checks, risk flagging" },
+    { name: "Deal Team Coordinators", description: "Cross-document tracking, deadline management, status reporting" },
+    { name: "Knowledge Management", description: "Institutional knowledge capture, precedent tracking, playbook maintenance" },
   ],
   demos: [
     {
-      id: "intake",
-      label: "Client Intake",
-      description: "AI extracts structured data from messy intake notes.",
-      inputLabel: "Raw Intake Notes",
-      inputContent: `Name: sarah m. chen
-Business: chen's family restaurant LLC
-Issue: lease dispute w/ landlord, landlord threatening eviction, need help ASAP
-Phone: (626) 555-0187
-Email: sarah.chen88@gmail.com
-Referred by: mike at the chamber of commerce
-Notes: she called twice, sounds urgent, something about lease ending in 30 days`,
-      outputLabel: "Extracted Data",
+      id: "change-analysis",
+      label: "Change Analysis",
+      demoType: "text" as const,
+      description: "AI reads both contract versions and explains what changed, why it matters, and what to push back on.",
+      inputLabel: "Contract Versions",
+      inputContent: "Supply Agreement v3 → v4\nUploaded: SupplyAgreement_v3_clean.docx\nUploaded: SupplyAgreement_v4_redline.docx\n\n14 changes detected across 8 sections.\nAnalyzing risk direction for each change...",
+      outputLabel: "Change Analysis",
+      outputContent: `§4.2 Indemnification — HIGH RISK
+Liability cap removed entirely. Previous draft capped indemnification at 2x total contract value ($4.2M). New draft has no cap.
+Risk: Unlimited exposure on indemnification claims.
+Suggested response: Reinstate cap at 2x contract value, or propose mutual carve-outs limited to gross negligence and willful misconduct.
+
+§7.1 Termination for Breach — REVIEW
+Cure period shortened from 30 days to 10 days.
+Risk: 10 days may be insufficient to cure complex supply chain breaches.
+Suggested response: Propose 20-day cure period with written notice requirement.
+
+§2.1 Payment Terms — STANDARD
+Net 30 changed to Net 45. Minor change, favorable to client. No action needed.
+
+§9.3 Non-Compete — REVIEW
+Geographic scope expanded from "North America" to "worldwide."
+Risk: May be unenforceable in certain jurisdictions. Broader than necessary for a supply agreement.
+
+All citations verified against source documents. 14 changes analyzed, 3 require attorney review.`,
+    },
+    {
+      id: "smart-skim",
+      label: "Smart Skim",
+      demoType: "checklist" as const,
+      description: "AI reads the full document and tells your team which sections need careful review, which are non-standard, and which are standard boilerplate.",
+      inputLabel: "Document Upload",
+      inputContent: "Uploaded: CreditAgreement_Draft_124pages.pdf\n\n124 pages · 47 sections\nScanning for non-standard language, risk provisions,\nand boilerplate patterns...",
+      outputLabel: "Reading Guide",
       outputContent: "",
-      successMessage: "8 fields extracted — Ready for CRM import",
-      fields: [
-        { label: "Client Name", value: "Sarah M. Chen" },
-        { label: "Business Entity", value: "Chen's Family Restaurant LLC" },
-        { label: "Matter Type", value: "Commercial Lease Dispute" },
-        { label: "Urgency", value: "High — 30-day deadline" },
-        { label: "Phone", value: "(626) 555-0187" },
-        { label: "Email", value: "sarah.chen88@gmail.com" },
-        { label: "Referral Source", value: "Mike — Chamber of Commerce" },
-        { label: "Key Issue", value: "Landlord threatening eviction; lease expiring in 30 days" },
+      successMessage: "Reading guide complete — 12 sections flagged for review",
+      checklistItems: [
+        { text: "§4.2 Indemnification — Non-standard uncapped liability. MUST REVIEW.", status: "missing" as const },
+        { text: "§7.1 Termination — Shortened cure period (10 days). Verify with client.", status: "missing" as const },
+        { text: "§9.3 Non-Compete — Worldwide scope, potentially unenforceable. REVIEW.", status: "flag" as const },
+        { text: "§11.2 Force Majeure — Excludes pandemic events. Non-standard.", status: "flag" as const },
+        { text: "§5.4 Representations — Broader than typical. Check knowledge qualifiers.", status: "flag" as const },
+        { text: "§2.1 Payment Terms — Net 45, standard. Low priority.", status: "done" as const },
+        { text: "§3.1 Delivery — Standard shipping terms. Low priority.", status: "done" as const },
+        { text: "§12.4 Governing Law — Standard Delaware choice of law. Low priority.", status: "done" as const },
+        { text: "§13.1 Notices — Standard form. Low priority.", status: "done" as const },
+        { text: "§14.2 Entire Agreement — Boilerplate. Low priority.", status: "done" as const },
       ],
     },
     {
-      id: "billing",
-      label: "Smart Billing",
-      description: "Transform raw time entries into professional billing narratives in seconds.",
-      inputLabel: "Raw Time Entries",
-      inputContent: `1/15 - 1.5h - call w/ client re: contract terms, discussed indemnification clause
-1/16 - 2.0h - reviewed opposing party draft, redlined sections 4-7
-1/17 - 0.5h - email chain w/ opposing counsel, scheduling mediation
-1/18 - 3.0h - drafted revised agreement incorporating client feedback`,
-      outputLabel: "Generated Billing Narrative",
-      outputContent: `Professional Services — Chen v. Pacific Properties LLC
-
-1/15/2025 — 1.5 hrs — Telephone conference with client regarding contract terms; analyzed and discussed indemnification provisions and liability allocation framework.
-
-1/16/2025 — 2.0 hrs — Comprehensive review of opposing party's draft agreement; prepared detailed redline of Sections 4 through 7, including modifications to payment terms, termination clauses, and dispute resolution provisions.
-
-1/17/2025 — 0.5 hrs — Correspondence with opposing counsel regarding scheduling of mediation session; coordinated availability of all parties.
-
-1/18/2025 — 3.0 hrs — Drafted revised agreement incorporating client's feedback and prior negotiation points; updated indemnification language per client instructions.
-
-Total: 7.0 hours`,
+      id: "closing-tracker",
+      label: "Closing Tracker",
+      demoType: "checklist" as const,
+      description: "AI reads the purchase agreement and generates the complete closing checklist with status tracking.",
+      inputLabel: "Purchase Agreement",
+      inputContent: "Uploaded: StockPurchaseAgreement_Executed.pdf\n\nExtracting closing conditions from Article VIII...\nMapping deliverables from Schedules 2.4, 3.1, 5.2...\nIdentifying responsible parties...",
+      outputLabel: "Closing Checklist",
+      outputContent: "",
+      successMessage: "12 of 18 closing conditions satisfied",
+      checklistItems: [
+        { text: "Antitrust Approval (Hart-Scott-Rodino) — Buyer responsibility. Filed 1/3. Waiting period expires 2/2.", status: "flag" as const },
+        { text: "Board Resolutions (Buyer) — Received and approved 12/15.", status: "done" as const },
+        { text: "Board Resolutions (Seller) — Received and approved 12/18.", status: "done" as const },
+        { text: "Officer's Certificate (Seller) — Received 12/20.", status: "done" as const },
+        { text: "Landlord Consent — 123 Main St — MISSING. Seller to obtain.", status: "missing" as const },
+        { text: "Landlord Consent — 456 Oak Ave — MISSING. Seller to obtain.", status: "missing" as const },
+        { text: "Landlord Consent — 789 Park Blvd — Received 1/5.", status: "done" as const },
+        { text: "Key Employee Agreement — J. Smith — Executed 12/22.", status: "done" as const },
+        { text: "Key Employee Agreement — R. Patel — MISSING. Target to obtain.", status: "missing" as const },
+        { text: "Escrow Agreement — Executed 12/28. Funds deposited.", status: "done" as const },
+        { text: "IP Assignment — All patents assigned 1/2.", status: "done" as const },
+        { text: "Tax Withholding Certificate (FIRPTA) — Received 1/4.", status: "done" as const },
+      ],
     },
     {
-      id: "comms",
-      label: "Office Communications",
-      description: "Turn meeting notes into structured summaries with action items.",
-      inputLabel: "Meeting Notes (Raw)",
-      inputContent: `team mtg 1/20 - smith case update
-attendees: sarah, mike, jenny, david
-- david says discovery deadline moved to march 15
-- jenny needs to follow up with expert witness dr. thompson
-- mike raised concern about budget, client pushing back on fees
-- need to schedule deposition for feb 10-12
-- sarah will draft motion to compel by end of week
-- client wants monthly status updates going forward
-- next meeting tuesday 2pm`,
-      outputLabel: "Formatted Summary",
-      outputContent: `Meeting Summary — Smith Case Update
-Date: January 20, 2025 | Duration: ~30 min
-
-Attendees: Sarah, Mike, Jenny, David
-
-Key Discussion Points:
-• Discovery deadline extended to March 15
-• Budget concerns raised — client pushing back on current fee structure
-• Expert witness (Dr. Thompson) follow-up needed
-
-Action Items:
-□ Jenny — Follow up with Dr. Thompson (expert witness) — Due: Jan 24
-□ Sarah — Draft motion to compel — Due: Jan 24 (end of week)
-□ Mike — Address client billing concerns — Due: Jan 22
-□ David — Schedule depositions for Feb 10-12 window — Due: Jan 27
-
-Ongoing:
-• Implement monthly client status updates (starting February)
-
-Next Meeting: Tuesday, 2:00 PM`,
+      id: "deal-context",
+      label: "Deal Context",
+      demoType: "table" as const,
+      description: "When a term changes in one document, see every other document in the deal that's affected.",
+      inputLabel: "Change Detected",
+      inputContent: "Change detected in Purchase Agreement §1.1:\n\n\"Material Adverse Effect\" definition modified —\nadded carve-out for \"changes in applicable law\"\n\nScanning 8 related documents for references\nto this definition...",
+      outputLabel: "Impact Analysis",
+      outputContent: "",
+      tableData: {
+        headers: ["Document", "Section", "Reference", "Action Required"],
+        rows: [
+          ["Escrow Agreement", "§3.2(a)", "Uses this definition as closing condition", "⚠ Update cross-reference"],
+          ["Transition Services Agreement", "§5.1(b)", "This definition triggers early termination", "⚠ Conforming amendment needed"],
+          ["IP License", "§2.4", "This definition voids license grant", "⚠ Review scope of carve-out"],
+          ["Employment Agreement (Smith)", "§4.1", "Has its own separate definition", "✓ No update needed"],
+          ["Employment Agreement (Patel)", "§4.1", "Has its own separate definition", "✓ No update needed"],
+          ["Non-Compete", "§1.2", "References Purchase Agreement definitions", "⚠ Verify no unintended scope change"],
+          ["Disclosure Schedules", "Schedule 4.8", "Uses this definition to qualify representations", "⚠ Review in light of new carve-out"],
+          ["Side Letter", "—", "No reference to this definition", "✓ No action"],
+        ],
+        recommendation: "3 documents require conforming amendments. 1 document needs scope review. 2 employment agreements use their own definitions — no changes needed. Recommend updating Escrow Agreement and Transition Services Agreement before closing.",
+      },
     },
     {
-      id: "marketing",
-      label: "Marketing & Outreach",
-      description: "Generate professional legal marketing content from simple prompts.",
-      inputLabel: "Prompt",
-      inputContent: "Write a LinkedIn post about commercial lease renewal tips for small business owners. Professional but approachable tone.",
-      outputLabel: "Generated Content",
-      outputContent: `Is your business lease up for renewal? Here are 3 things every small business owner should review before signing:
-
-1. Escalation clauses — Know exactly how much your rent can increase and when. Don't get surprised by a 15% jump in Year 3.
-
-2. Personal guarantees — Understand your personal liability. There may be room to negotiate a cap or a burn-off provision.
-
-3. Assignment & subletting rights — If your business evolves, you want flexibility. Make sure you're not locked into a space you can't adapt.
-
-At Chen & Associates, we've helped dozens of local businesses negotiate leases that protect their interests. If your renewal is coming up, let's talk before you sign.
-
-#SmallBusiness #CommercialLease #LegalTips #BusinessLaw`,
+      id: "counsel-profile",
+      label: "Counsel Profile",
+      demoType: "fields" as const,
+      description: "AI builds a profile of opposing counsel from your firm's historical data — their patterns, tactics, and typical concession points.",
+      inputLabel: "Query",
+      inputContent: "Opposing counsel: Baker & Sterling LLP\nLead partner: Margaret Chen\n\nSearching firm knowledge base...\nAnalyzing 8 past matters against Baker & Sterling...\nMapping negotiation patterns across 3 deal types...",
+      outputLabel: "Counsel Profile",
+      outputContent: "",
+      successMessage: "Profile generated from 8 historical matters (2019-2025)",
+      fields: [
+        { label: "Firm", value: "Baker & Sterling LLP" },
+        { label: "Lead Partner", value: "Margaret Chen (Corporate/M&A)" },
+        { label: "Matters Against", value: "8 matters (2019-2025)" },
+        { label: "Avg Negotiation Rounds", value: "4 rounds to close" },
+        { label: "Common Tactic", value: "Aggressive initial position on indemnity, significant movement in round 3" },
+        { label: "Typical Concessions", value: "Representations & warranties scope, payment timing" },
+        { label: "Typical Holdouts", value: "Indemnity caps, non-compete geography, governing law" },
+        { label: "Recommended Strategy", value: "Open with strong position on indemnity cap — expect pushback rounds 1-2, concession in round 3. Prepare fallback on non-compete scope." },
+      ],
     },
   ],
   automationUseCases: [
-    { task: "Client intake processing", howItWorks: "Your receptionist pastes messy intake notes into Claude with our pre-built prompt. Claude instantly organizes the info and drafts a follow-up email.", before: "45 min", after: "2 min", savings: "96%" },
-    { task: "Billing narratives", howItWorks: "Your billing clerk pastes raw time entries into Claude with our billing prompt. Claude rewrites them into professional language.", before: "30 min", after: "5 min", savings: "83%" },
-    { task: "Meeting summaries", howItWorks: "After any Zoom call, Zoom AI Companion automatically generates a summary with attendees, key decisions, and action items.", before: "15 min", after: "Instant", savings: "100%" },
-    { task: "Client follow-up emails", howItWorks: "Your assistant pastes a quick case update into Claude with our email prompt. Claude drafts a personalized, professional email in seconds.", before: "20 min", after: "2 min", savings: "90%" },
+    { task: "Contract change analysis", howItWorks: "AI reads both contract versions, explains why each change matters, flags risk direction, and drafts pushback language.", before: "2-3 hours", after: "5 minutes", savings: "up to 96%" },
+    { task: "100-page document triage", howItWorks: "AI reads the full document and tells attorneys which sections need careful review vs. standard boilerplate.", before: "Hours of attorney time", after: "45 min guided read", savings: "~80%" },
+    { task: "Closing checklist generation", howItWorks: "AI reads the purchase agreement and extracts every closing condition, deliverable, and responsible party.", before: "1-2 hours", after: "2 minutes", savings: "~97%" },
+    { task: "Cross-document impact check", howItWorks: "When a term changes in the purchase agreement, AI shows every affected document in the deal instantly.", before: "Currently impossible", after: "30 seconds", savings: "New" },
   ],
   faqItems: [
-    { question: "Is this about automating our legal work?", answer: "No — we don't touch your case work, legal research, or client matters. We focus entirely on the operational side of your firm: client intake, billing, emails, marketing, scheduling, and admin tasks. These are the repetitive, time-consuming tasks that eat up your staff's day but don't require a law degree." },
-    { question: "What is Claude and how does it work?", answer: "Claude is an AI assistant made by Anthropic. Think of it like a very smart writing helper. You type in a request — like 'rewrite these time entries into billing language' — and it gives you a polished result in seconds. We make it even simpler by creating pre-written prompts so your team doesn't have to figure out what to type." },
-    { question: "What are prompt templates?", answer: "A prompt template is a pre-written instruction that tells Claude exactly what to do. Think of it like a recipe: instead of figuring out how to cook from scratch, you follow the steps and get a great result every time. Your staff just pastes their info below it and Claude handles the rest. No technical skills needed." },
-    { question: "Do you access any of our firm's data?", answer: "No — we never access, handle, or store any of your firm's data. We simply teach your team how to use AI tools like Claude and Zoom AI on their own. We build prompt templates and show your staff how to copy and paste them." },
-    { question: "What if our staff isn't tech-savvy?", answer: "That's exactly who we build for. If your staff can copy and paste, they can use Claude. We create the templates, organize them by role, and show each person exactly how to use them." },
-    { question: "Can Claude really help with billing?", answer: "It's one of the biggest wins. Industry estimates show that delayed time entries cost $50,000+ in lost revenue per lawyer per year. With our billing prompts, your staff pastes raw time entries into Claude and gets clean, professional billing language back in seconds." },
-    { question: "Can Claude really match our firm's writing style?", answer: "Yes. During setup, we show your team how to load 10-20 examples of your firm's best writing into a Claude workspace. Claude reads those samples and matches your tone, vocabulary, and structure in everything it writes." },
-    { question: "What about meeting notes?", answer: "We turn on a built-in feature in Zoom that automatically writes up your meetings after every call — who was there, what was discussed, and what needs to happen next." },
-    { question: "Do we need to review what AI writes before sending?", answer: "Always. Claude is a tool that drafts content for your team — it doesn't send anything on its own. Your staff reviews, edits, and approves everything before it goes out." },
-    { question: "How long does the setup take?", answer: "Most firms are up and running within 2-4 weeks. Week 1 is an audit, Weeks 2-3 we create templates and train each role, Week 4 is handoff with full documentation." },
-    { question: "Do we need ongoing support from you?", answer: "No — that's the whole point. We set up the prompt templates, train your team, and hand over full documentation so you run independently. No ongoing fees, no retainer, no dependency." },
+    { question: "What exactly does Sidebar AI build?", answer: "We build AI tools that sit on top of your existing systems — contract change analysis, document triage (Smart Skim), M&A closing automation, client knowledge bases, and negotiation playbooks. Each tool connects directly to the software you already use (iManage, Clio, or NetDocuments) through custom integrations. We consult on your workflows, build the tools, deploy them, train your team, and hand everything over." },
+    { question: "How do you prevent AI hallucination?", answer: "Every output runs through a multi-pass verification pipeline. Dollar amounts, dates, and obligations are cross-referenced against source documents in a separate verification pass. Every claim includes a mandatory citation to a specific section and page number. If the AI is uncertain, it flags the output rather than guessing. Nothing reaches an attorney unverified." },
+    { question: "Does Sidebar AI access our client data?", answer: "No. We never store, access, or see your client data. The tools we build run inside your firm's environment — your documents never leave your systems and are never used to train AI models. Attorney-client privilege stays fully intact. After we deploy and train your team, your firm operates everything independently." },
+    { question: "How do the integrations work?", answer: "We build custom software connectors that let AI read and write to iManage, Clio, or NetDocuments directly — with your firm's security controls in place. Instead of copying documents into a separate AI tool, the AI works inside your existing systems. Think of it as a secure bridge between AI and the software your team already uses." },
+    { question: "How long does deployment take?", answer: "Phase 1 tools (Contract Change Analysis and Smart Skim) deploy in 2-4 weeks with no infrastructure changes. Phase 2 tools (Deal Context Graph, Client Intelligence, Negotiation Playbooks, Closing Automation) are built to order and include a security review with your IT team, typically adding 1-3 weeks per tool." },
+    { question: "Will this disrupt our current workflows?", answer: "No. We start with a 1-2 day audit to map how documents move through your firm. Tools are built to fit into your existing workflows, not replace them. Documents flow back into iManage, Clio, or NetDocuments automatically. Your attorneys use the same systems they already know — they just get better information, faster." },
+    { question: "How is this different from Harvey, CoCounsel, or Luminance?", answer: "Those tools handle research, drafting, and basic document review well. We build what they don't — per-client knowledge bases with ethical wall isolation, opposing counsel profiling from your historical data, cross-document deal relationship mapping, and AI-powered change analysis that explains why each change matters. Most firms use Sidebar AI alongside their existing legal AI tools." },
+    { question: "How is pricing structured?", answer: "Phase 1 tools are fixed-price project engagements — you know the cost before we start. Phase 2 tools are scoped after the initial workflow audit, with pricing based on complexity and integration requirements. There are no ongoing subscription fees. We build it, hand it over, and include 30 days of support." },
+    { question: "Do we need to review AI outputs before acting on them?", answer: "Always. Every tool we build is designed as an assistant, not a replacement. AI drafts the analysis, flags the risks, and suggests responses — but an attorney reviews and approves everything before it goes to a client or opposing counsel. The tools are designed so that errors are detectable, not silent." },
   ],
   sizeOptions: [
     { value: "", label: "Select firm size" },
@@ -346,32 +361,38 @@ At Chen & Associates, we've helped dozens of local businesses negotiate leases t
   ],
   specialtyLabel: "Practice Area",
   firmVoice: {
-    genericEmail: `Dear Client,
+    genericEmail: `REDLINE SUMMARY — Supply Agreement v3 to v4
 
-This is to inform you that your case has been updated. We have received the documents you submitted. Our team is currently reviewing them. We will contact you when we have more information.
+Changes detected: 14
+- §4.2: Indemnification cap changed
+- §7.1: Cure period modified
+- §9.3: Non-compete scope changed
+- §2.1: Payment terms updated
+- 10 additional formatting/cross-reference changes
 
-Please do not hesitate to reach out if you have any questions.
+Please review and advise.`,
+    firmVoiceEmail: `CHANGE ANALYSIS — Supply Agreement v3 → v4
+14 changes · 3 require attorney review
 
-Regards,
-The Law Office`,
-    firmVoiceEmail: `Hi Sarah,
+§4.2 Indemnification — HIGH RISK
+Liability cap removed entirely. Previous draft: 2x contract value ($4.2M). New draft: uncapped. Exposure now unlimited.
+→ Suggested response: Reinstate cap at 2x, or propose mutual carve-outs for gross negligence only.
 
-Quick update — we received the documents you sent over on Tuesday, and everything looks good. David is reviewing them now and should have a full summary for you by Friday.
+§7.1 Termination — REVIEW
+Cure period: 30 days → 10 days. Insufficient for complex supply chain breaches.
+→ Suggested response: Counter at 20 days with written notice requirement.
 
-One thing we noticed: the HOA disclosure on page 3 is missing a signature. Could you get that signed and send it back when you get a chance? No rush — anytime this week works.
+§2.1 Payment — STANDARD
+Net 30 → Net 45. Favorable to client. No action needed.
 
-If anything comes up before then, just reply here or call the office. We're on it.
-
-Best,
-Lisa
-Greenfield & Associates`,
-    voiceLabel: "Your Firm's Voice",
-    worksFor: ["Client emails", "Follow-up letters", "Newsletters", "Collection notices", "Marketing copy", "Social posts", "Internal memos", "Engagement letters"],
+All citations verified against source documents.`,
+    voiceLabel: "AI-Powered Analysis",
+    worksFor: ["Contract change summaries", "Risk assessments", "Client memos", "Closing status reports", "Negotiation briefs", "Due diligence summaries", "Board presentations", "Deal team updates"],
   },
-  trustItems: ["We never touch your data", "Not case work — operations only", "Results in weeks"],
+  trustItems: ["Your data stays in your systems", "Every output verified with citations", "Connects to iManage, Clio, NetDocuments"],
   urgencyText: "5 new firms",
-  metaTitle: "Blueprint AI | AI Consulting & Training for Law Firms",
-  metaDescription: "We teach law firms to automate client intake, billing, marketing, and operations with AI. Not case work — we help your firm run smoother.",
+  metaTitle: "Sidebar AI | Contract Analysis, Document Triage & Deal Intelligence for Law Firms",
+  metaDescription: "AI-powered contract change analysis, document triage, M&A closing automation, and deal intelligence tools that connect to iManage, Clio, and NetDocuments.",
 };
 
 // ─── CPA Firms ───────────────────────────────────────────────────────────────

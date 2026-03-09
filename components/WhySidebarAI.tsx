@@ -4,27 +4,43 @@ import { motion } from "framer-motion";
 
 const comparisons = [
   {
-    challenge: "Tried AI and gave up?",
+    challenge: "Already using Harvey?",
     description:
-      "Most businesses try ChatGPT once, get a generic result, and stop. We know exactly which operational tasks AI handles best — and we build the prompts so your team actually uses them daily.",
-    stat: "0.8%",
-    statLabel: "of businesses use AI well",
+      "Harvey handles research and drafting. We build what Harvey doesn't — per-client knowledge bases, opposing counsel profiling, cross-document deal mapping, and AI-powered change analysis. Firms use both.",
+    stat: "Complementary",
+    statLabel: "not competitive",
+    color: "from-navy/10 to-navy/5",
+    borderColor: "border-navy-200/50",
+    accentColor: "text-navy",
+    iconBg: "bg-navy-50",
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
+      </svg>
+    ),
+  },
+  {
+    challenge: "Worried about AI hallucination?",
+    description:
+      "Generic AI tools guess. Our multi-pass pipeline verifies every output against source documents — mandatory citations, number verification, and uncertainty flags. Nothing reaches an attorney unverified.",
+    stat: "0",
+    statLabel: "unverified outputs",
     color: "from-rose-500/10 to-rose-500/5",
     borderColor: "border-rose-200/50",
     accentColor: "text-rose-500",
     iconBg: "bg-rose-50",
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
       </svg>
     ),
   },
   {
-    challenge: "Your software has AI built in?",
+    challenge: "Your software has \"AI features\"?",
     description:
-      "Your existing tools cover a handful of tasks. We find the dozens of operational workflows they don't — emails, reports, marketing, meeting notes — and build templates for all of them.",
-    stat: "5%",
-    statLabel: "of what's possible",
+      "iManage Insight finds documents. Clio has drafting helpers. Neither reads 100-page contracts and tells your team which pages matter. Neither maps how a term change in the purchase agreement affects every related document. That's what we build.",
+    stat: "10x",
+    statLabel: "beyond built-in AI",
     color: "from-amber-500/10 to-amber-500/5",
     borderColor: "border-amber-200/50",
     accentColor: "text-amber-600",
@@ -36,22 +52,6 @@ const comparisons = [
       </svg>
     ),
   },
-  {
-    challenge: "Considering an AI workshop?",
-    description:
-      "Workshops teach concepts for a day. We build a complete system — custom templates, role-specific playbooks, voice-matched outputs — that your team uses independently long after we're gone.",
-    stat: "System",
-    statLabel: "not a slide deck",
-    color: "from-navy/10 to-navy/5",
-    borderColor: "border-navy-200/50",
-    accentColor: "text-navy",
-    iconBg: "bg-navy-50",
-    icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342" />
-      </svg>
-    ),
-  },
 ];
 
 interface WhySidebarAIProps {
@@ -59,7 +59,7 @@ interface WhySidebarAIProps {
   brandName?: string;
 }
 
-export default function WhySidebarAI({ clientNoun = "firm" }: WhySidebarAIProps) {
+export default function WhySidebarAI(_props?: WhySidebarAIProps) {
   return (
     <section className="py-24 md:py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-white via-neutral-50/30 to-white pointer-events-none" />
@@ -72,10 +72,10 @@ export default function WhySidebarAI({ clientNoun = "firm" }: WhySidebarAIProps)
           className="text-center mb-14"
         >
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy-50 border border-navy-100 text-xs font-semibold text-navy uppercase tracking-wider mb-4">
-            Why Us
+            Why Sidebar AI
           </span>
           <h2 className="text-headline text-neutral-900">
-            Your {clientNoun} has options.{" "}
+            Your firm has options.{" "}
             <span className="font-serif italic font-normal">Here&apos;s why they choose us.</span>
           </h2>
         </motion.div>

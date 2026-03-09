@@ -1,25 +1,71 @@
 "use client";
 
 import { motion } from "framer-motion";
-import type { UseCase } from "@/data/industries";
 
-const systemsWeSetUp = [
-  { title: "We Find the Tasks You Didn't Know AI Could Do", description: "Most businesses have no idea how many daily tasks AI can already handle. We audit your workflows and uncover dozens of opportunities." },
-  { title: "Ready-to-Use Templates", description: "For every task we find, we build a ready-made template — a fill-in-the-blank instruction your team copies into Claude. Just copy the template, paste your info, and get a polished result in seconds." },
-  { title: "A Playbook for Every Role", description: "Everyone gets a simple guide written for exactly what they do each day. No guessing, no figuring it out on the fly." },
-  { title: "Zoom AI for Meeting Notes", description: "We turn on Zoom's built-in AI so it automatically writes up your meetings — who attended, what was discussed, and what needs to happen next." },
-  { title: "AI That Writes In Your Voice", description: "We show your team how to load samples of your writing into Claude so every output matches your tone and style. It sounds like your office, not a robot." },
-  { title: "Full Handoff — You Run It From Here", description: "We leave you with a complete playbook: every prompt, every workflow, step-by-step instructions. Your team runs everything independently." },
+const differentiators = [
+  {
+    title: "Multi-Pass Verification",
+    description: "Every output cross-references source documents. Dollar amounts, dates, and obligations are verified in a separate pass before anything reaches an attorney.",
+  },
+  {
+    title: "Mandatory Citations",
+    description: "Every claim references a specific section and page. No unsourced statements.",
+  },
+  {
+    title: "Ethical Wall Enforcement",
+    description: "Per-client data isolation. Client A's information never surfaces in Client B's context.",
+  },
+  {
+    title: "Direct Integration With Your Tools",
+    description: "Processed documents flow back into iManage, Clio, or NetDocuments automatically via custom software connectors. No copying, no exporting.",
+  },
+  {
+    title: "Your Data Stays Yours",
+    description: "Your documents never leave your firm's systems. We never store, access, or train AI on your data. Attorney-client privilege stays intact.",
+  },
+  {
+    title: "Deploy and Hand Off",
+    description: "We build it, deploy it, train your team, and hand over everything. No ongoing dependency.",
+  },
+];
+
+const beforeAfter = [
+  {
+    task: "Contract change analysis",
+    before: "2-3 hours",
+    after: "5 minutes",
+    savings: "up to 96%",
+    howItWorks: "AI explains why each change matters, not just what changed",
+  },
+  {
+    task: "100-page document triage",
+    before: "Hours of attorney time",
+    after: "45 min guided read",
+    savings: "~80%",
+    howItWorks: "Attorneys focus on the 20% of pages that actually need attention",
+  },
+  {
+    task: "Closing checklist from purchase agreement",
+    before: "1-2 hours",
+    after: "2 minutes",
+    savings: "~97%",
+    howItWorks: "AI reads the purchase agreement and generates the full list",
+  },
+  {
+    task: "Cross-document impact check",
+    before: "Currently impossible",
+    after: "30 seconds",
+    savings: "New",
+    howItWorks: "Change a term in the purchase agreement, see every affected document instantly",
+  },
 ];
 
 interface ServicesFeaturesProps {
-  automationUseCases?: UseCase[];
+  automationUseCases?: { task: string; howItWorks: string; before: string; after: string; savings: string }[];
   clientNoun?: string;
 }
 
-export default function ServicesFeatures({ automationUseCases: propUseCases, clientNoun = "firm" }: ServicesFeaturesProps) {
-  const useCases = propUseCases || defaultUseCases;
-
+export default function ServicesFeatures(_props?: ServicesFeaturesProps) {
   return (
     <section id="features" className="py-24 md:py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-neutral-50/50 via-white to-neutral-50/30 pointer-events-none" />
@@ -32,20 +78,20 @@ export default function ServicesFeatures({ automationUseCases: propUseCases, cli
           className="text-center mb-14"
         >
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy-50 border border-navy-100 text-xs font-semibold text-navy uppercase tracking-wider mb-4">
-            What We Do
+            How We&apos;re Different
           </span>
           <h2 className="text-headline text-neutral-900">
-            We find what you&apos;re missing,{" "}
-            <span className="font-serif italic font-normal">then set it up for you</span>
+            Built-in safeguards.{" "}
+            <span className="font-serif italic font-normal">Real time savings.</span>
           </h2>
           <p className="mt-3 text-body-lg text-neutral-600 max-w-2xl mx-auto">
-            Most {clientNoun}s don&apos;t realize how much daily work AI can already do. We find the tasks,
-            build ready-to-use templates for each one, train your team, and hand over the keys.
+            Every tool we build includes verification, citations, and data isolation.
+            Here&apos;s what that means in practice.
           </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
-          {/* Systems We Set Up */}
+          {/* Left: What's built into every tool */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -56,43 +102,17 @@ export default function ServicesFeatures({ automationUseCases: propUseCases, cli
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-xl bg-navy-50 flex items-center justify-center">
                 <svg className="w-5 h-5 text-navy" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17l-5.1-5.1m0 0L11.42 4.97m-5.1 5.1H21M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
                 </svg>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-neutral-900">What We Set Up For You</h3>
-                <p className="text-xs text-neutral-600">Discover, build, hand off</p>
-              </div>
-            </div>
-
-            <p className="text-sm text-neutral-600 mb-6 leading-relaxed">
-              We don&apos;t run a workshop and leave you with a slide deck. We build a complete, ready-to-use system
-              tailored to your {clientNoun} — then hand you the keys.
-            </p>
-
-            <div className="mb-6 p-4 rounded-xl bg-gradient-to-r from-navy-50 to-navy-50/50 border border-navy-100/60">
-              <p className="text-[10px] font-bold text-navy/60 uppercase tracking-[0.12em] mb-3">What your {clientNoun} walks away with</p>
-              <div className="grid grid-cols-2 gap-2">
-                {[
-                  "Custom prompt templates per role",
-                  "Voice-matched AI outputs",
-                  "Role-by-role playbook",
-                  "Zoom AI configured",
-                  "Team training completed",
-                  "Full documentation & guides",
-                ].map((item) => (
-                  <div key={item} className="flex items-center gap-2">
-                    <svg className="w-3.5 h-3.5 text-navy flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="text-xs font-medium text-neutral-700">{item}</span>
-                  </div>
-                ))}
+                <h3 className="text-lg font-semibold text-neutral-900">What&apos;s Built Into Every Tool</h3>
+                <p className="text-xs text-neutral-600">Cross-cutting safeguards and integrations</p>
               </div>
             </div>
 
             <div className="space-y-4">
-              {systemsWeSetUp.map((feature, i) => (
+              {differentiators.map((feature, i) => (
                 <motion.div
                   key={feature.title}
                   initial={{ opacity: 0, x: -10 }}
@@ -115,7 +135,7 @@ export default function ServicesFeatures({ automationUseCases: propUseCases, cli
             </div>
           </motion.div>
 
-          {/* Before/After */}
+          {/* Right: Before/After */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -134,18 +154,13 @@ export default function ServicesFeatures({ automationUseCases: propUseCases, cli
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-white">How It Works In Practice</h3>
-                  <p className="text-xs text-neutral-300">Copy the prompt. Paste it in. Done.</p>
+                  <h3 className="text-lg font-semibold text-white">Before &amp; After</h3>
+                  <p className="text-xs text-neutral-300">Time savings your team will see</p>
                 </div>
               </div>
 
-              <p className="text-sm text-neutral-200 mb-6 leading-relaxed">
-                Here&apos;s what your team&apos;s day looks like after we set things up.
-                Each task uses a simple copy-and-paste prompt — no technical skills required.
-              </p>
-
               <div className="space-y-3">
-                {useCases.map((item, i) => (
+                {beforeAfter.map((item, i) => (
                   <motion.div
                     key={item.task}
                     initial={{ opacity: 0, y: 10 }}
@@ -157,7 +172,7 @@ export default function ServicesFeatures({ automationUseCases: propUseCases, cli
                     <div className="flex items-center justify-between mb-1.5">
                       <p className="font-medium text-white text-sm">{item.task}</p>
                       <span className="text-xs font-bold text-navy-900 bg-gold px-2.5 py-0.5 rounded-full shadow-[0_2px_8px_rgba(212,165,116,0.3)]">
-                        {item.savings} faster
+                        {item.savings === "New" ? "NEW" : `${item.savings} faster`}
                       </span>
                     </div>
                     <p className="text-xs text-neutral-300 mb-3 leading-relaxed">{item.howItWorks}</p>
@@ -181,10 +196,3 @@ export default function ServicesFeatures({ automationUseCases: propUseCases, cli
     </section>
   );
 }
-
-const defaultUseCases: UseCase[] = [
-  { task: "Client intake processing", howItWorks: "Your front desk pastes messy intake notes into Claude with our pre-built prompt.", before: "45 min", after: "2 min", savings: "96%" },
-  { task: "Professional emails", howItWorks: "Your team pastes a quick update into Claude with our email prompt and gets a polished draft.", before: "20 min", after: "2 min", savings: "90%" },
-  { task: "Meeting summaries", howItWorks: "After any Zoom call, Zoom AI Companion automatically generates a summary.", before: "15 min", after: "Instant", savings: "100%" },
-  { task: "Document drafting", howItWorks: "Your staff pastes key details into Claude with our template and gets a formatted document back.", before: "30 min", after: "5 min", savings: "83%" },
-];

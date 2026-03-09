@@ -18,25 +18,25 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Blueprint AI | AI Consulting & Training for Businesses",
+  title: "Sidebar AI | AI Systems & Custom Integrations for Law Firms",
   description:
-    "We connect AI to the tools you already use and train your team to use it. AI consulting for law firms, CPA firms, real estate, insurance agencies, and restaurants.",
+    "AI consulting, custom tools, and integrations for law firms — contract analysis, document triage, closing automation, and direct connections to iManage, Clio, and NetDocuments. We build it, train your team, and hand it over.",
   keywords:
-    "AI consulting, business automation, AI training, law firm AI, CPA automation, real estate AI, insurance automation, restaurant AI",
+    "legal AI, law firm AI, contract analysis, document triage, MCP integration, iManage AI, Clio AI, NetDocuments AI, legal technology, AI for lawyers",
   openGraph: {
-    title: "Blueprint AI | AI Consulting & Training for Businesses",
+    title: "Sidebar AI | AI Systems & Custom Integrations for Law Firms",
     description:
-      "We connect AI to the tools you already use and train your team to use it. Serving law firms, CPA firms, real estate, insurance, and restaurants.",
-    url: "https://blueprintaihq.com",
-    siteName: "Blueprint AI",
+      "We build AI tools that read your contracts, flag what matters, and connect directly to your document management system. Built for law firms.",
+    url: "https://sidebarai.us",
+    siteName: "Sidebar AI",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blueprint AI | AI Consulting & Training for Businesses",
+    title: "Sidebar AI | AI Systems & Custom Integrations for Law Firms",
     description:
-      "We connect AI to the tools you already use and train your team to use it.",
+      "AI systems and custom integrations built specifically for law firms.",
   },
   icons: {
     icon: "/icon.svg",

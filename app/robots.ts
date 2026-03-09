@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://blueprintaihq.com/sitemap.xml",
+    sitemap: "https://sidebarai.us/sitemap.xml",
   };
 }

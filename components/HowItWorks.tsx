@@ -2,12 +2,12 @@
 
 import { motion } from "framer-motion";
 
-const defaultSteps = [
+const steps = [
   {
-    title: "Discover",
+    title: "Map",
     description:
-      "We audit your daily workflows and uncover every place AI can help — use cases your team didn't know existed. Most businesses are surprised by how many tasks AI can handle.",
-    detail: "1-hour discovery call to map your workflows",
+      "We spend 1-2 days with your team mapping how documents move through your firm — contract review, due diligence, closings. We identify where AI creates the biggest impact.",
+    detail: "1-2 day workflow audit",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
@@ -17,8 +17,8 @@ const defaultSteps = [
   {
     title: "Build",
     description:
-      "For each use case, we create a ready-to-use prompt template — a pre-written instruction your staff copies into Claude to get a polished result in seconds. We also set up Zoom AI for automatic meeting notes.",
-    detail: "10-15 custom AI tools built for your team",
+      "We build your AI tools and connect them to iManage, Clio, or NetDocuments. Every output runs through our verification pipeline before it reaches an attorney.",
+    detail: "Custom tools + software integration",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17l-5.1-5.1m0 0L11.42 4.97m-5.1 5.1H21M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
@@ -26,46 +26,10 @@ const defaultSteps = [
     ),
   },
   {
-    title: "Hand Off",
+    title: "Deploy & Hand Off",
     description:
-      "We train every role on their specific prompts, verify everything works, and hand over a complete playbook. Your team runs it all independently — no ongoing dependency on us.",
-    detail: "2 training sessions + printed cheat sheets",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z" />
-      </svg>
-    ),
-  },
-];
-
-const hubSteps = [
-  {
-    title: "Discover",
-    description:
-      "We start with a 1-hour discovery call to map your team's daily workflows. We identify every task AI can handle — most businesses discover 10-20 use cases they didn't know existed.",
-    detail: "1-hour workflow audit",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Build",
-    description:
-      "We build 10-15 custom AI commands tailored to your specific tasks. We connect AI to the software you already use — your accounting platform, document storage, CRM — so your team can ask questions in plain English and get answers from your own data.",
-    detail: "Custom commands + software connections",
-    icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17l-5.1-5.1m0 0L11.42 4.97m-5.1 5.1H21M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
-      </svg>
-    ),
-  },
-  {
-    title: "Train & Hand Off",
-    description:
-      "Two hands-on training sessions teach every role their specific AI tools. We provide a printed cheat sheet for every desk and 30 days of email support. Your team runs everything independently after that.",
-    detail: "2 sessions + cheat sheets + 30-day support",
+      "We deploy into your environment, walk every role through their tools, and hand over complete documentation. Your team runs it independently.",
+    detail: "Hands-on training + 30-day support",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z" />
@@ -79,11 +43,10 @@ interface HowItWorksProps {
   isHub?: boolean;
 }
 
-export default function HowItWorks({ clientNoun = "firm", isHub = false }: HowItWorksProps) {
-  const steps = isHub ? hubSteps : defaultSteps;
+export default function HowItWorks(_props?: HowItWorksProps) {
   return (
     <section id="how-it-works" className="py-24 md:py-32 relative overflow-hidden">
-      {/* Dark background — softened */}
+      {/* Dark background */}
       <div className="absolute inset-0 bg-[#0F2240]" />
       <div className="absolute inset-0 bg-gradient-to-br from-[#132D54]/80 via-[#163052] to-[#0F2240]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_50%_0%,rgba(212,165,116,0.06),transparent)] pointer-events-none" />
@@ -107,11 +70,11 @@ export default function HowItWorks({ clientNoun = "firm", isHub = false }: HowIt
             Our Process
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-headline font-semibold text-white tracking-tight">
-            How we get your {clientNoun}{" "}
+            How we get your firm{" "}
             <span className="font-serif italic font-normal text-gold">up and running</span>
           </h2>
           <p className="mt-3 text-body-lg text-neutral-300">
-            A simple three-step process tailored to your {clientNoun}&apos;s needs.
+            A simple three-step process. Most firms are live within 2-4 weeks.
           </p>
         </motion.div>
 

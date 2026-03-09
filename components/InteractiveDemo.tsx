@@ -267,14 +267,15 @@ export default function InteractiveDemo({ demos: propDemos, clientNoun = "firm",
           className="text-center mb-12"
         >
           <span className={`inline-flex items-center gap-2 px-3 py-1 rounded-full border text-xs font-semibold uppercase tracking-wider mb-4 ${theme.badge}`}>
-            Live Demos
+            Preview
           </span>
           <h2 className="text-headline text-neutral-900">
-            See what AI does for{" "}
+            What we&apos;ll build for{" "}
             <span className="font-serif italic font-normal">your {clientNoun}</span>
           </h2>
           <p className="mt-3 text-body-lg text-neutral-600 max-w-2xl mx-auto">
-            Click any workflow below. This is exactly what your team will do every day.
+            Each tool below is custom-built for your {clientNoun} and connects directly to your documents and systems.
+            These sample workflows show what your team will see.
           </p>
         </motion.div>
 

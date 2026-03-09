@@ -23,7 +23,7 @@ interface ContactFormProps {
 export default function ContactForm({
   sizeOptions: propSizeOptions,
   specialtyOptions: propSpecialtyOptions,
-  specialtyLabel = "Practice Area",
+  specialtyLabel = "Primary Practice Area",
   clientNoun = "firm",
 }: ContactFormProps) {
   const sizeOptions = propSizeOptions || defaultSizeOptions;
@@ -175,7 +175,7 @@ export default function ContactForm({
                 <span className="font-serif italic font-normal">your {clientNoun}?</span>
               </h2>
               <p className="text-xl text-neutral-300 mb-6 leading-relaxed">
-                Schedule a free consultation to see how AI can save your team hours every week.
+                We audit your workflows, build custom AI tools, connect them to your existing software, and train your team to run everything independently.
               </p>
 
               <div className="flex items-center gap-3 mb-10 px-4 py-3 rounded-xl bg-amber-500/10 border border-amber-500/20">
@@ -197,8 +197,8 @@ export default function ContactForm({
                   </div>
                   <div>
                     <p className="text-base text-neutral-300">Email</p>
-                    <a href="mailto:hello@blueprintaihq.com" className="text-lg font-medium text-white hover:text-gold transition-colors">
-                      hello@blueprintaihq.com
+                    <a href="mailto:hello@sidebarai.us" className="text-lg font-medium text-white hover:text-gold transition-colors">
+                      hello@sidebarai.us
                     </a>
                   </div>
                 </div>
@@ -282,7 +282,7 @@ export default function ContactForm({
                 </button>
 
                 <p className="text-center text-base text-neutral-500">
-                  Free consultation · No commitment · No data access
+                  Free consultation · No commitment · We never access your data
                 </p>
               </div>
             </motion.form>
@@ -296,13 +296,20 @@ export default function ContactForm({
 const defaultSizeOptions: SelectOption[] = [
   { value: "", label: "Select firm size" },
   { value: "solo", label: "Solo Practitioner" },
-  { value: "small", label: "Small (2-10)" },
-  { value: "medium", label: "Medium (11-50)" },
-  { value: "large", label: "Large (50+)" },
+  { value: "small", label: "Small (2-10 attorneys)" },
+  { value: "medium", label: "Mid-size (11-50 attorneys)" },
+  { value: "large", label: "Large (50+ attorneys)" },
+  { value: "amlaw", label: "Am Law 200" },
 ];
 
 const defaultSpecialtyOptions: SelectOption[] = [
   { value: "", label: "Select practice area (optional)" },
+  { value: "corporate", label: "Corporate / M&A" },
+  { value: "litigation", label: "Litigation" },
+  { value: "real-estate", label: "Real Estate" },
+  { value: "ip", label: "Intellectual Property" },
+  { value: "employment", label: "Employment" },
+  { value: "tax", label: "Tax" },
   { value: "general", label: "General Practice" },
   { value: "other", label: "Other" },
 ];

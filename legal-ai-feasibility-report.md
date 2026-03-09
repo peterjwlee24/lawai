@@ -3,6 +3,10 @@
 
 *Research compiled: March 8, 2026*
 
+> **Companion documents:**
+> - [`SKILL-PRINCIPLES.md`](./SKILL-PRINCIPLES.md) — Core principles, anti-hallucination rules, and design patterns extracted from this report. Use as the reference when building any new skill.
+> - [`How-to-Build-Claude-Skills-Tutorial.md`](/Users/peterlee/Library/Application%20Support/Claude/local-agent-mode-sessions/7debe6cc-e009-4b37-9adc-89f34f43ba18/49b63688-9d08-446f-a331-7a86409b8331/local_3094d384-d8d1-42c8-b17a-e16a65e87d94/outputs/How-to-Build-Claude-Skills-Tutorial.md) — General tutorial on building Claude skills (folder structure, YAML, testing, distribution).
+
 ---
 
 ## Executive Summary
@@ -2592,3 +2596,208 @@ CACHE_CONTROL = {
 This gives firms the **most accurate results possible** while keeping costs low automatically. The firm doesn't make any decisions about models — your code handles it all.
 
 **Bottom line: The firm pays Anthropic directly for API usage (~$150-412/month for 20 lawyers). You charge a software license (~$1,500/month). You have zero API costs, zero data liability, zero infrastructure beyond a tiny MCP server. No backend needed.**
+
+---
+
+# PART 6: Go-To-Market Strategy — First Client Pricing & Pilot Model
+
+*Strategy compiled: March 8, 2026*
+
+---
+
+## Target Market: Boutique Law Firms (10-25 Lawyers)
+
+### Why Boutique First
+- **Fast decision-making** — one managing partner says yes, you're in
+- **Minimal security review** — no 6-month vendor approval process
+- **No iManage needed initially** — many use Clio, NetDocuments, or even basic file systems
+- **Under $3,000 = expense report approval** — no committee, no procurement
+- **Hungry for competitive edge** — boutiques compete against big firms with bigger budgets
+
+---
+
+## The Pilot Model: Build Two, Get Paid to Train Everyone
+
+### What You Build for Free (Proof Phase)
+
+**Two core Claude Cowork skills — no MCP server, no custom infrastructure:**
+
+| Skill | What It Does | Why It's Free |
+|---|---|---|
+| **Contract Change Analysis** (`/legal:redline-summary`) | Upload two contract versions → AI explains what changed, why it matters, risk flags, suggested pushback language | Your strongest demo — value is obvious in 5 minutes |
+| **Smart Skim** (`/legal:smart-skim`) | Upload a 100+ page contract → AI produces a prioritized reading guide with color-coded sections (MUST READ / CHECK / SKIP) | Saves hours on day one, no competitor does this |
+
+**What these require:**
+- Claude Cowork (the firm needs Claude Team or Pro — $20-30/user/month, paid by the firm directly to Anthropic)
+- Your skill files (markdown — no code, no servers, no databases)
+- That's it. No MCP. No iManage integration. Lawyers upload documents manually.
+
+**What these do NOT require:**
+- No MCP server or custom connector
+- No iManage / Clio / NetDocuments integration
+- No backend infrastructure
+- No database
+- No vector store
+- No IT team involvement from the firm
+
+### The Pilot Engagement (Weeks 1-4)
+
+| Week | What Happens | Cost to Firm |
+|---|---|---|
+| Week 1 | You deploy both skills to the firm's Claude Cowork environment. Set up for 1-2 lawyers (typically a senior associate + a junior). | **$0** |
+| Week 2-3 | The 1-2 pilot lawyers use both tools on real contracts. You're available for questions. They see the time savings firsthand. | **$0** |
+| Week 4 | Pilot lawyers report back to managing partner: "This saves us hours every week." You schedule the firm-wide onboarding. | **$0** |
+
+### What You Get Paid For: Firm-Wide Onboarding
+
+Once the 1-2 pilot lawyers have seen the value, the firm pays you to:
+
+1. **Train every lawyer at the firm** (10-25 people) on both tools
+2. **Customize workflows** for each practice group (corporate team uses it differently than litigation)
+3. **Create quick-reference documentation** so attorneys can use it independently
+4. **Provide 30 days of post-training support** (email/Slack for questions)
+
+### First-Client Pricing
+
+| What | Price |
+|---|---|
+| Build + deploy both skills (1-2 lawyers, 2-4 week pilot) | **Free** |
+| Firm-wide onboarding, training, workflow customization, 30-day support | **$2,950** |
+
+**Why $2,950:**
+- Under $3,000 = single partner can approve without committee
+- Feels calculated, not arbitrary
+- A partner billing $500/hour pays this off in 6 hours of saved time
+- Your tools save more than that in the first week across the firm
+- Low enough to be a no-brainer after they've seen it working
+
+### After You Have Proof (Client #2+)
+
+| Client # | Pilot | Onboarding Price | Why |
+|---|---|---|---|
+| **Client 1-2** | Free | **$2,950** | Building track record + testimonials |
+| **Client 3-5** | Free | **$4,950** | You have 1-2 references now |
+| **Client 6+** | **$2,000** (paid pilot) | **$5,950-8,000** | Proven product, case studies, testimonials |
+| **Client 10+** | **$3,000** (paid pilot) | **$8,000-12,000** | Established reputation |
+
+---
+
+## Phase 2: MCP Integration & Advanced Tools (Where the Real Money Is)
+
+Once a firm is using the two core skills and loves them, they'll ask: "Can we connect this to iManage so we don't have to upload files manually?" and "Can it also do X?"
+
+**That's when you sell Phase 2 — and this is where you charge significantly more.**
+
+### Why MCP Integration Costs More
+
+| Phase 1 (Cowork Skills Only) | Phase 2 (MCP Integration) |
+|---|---|
+| Markdown skill files — no code | Custom MCP server — real engineering |
+| No infrastructure | Cloudflare Worker deployment |
+| No security review needed | IT team security review required |
+| Lawyers upload files manually | Automated document pull/push from iManage, Clio, or NetDocuments |
+| Zero ongoing maintenance | Ongoing connector maintenance |
+| Works in minutes | Requires OAuth setup, API credentials, testing |
+
+### Phase 2 Pricing (Per Tool, One-Time)
+
+| Tool | What It Adds | First Clients | Standard |
+|---|---|---|---|
+| **iManage / Clio / NetDocuments MCP Connector** | Automated document retrieval + filing. No more manual uploads. | **$5,000-8,000** | **$12,000-18,000** |
+| **Deal Context Graph** | Cross-document relationship mapping. Change a term → see every affected document. | **$3,000-5,000** | **$8,000-12,000** |
+| **Client Intelligence / Knowledge Base** | Per-client knowledge with ethical wall isolation. Query past deals, arguments, positions. | **$3,000-5,000** | **$8,000-12,000** |
+| **Negotiation Playbooks** | Opposing counsel profiling from historical data. AI-generated strategy recommendations. | **$3,000-5,000** | **$8,000-12,000** |
+| **M&A Closing Automation** | AI reads purchase agreement → generates full closing checklist with status tracking. | **$3,000-5,000** | **$8,000-12,000** |
+
+### Phase 2 Bundles
+
+| Bundle | What's Included | First Clients | Standard |
+|---|---|---|---|
+| **DMS Integration Only** | MCP Connector + Version 2 of both core skills (auto-pull from DMS) | **$5,000-8,000** | **$12,000-18,000** |
+| **Full Platform** | MCP Connector + all 4 advanced tools | **$15,000-25,000** | **$40,000-65,000** |
+
+---
+
+## Revenue Model Summary
+
+### One-Time Project Fees (Not Subscription)
+
+Boutique firms hate recurring vendor fees. Everything is one-time:
+- You build it, deploy it, train the team, hand it over
+- They own the skills and run them independently
+- 30-day support included, then they're on their own
+
+### Optional Recurring Revenue (Later)
+
+Once you have 5+ clients, offer optional add-ons:
+- **Quarterly tune-ups** ($500-1,000/quarter) — update prompts, add new document types, retrain on workflow changes
+- **On-call support** ($200-500/month) — "call us when it breaks" safety net
+- **New tool builds** — each new skill or feature is a separate project fee
+
+### What the Firm Pays Separately (Not Your Revenue)
+
+| Cost | Who Pays | Amount |
+|---|---|---|
+| Claude Team or Pro subscription | Firm pays Anthropic directly | $20-30/user/month |
+| Claude API usage (Phase 2+ tools only) | Firm pays Anthropic directly | ~$50-500/month depending on volume |
+
+**You never touch these costs.** The firm has a direct relationship with Anthropic. This keeps your pricing clean and your liability at zero.
+
+---
+
+## Realistic First-Year Revenue Projection
+
+### Conservative Scenario (3 Clients in Year 1)
+
+| Client | Phase 1 | Phase 2 | Total |
+|---|---|---|---|
+| Client 1 (Month 1-2) | $2,950 | $5,000 (DMS connector) | **$7,950** |
+| Client 2 (Month 4-5) | $4,950 | $8,000 (DMS + 1 advanced tool) | **$12,950** |
+| Client 3 (Month 7-8) | $4,950 | $15,000 (full platform) | **$19,950** |
+| **Year 1 Total** | | | **$40,850** |
+
+### Moderate Scenario (6 Clients in Year 1)
+
+| Clients | Phase 1 Revenue | Phase 2 Revenue | Total |
+|---|---|---|---|
+| Clients 1-2 | $5,900 | $10,000 | $15,900 |
+| Clients 3-5 | $14,850 | $24,000 | $38,850 |
+| Client 6 | $5,950 | $15,000 | $20,950 |
+| **Year 1 Total** | | | **$75,700** |
+
+---
+
+## The Sales Conversation (How to Close)
+
+### Step 1: Get the Meeting
+- "I've built two AI tools that save your attorneys hours on contract review. Can I show you in 15 minutes?"
+- Target: managing partner or head of corporate practice
+
+### Step 2: Live Demo (15 Minutes)
+- Show Contract Change Analysis on a sample contract — the risk flags and suggested responses sell themselves
+- Show Smart Skim on a 100+ page agreement — the reading guide is an instant "wow"
+
+### Step 3: Offer the Pilot
+- "I'll set this up for two of your attorneys at no cost. They use it for 2-4 weeks on real contracts. If they love it, I'll train your whole team for $2,950."
+- This is a zero-risk offer. No partner says no to free.
+
+### Step 4: After the Pilot
+- The pilot lawyers become your internal champions
+- Schedule the firm-wide training ($2,950)
+- During training, every lawyer asks "can it also do X?" — that's your Phase 2 pipeline
+
+### Step 5: Phase 2 Upsell (Month 3-6)
+- "Your team keeps asking about connecting to iManage and building a client knowledge base. Here's what that looks like..."
+- By now you have proof, trust, and internal champions
+
+---
+
+## Key Principles
+
+1. **Free pilot → paid training** is the entire first-client model
+2. **$2,950** is the magic number — under $3K, single partner approval, feels like nothing after they've seen it work
+3. **Phase 1 = Cowork skills only** — no MCP, no infrastructure, no IT involvement. Just markdown skill files.
+4. **Phase 2 = MCP + advanced tools** — this is where real engineering and real money start. Charge 3-5x more.
+5. **The firm pays Anthropic directly** for Claude subscriptions and API usage. You never touch their data or their AI costs.
+6. **One-time fees, not subscriptions** — boutique firms buy projects, not SaaS. Add optional recurring support later.
+7. **Start with 10-25 lawyer boutiques** — fast decisions, minimal security review, builds your track record for larger firms later.

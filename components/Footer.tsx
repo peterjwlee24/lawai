@@ -6,7 +6,7 @@ interface FooterProps {
   brandName?: string;
 }
 
-export default function Footer({ brandName = "Blueprint AI" }: FooterProps) {
+export default function Footer(_props?: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   const scrollToSection = (id: string) => {
@@ -35,10 +35,10 @@ export default function Footer({ brandName = "Blueprint AI" }: FooterProps) {
                   />
                 </svg>
               </div>
-              <span className="text-lg font-semibold text-white">{brandName}</span>
+              <span className="text-lg font-semibold text-white">Sidebar AI</span>
             </Link>
             <p className="text-sm text-neutral-300 leading-relaxed">
-              AI consulting and training for businesses. We handle the operations so you can focus on what matters.
+              AI consulting, custom tools, and integrations for law firms.
             </p>
           </div>
 
@@ -71,17 +71,32 @@ export default function Footer({ brandName = "Blueprint AI" }: FooterProps) {
             </ul>
           </div>
 
-          {/* Industries */}
+          {/* Solutions */}
           <div>
             <h4 className="text-sm font-semibold text-neutral-200 uppercase tracking-wider mb-4">
-              Industries
+              Solutions
             </h4>
             <ul className="space-y-3">
-              <li><Link href="/law-firms" className="text-sm text-neutral-300 hover:text-white transition-colors">Law Firms</Link></li>
-              <li><Link href="/cpa-firms" className="text-sm text-neutral-300 hover:text-white transition-colors">CPA Firms</Link></li>
-              <li><Link href="/real-estate" className="text-sm text-neutral-300 hover:text-white transition-colors">Real Estate</Link></li>
-              <li><Link href="/insurance" className="text-sm text-neutral-300 hover:text-white transition-colors">Insurance</Link></li>
-              <li><Link href="/restaurants" className="text-sm text-neutral-300 hover:text-white transition-colors">Restaurants</Link></li>
+              <li>
+                <button onClick={() => scrollToSection("what-we-build")} className="text-sm text-neutral-300 hover:text-white transition-colors">
+                  Contract Analysis
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection("what-we-build")} className="text-sm text-neutral-300 hover:text-white transition-colors">
+                  Smart Skim
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection("what-we-build")} className="text-sm text-neutral-300 hover:text-white transition-colors">
+                  Closing Automation
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection("what-we-build")} className="text-sm text-neutral-300 hover:text-white transition-colors">
+                  Integrations
+                </button>
+              </li>
             </ul>
           </div>
 
@@ -92,8 +107,8 @@ export default function Footer({ brandName = "Blueprint AI" }: FooterProps) {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a href="mailto:hello@blueprintaihq.com" className="text-sm text-neutral-300 hover:text-white transition-colors">
-                  hello@blueprintaihq.com
+                <a href="mailto:hello@sidebarai.us" className="text-sm text-neutral-300 hover:text-white transition-colors">
+                  hello@sidebarai.us
                 </a>
               </li>
               <li className="text-sm text-neutral-400">
@@ -106,20 +121,20 @@ export default function Footer({ brandName = "Blueprint AI" }: FooterProps) {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-neutral-800 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-neutral-500">
-            &copy; {currentYear} {brandName}. All rights reserved.
+            &copy; {currentYear} Sidebar AI. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1.5 text-xs text-neutral-500">
               <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
               </svg>
-              We Never Touch Your Data
+              Your Data Never Leaves Your Systems
             </span>
             <span className="flex items-center gap-1.5 text-xs text-neutral-500">
               <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              Operations Only
+              Zero Unverified Outputs
             </span>
           </div>
         </div>

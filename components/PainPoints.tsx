@@ -50,12 +50,12 @@ export default function PainPoints({ painPoints: propPainPoints, sectionLabel = 
             The Problem
           </span>
           <h2 className="text-headline text-neutral-900">
-            The operational tax on{" "}
+            The intelligence gap in{" "}
             <span className="font-serif italic font-normal">{sectionLabel}</span>
           </h2>
           <p className="mt-3 text-body-lg text-neutral-600 max-w-2xl mx-auto">
-            Your team may have heard of AI. But the business side — communications, admin,
-            reporting, and marketing — has dozens of AI use cases most businesses don&apos;t even know about yet.
+            Contract review, deal coordination, and institutional knowledge — the highest-value
+            work at your firm still relies on manual processes that no existing tool fully automates.
           </p>
         </motion.div>
 
@@ -120,11 +120,11 @@ export default function PainPoints({ painPoints: propPainPoints, sectionLabel = 
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_0%,rgba(212,165,116,0.08),transparent)] pointer-events-none" />
             <div className="relative">
               <p className="text-lg font-semibold text-white mb-2">
-                Most businesses know AI can help. Few actually implement it.
+                Your firm knows AI can help. The question is where to start.
               </p>
               <p className="text-sm text-neutral-200 mb-6 leading-relaxed">
-                Businesses try ChatGPT once, get a generic result, and stop.
-                We know exactly which tasks to automate, build the templates for you, and make sure your team actually uses them daily.
+                We consult on your workflows, identify the highest-impact opportunities,
+                build tools that connect to your existing systems, and train your team to run everything independently.
               </p>
               <button
                 onClick={() => document.getElementById("demo")?.scrollIntoView({ behavior: "smooth" })}
@@ -144,8 +144,8 @@ export default function PainPoints({ painPoints: propPainPoints, sectionLabel = 
 }
 
 const defaultPainPoints: PainPoint[] = [
-  { stat: "63%", title: "of your day is non-billable", description: "Attorneys average just 2.9 billable hours out of an 8-hour day.", source: "Clio 2024 Legal Trends Report", tools: "We set up Claude with ready-made templates so your team drafts emails, formats documents, and summarizes notes in seconds.", color: "text-rose-500", bg: "bg-rose-50", border: "border-rose-100" },
-  { stat: "$50K+", title: "lost per lawyer, per year", description: "Delayed time entries cause massive revenue leakage.", source: "LawBillity / LeanLaw industry estimates", tools: "With our billing template, your staff pastes time entries into Claude and gets clean, professional billing language back in seconds.", color: "text-amber-600", bg: "bg-amber-50", border: "border-amber-100" },
-  { stat: "60%", title: "of calls go unanswered", description: "Only 40% of law firms answer client calls.", source: "Clio 2024 Secret Shopper Study", tools: "We build follow-up email templates so your team responds to every inquiry within minutes.", color: "text-sky-600", bg: "bg-sky-50", border: "border-sky-100" },
-  { stat: "51%", title: "burnout rate for associates", description: "Over half of mid-level associates experience burnout from repetitive operational busywork.", source: "Bloomberg Law 2024 Attorney Workload Survey", tools: "Ready-made templates let your team offload repetitive work to Claude.", color: "text-violet-600", bg: "bg-violet-50", border: "border-violet-100" },
+  { stat: "3+ hrs", title: "per redline — just to understand what changed", description: "Every round of contract negotiation, attorneys manually compare versions and write a summary explaining what shifted and why it matters.", source: "Thomson Reuters / law firm workflow data", tools: "Contract Change Analysis reads both versions and explains every change with risk direction, exposure impact, and pushback language — in minutes.", color: "text-rose-500", bg: "bg-rose-50", border: "border-rose-100" },
+  { stat: "0", title: "tools explain WHY contract changes matter", description: "Litera Compare and Word Compare show what changed. No tool explains the legal significance — the risk direction, who it favors, or how to respond.", source: "Market gap — verified against Litera, Word Compare, Draftable", tools: "Our Change Analysis explains risk direction, exposure impact, and drafts pushback language for each change.", color: "text-amber-600", bg: "bg-amber-50", border: "border-amber-100" },
+  { stat: "Invisible", title: "cross-document dependencies in every deal", description: "When a defined term changes in the purchase agreement, it silently affects the escrow agreement, TSA, IP license, and every other ancillary document.", source: "Standard M&A documentation structure — ABA Model Stock Purchase Agreement", tools: "Deal Context Graph maps how a single term change cascades across every document in the deal.", color: "text-sky-600", bg: "bg-sky-50", border: "border-sky-100" },
+  { stat: "100%", title: "of deal history walks out with departing partners", description: "How the firm argued for a client, what opposing counsel conceded, which strategies worked — this knowledge lives in partners' heads.", source: "Law firm knowledge management — industry consensus", tools: "Client Intelligence builds per-client knowledge bases with ethical wall isolation, so deal history is always available.", color: "text-violet-600", bg: "bg-violet-50", border: "border-violet-100" },
 ];
