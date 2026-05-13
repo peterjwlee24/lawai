@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import FounderExternalLinks, { FOUNDER_LINKS } from "@/components/FounderExternalLinks";
 
 const credibility = [
   {
@@ -9,12 +10,12 @@ const credibility = [
     body: "Trained at the intersection of computer science and how humans actually think and make decisions — the academic foundation that separates real AI work from prompt-tinkering.",
   },
   {
-    label: "7+ years at Amazon",
-    body: "Built production AI and authentication systems used by tens of millions of customers — including identity and verification flows that handled the kind of confidentiality and compliance pressure that lawyers will recognize.",
+    label: "8+ years building production AI",
+    body: "Senior software engineer at companies including Amazon and Ring — production AI and authentication systems used by tens of millions of customers, with the kind of confidentiality and compliance pressure that lawyers will recognize.",
   },
   {
-    label: "Incoming Engineering Manager · McMaster-Carr",
-    body: "Stepping into the engineering management track at one of the most operationally disciplined companies in the country — a firm that's been a master class in process and reliability for a hundred years.",
+    label: "Founder · CareMAR (healthcare AI)",
+    body: "Built AI software for small care homes and hospice facilities — replacing paper-based medication tracking with an AI-assisted app that non-technical owners actually use, in an industry governed by strict healthcare-privacy rules. Directly the same skillset Sidebar AI brings to law firms.",
   },
   {
     label: "Founder · Sidebar AI",
@@ -44,10 +45,10 @@ export default function SeminarsFounder() {
               <span className="font-serif italic font-normal">Engineer first. Educator second. Vendor last.</span>
             </h2>
             <p className="mt-4 text-body-lg text-neutral-700 leading-relaxed">
-              Jin trained at UC Berkeley in Cognitive Science, then spent seven-plus years at Amazon building production AI and authentication systems used by tens of millions of customers — the kind of work where a quiet bug means a press cycle and a confidentiality slip ends a career. He starts an Engineering Manager role at McMaster-Carr, one of the most operationally disciplined companies in the country, this year. Sidebar AI is the practice he founded to bring that same engineering posture to boutique and mid-market law firms.
+              Jin trained at UC Berkeley in Cognitive Science, then spent eight-plus years building production AI and authentication systems at companies including Amazon and Ring — work used by tens of millions of customers, the kind of engineering where a quiet bug means a press cycle and a confidentiality slip ends a career. He also founded <a href="https://caremar.us" target="_blank" rel="noopener noreferrer" className="text-navy underline-offset-4 hover:underline font-medium">CareMAR (caremar.us)</a>, AI-assisted software for small care homes and hospice facilities operating under strict healthcare-privacy rules — directly the same skill Sidebar AI brings to law firms: shipping production AI that non-technical users in a regulated industry actually adopt.
             </p>
             <p className="mt-4 text-body text-neutral-600 leading-relaxed">
-              The reason this matters for your firm: most AI seminars in your inbox are run by ex-marketers, ex-recruiters, or coaches who took a six-week prompt course. They&apos;ve never shipped AI in front of paying customers, never debugged a production confidentiality incident, never sat across from compliance counsel about a real deployment. Jin has. And when your firm books a seminar, Jin is the one on the call — not a sales lead, not a junior associate, not a polished slide-deck presenter.
+              The reason this matters for your firm: most AI seminars in your inbox are run by ex-marketers, ex-recruiters, or coaches who took a six-week prompt course. They&apos;ve never shipped AI in front of paying customers, never debugged a production confidentiality incident in a regulated industry, never sat across from compliance counsel about a real deployment. Jin has — at Amazon, at Ring, and at CareMAR. When your firm books a seminar, Jin is the one on the call — not a sales lead, not a junior associate, not a polished slide-deck presenter.
             </p>
 
             <div className="mt-8 grid sm:grid-cols-2 gap-4">
@@ -69,6 +70,8 @@ export default function SeminarsFounder() {
                 </motion.div>
               ))}
             </div>
+
+            <FounderExternalLinks links={FOUNDER_LINKS} className="mt-8" />
           </motion.div>
 
           {/* Right — portrait card */}

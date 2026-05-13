@@ -21,11 +21,13 @@ test.describe("/seminars page", () => {
     await expect(page.getByText("ABA Model Rule 5.3 · Supervision")).toBeVisible();
   });
 
-  test("founder section mentions Jinwoong Lee + renders portrait photo", async ({ page }) => {
+  test("founder section mentions Jinwoong Lee + CareMAR + renders portrait photo", async ({ page }) => {
     await page.goto("/seminars");
     await expect(page.getByRole("heading", { name: /Jinwoong Lee/ })).toBeVisible();
-    await expect(page.getByText(/Berkeley · Cognitive Science/)).toBeVisible();
-    await expect(page.getByText(/7\+ years at Amazon/)).toBeVisible();
+    await expect(page.getByText(/Berkeley · Cognitive Science/).first()).toBeVisible();
+    await expect(page.getByText(/8\+ years building production AI/i).first()).toBeVisible();
+    // CareMAR healthcare-AI credential is surfaced via the FounderExternalLinks card.
+    await expect(page.getByRole("link", { name: /CareMAR/i }).first()).toBeVisible();
     // Verify the real founder photo is rendered (not the navy placeholder gradient).
     const portrait = page.getByAltText(/Portrait of Jinwoong Lee/i);
     await expect(portrait).toBeVisible();

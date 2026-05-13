@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const reasons = [
   {
     title: "Run by the engineer who builds the deployments",
-    body: "Most AI seminars for law firms are run by ex-marketers or ex-consultants. This one is run by the engineer who personally configures Claude for Legal at boutique and mid-market firms — Berkeley Cognitive Science, seven-plus years building production AI used by millions of customers at Amazon, incoming Software Engineering Manager at McMaster-Carr. Your team gets answers from the person who would do the work, not a salesperson.",
+    body: "Most AI seminars for law firms are run by ex-marketers or ex-consultants. This one is run by the engineer who personally configures Claude for Legal at boutique and mid-market firms — Berkeley Cognitive Science, eight-plus years building production AI used by tens of millions of customers at companies including Amazon and Ring, founder of CareMAR (healthcare AI for care homes operating under strict privacy rules). Your team gets answers from the person who would do the work, not a salesperson.",
     contrast: "vs. coach / marketer / generalist consultant-turned-AI-expert",
   },
   {

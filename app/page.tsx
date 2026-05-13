@@ -194,7 +194,7 @@ const legalFaqItems: FAQItem[] = [
   {
     question: "Who's behind Sidebar AI?",
     answer:
-      "Sidebar AI is led by founder Jinwoong Lee — Berkeley Cognitive Science, seven-plus years building production AI and authentication systems at Amazon used by millions, and an incoming Software Engineering Manager at McMaster-Carr. We work exclusively with boutique law firms on Claude for Legal implementation. We are not a generalist AI consultancy.",
+      "Sidebar AI is led by founder Jinwoong Lee — Berkeley Cognitive Science, eight-plus years building production AI and authentication systems at companies including Amazon and Ring (used by tens of millions of customers), and founder of CareMAR (caremar.us), AI-assisted software for small care homes and hospice facilities operating under strict healthcare-privacy rules. That CareMAR experience — shipping production AI for non-technical users in a regulated industry — is directly the skillset Sidebar AI brings to law firms. We work exclusively with boutique and mid-market firms on Claude for Legal implementation. We are not a generalist AI consultancy.",
   },
 ];
 
