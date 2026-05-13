@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import TrustBadges from "@/components/TrustBadges";
@@ -37,7 +38,8 @@ const days = [
     ],
     deliverable: "Implementation Plan document, signed off by the managing partner before Tuesday begins.",
     image: "/images/sprint-monday.jpg",
-    imageAlt: "A senior engineer on a video call with two attorneys at a walnut conference table, mid-conversation about matter workflows.",
+    imageAlt: "Discovery video call viewed across a partner's walnut conference table — the senior engineer and two attorneys on screen, a printed contract draft, leather discovery-call notebook, fountain pen, and stoneware coffee mug staged alongside.",
+    hasImage: true,
   },
   {
     label: "Tuesday",
@@ -54,6 +56,7 @@ const days = [
     deliverable: "A configured Claude tenant your team could log into, plus a written usage policy ready for your malpractice carrier.",
     image: "/images/sprint-tuesday.jpg",
     imageAlt: "An engineer's monitor displaying a Claude tenant configuration page with single sign-on and practice-area tools being enabled.",
+    hasImage: false,
   },
   {
     label: "Wednesday",
@@ -69,6 +72,7 @@ const days = [
     deliverable: "Every integration verified working against your actual data — not a demo tenant.",
     image: "/images/sprint-wednesday.jpg",
     imageAlt: "Editorial photograph of code editor next to a document management system in a dual-monitor setup.",
+    hasImage: false,
   },
   {
     label: "Thursday",
@@ -84,6 +88,7 @@ const days = [
     deliverable: "Five workflows your associates trigger by name, configured to your firm's actual playbook — not a generic prompt pack.",
     image: "/images/sprint-thursday.jpg",
     imageAlt: "Editorial photograph of an attorney's hand annotating a printed contract review playbook on a walnut desk.",
+    hasImage: false,
   },
   {
     label: "Friday",
@@ -100,6 +105,7 @@ const days = [
     deliverable: "Your firm running independently from week two — with a runbook, a video library, and a calendar of check-ins.",
     image: "/images/sprint-friday.jpg",
     imageAlt: "A printed Sidebar AI runbook open on a desk next to a steaming coffee mug, late-afternoon golden light from a window.",
+    hasImage: false,
   },
 ];
 
@@ -174,20 +180,35 @@ export default function SprintPage() {
                     </div>
                     <p className="text-body font-medium text-navy mb-5 leading-relaxed">{day.summary}</p>
 
-                    {/* Image placeholder with bracket corners */}
+                    {/* Real photo (if available) with editorial bracket corners.
+                        Falls back to a navy placeholder card when the photo
+                        for this day hasn't been generated yet. */}
                     <div className="relative">
                       <span aria-hidden="true" className="absolute -left-3 -top-3 z-10 h-8 w-8 border-l-2 border-t-2 border-navy" />
                       <span aria-hidden="true" className="absolute -bottom-3 -right-3 z-10 h-8 w-8 border-b-2 border-r-2 border-gold" />
-                      <div className="relative aspect-[16/10] rounded-2xl bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950 overflow-hidden flex items-end p-6 border border-neutral-200">
-                        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_30%,rgba(212,165,116,0.16),transparent)]" />
-                        <div className="absolute inset-0 grain opacity-[0.04]" />
-                        <div className="relative">
-                          <p className="text-[10px] font-mono font-bold uppercase tracking-[0.14em] text-gold/80 mb-1">
-                            Photo placeholder · {day.label}
-                          </p>
-                          <p className="text-xs text-neutral-300 leading-relaxed">{day.imageAlt}</p>
+                      {day.hasImage ? (
+                        <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-100">
+                          <Image
+                            src={day.image}
+                            alt={day.imageAlt}
+                            fill
+                            sizes="(min-width: 1024px) 42vw, 100vw"
+                            className="object-cover"
+                            quality={88}
+                          />
                         </div>
-                      </div>
+                      ) : (
+                        <div className="relative aspect-[16/10] rounded-2xl bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950 overflow-hidden flex items-end p-6 border border-neutral-200">
+                          <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_30%,rgba(212,165,116,0.16),transparent)]" />
+                          <div className="absolute inset-0 grain opacity-[0.04]" />
+                          <div className="relative">
+                            <p className="text-[10px] font-mono font-bold uppercase tracking-[0.14em] text-gold/80 mb-1">
+                              Photo placeholder · {day.label}
+                            </p>
+                            <p className="text-xs text-neutral-300 leading-relaxed">{day.imageAlt}</p>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
 
