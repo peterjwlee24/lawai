@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/pages/PageHero";
@@ -197,6 +198,43 @@ export default function PracticeAreasPage() {
             "Re-usable across every matter in the practice area",
           ]}
         />
+
+        {/* Practice-area photo plate — sets the editorial tone before the TOC */}
+        <section className="py-16 md:py-20 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-neutral-50/40 to-white pointer-events-none" />
+          <div className="container-main relative">
+            <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+              <div className="lg:col-span-7">
+                <div className="relative">
+                  <span aria-hidden="true" className="absolute -left-3 -top-3 z-10 h-8 w-8 border-l-2 border-t-2 border-navy" />
+                  <span aria-hidden="true" className="absolute -bottom-3 -right-3 z-10 h-8 w-8 border-b-2 border-r-2 border-gold" />
+                  <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-100 shadow-elevated">
+                    <Image
+                      src="/images/practice-areas-hero.jpg"
+                      alt="A row of labeled file folders standing in a walnut shelf organizer in a partner's office — Estate Planning, Corporate / M&A, IP, Tax, Employment, Real Estate, and Litigation. A hand enters from the left edge mid-reach, pulling the Estate Planning folder partway forward. Softly out-of-focus professional certificates frame the wall above; a stoneware mug rests on a side table below. Warm walnut paneling, soft directional daylight."
+                      fill
+                      sizes="(min-width: 1024px) 58vw, 100vw"
+                      className="object-cover"
+                      quality={88}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="lg:col-span-5">
+                <span className="text-[11px] font-mono font-bold uppercase tracking-[0.12em] text-navy mb-3 block">
+                  Pick your practice
+                </span>
+                <h2 className="text-3xl md:text-headline font-semibold text-neutral-900 leading-tight tracking-tight">
+                  Twelve folders, twelve playbooks,{" "}
+                  <span className="font-serif italic font-normal">one sprint shape.</span>
+                </h2>
+                <p className="mt-5 text-body-lg text-neutral-700 leading-relaxed">
+                  The sprint framework is identical across practice areas — Monday discovery, Friday handover. What changes is the playbook we capture on Monday and the workflows we build on Thursday. Each of the twelve folders below opens to the workflows we typically build for that practice.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <PracticeAreasList areas={areas} />
 

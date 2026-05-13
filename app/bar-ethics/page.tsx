@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/pages/PageHero";
@@ -120,6 +121,46 @@ export default function BarEthicsPage() {
             "Malpractice-carrier-reviewed policy template",
           ]}
         />
+
+        {/* Hero artifact — the actual policy document we draft */}
+        <section className="py-16 md:py-20 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-neutral-50/40 to-white pointer-events-none" />
+          <div className="container-main relative">
+            <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+              <div className="lg:col-span-5">
+                <span className="text-[11px] font-mono font-bold uppercase tracking-[0.12em] text-navy mb-3 block">
+                  The deliverable
+                </span>
+                <h2 className="text-3xl md:text-headline font-semibold text-neutral-900 leading-tight tracking-tight">
+                  Every engagement ships with a{" "}
+                  <span className="font-serif italic font-normal">bar-compliant AI usage policy</span> your malpractice carrier can sign off on.
+                </h2>
+                <p className="mt-5 text-body-lg text-neutral-700 leading-relaxed">
+                  Three sections every policy covers: confidentiality and data security, competence and supervision, and candor and compliance. Each one is mapped to the specific ABA Model Rule and your state&apos;s equivalent. The template you walk away with is the document we draft for your firm, customized to your jurisdiction and your matter mix.
+                </p>
+                <p className="mt-4 text-sm text-neutral-500 italic leading-relaxed">
+                  The policy is yours to keep after the sprint — no licensing, no per-attorney fee, no expiration. It lives on the firm letterhead. We update it for you at carrier-renewal time via the retainer.
+                </p>
+              </div>
+              <div className="lg:col-span-7">
+                <div className="relative">
+                  <span aria-hidden="true" className="absolute -left-3 -top-3 z-10 h-8 w-8 border-l-2 border-t-2 border-navy" />
+                  <span aria-hidden="true" className="absolute -bottom-3 -right-3 z-10 h-8 w-8 border-b-2 border-r-2 border-gold" />
+                  <div className="relative aspect-square rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-100 shadow-elevated">
+                    <Image
+                      src="/images/bar-ethics-desk.jpg"
+                      alt="An attorney's working desk: a printed Sidebar AI Bar-compliant AI usage policy with three sections (Confidentiality and data security, Competence and supervision, Candor and compliance), an open notebook with handwritten cursive notes, a black fountain pen with gold trim, tortoise-shell reading glasses, a stoneware coffee mug, a brass paperweight, all on warm walnut with soft diagonal daylight."
+                      fill
+                      sizes="(min-width: 1024px) 50vw, 100vw"
+                      className="object-cover"
+                      quality={88}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Rules grid */}
         <section className="py-24 md:py-28 relative overflow-hidden">
