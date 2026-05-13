@@ -71,8 +71,8 @@ const days = [
     ],
     deliverable: "Every integration verified working against your actual data — not a demo tenant.",
     image: "/images/sprint-wednesday.jpg",
-    imageAlt: "Editorial photograph of code editor next to a document management system in a dual-monitor setup.",
-    hasImage: false,
+    imageAlt: "A senior engineer at a dual-monitor walnut-desk setup, golden-hour light streaming in. The left monitor shows a VS Code editor with secure_integration.py — Python OAuth 2.0 + PKCE code wiring Claude for Legal into a firm system. The right monitor shows a Document Center listing real deal documents (Term Sheet, SPA, Investor Rights Agreement, Board Consent, Cap Table, Due Diligence Request, Employment Agreement, IP Assignment, Closing Checklist) for ACME Holdings - Series B. An open notebook in the foreground holds a hand-drawn Claude for Legal Integration Architecture diagram with DMS, Integration Service, Auth, Tokens/Refresh, and Claude for Legal API, plus Key Flows annotations.",
+    hasImage: true,
   },
   {
     label: "Thursday",
@@ -87,8 +87,8 @@ const days = [
     ],
     deliverable: "Five workflows your associates trigger by name, configured to your firm's actual playbook — not a generic prompt pack.",
     image: "/images/sprint-thursday.jpg",
-    imageAlt: "Editorial photograph of an attorney's hand annotating a printed contract review playbook on a walnut desk.",
-    hasImage: false,
+    imageAlt: "Top-down editorial photograph of an attorney's hand annotating a printed Contract Review Playbook — Indemnification. The page shows the firm's Standard Positions (Cap: 2x contract value, Survival: 3-5 years post-termination, Mutual carve-outs for gross negligence only, Defense Obligations, Insurance) with two hand-circled positions and a handwritten marginal note reading 'Push for 2x cap + mutual gross neg. only.' A purchase agreement with yellow sticky notes ('Check survival period,' 'Confirm insurance requirements') sits to the right, alongside a stoneware coffee mug and tortoise-shell reading glasses on a walnut desk.",
+    hasImage: true,
   },
   {
     label: "Friday",
