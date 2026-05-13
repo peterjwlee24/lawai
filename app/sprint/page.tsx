@@ -104,8 +104,8 @@ const days = [
     ],
     deliverable: "Your firm running independently from week two — with a runbook, a video library, and a calendar of check-ins.",
     image: "/images/sprint-friday.jpg",
-    imageAlt: "A printed Sidebar AI runbook open on a desk next to a steaming coffee mug, late-afternoon golden light from a window.",
-    hasImage: false,
+    imageAlt: "A printed Sidebar AI Runbook open to the Workflow 03 — Matter Intake page, showing the firm's Overview, five Workflow Steps (Create Matter, Conflict Check, Collect Documents, Initial Triage, Confirm & Notify), Key Benefits, and Best Practices panels. Beside it on the walnut desk: a stoneware coffee mug with steam rising, a closed MacBook, tortoise-shell reading glasses, a small succulent, and an open leather notebook with handwritten Handover Notes — Intake workflow live, Team training complete, Templates uploaded, Monitoring dashboard set, Next: Review feedback — ending with the line 'Great week. Strong foundation for the team.' Late-afternoon golden-hour light streams across the desk.",
+    hasImage: true,
   },
 ];
 
