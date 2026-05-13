@@ -55,8 +55,8 @@ const days = [
     ],
     deliverable: "A configured Claude tenant your team could log into, plus a written usage policy ready for your malpractice carrier.",
     image: "/images/sprint-tuesday.jpg",
-    imageAlt: "An engineer's monitor displaying a Claude tenant configuration page with single sign-on and practice-area tools being enabled.",
-    hasImage: false,
+    imageAlt: "A monitor showing the Claude for Legal Configure-tenant page for a fictional Acme Law Partners LLP — Okta single sign-on connected, and four practice-area toolsets (Corporate, M&A, Intellectual Property, Employment) toggled on. A printed Attorney Firm — Implementation Checklist sits to the right, with a stoneware coffee mug and Mont Blanc fountain pen staged on a walnut desk.",
+    hasImage: true,
   },
   {
     label: "Wednesday",

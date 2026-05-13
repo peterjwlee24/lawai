@@ -11,6 +11,7 @@ import WhySidebarAI from "@/components/WhySidebarAI";
 import SocialProof from "@/components/SocialProof";
 import ServiceTiers from "@/components/ServiceTiers";
 import WhatDoesntDisappear from "@/components/WhatDoesntDisappear";
+import ValuePropReanchor from "@/components/ValuePropReanchor";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import type { DemoTab, FAQItem } from "@/data/industries";
@@ -214,6 +215,7 @@ export default function Home() {
         <ServiceTiers />
         <WhatDoesntDisappear />
         <SocialProof />
+        <ValuePropReanchor />
         <FAQ faqItems={legalFaqItems} clientNoun="firm" />
         <ContactForm clientNoun="firm" specialtyLabel="Primary practice area" />
       </main>

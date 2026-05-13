@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/pages/PageHero";
 import PageCTABand from "@/components/pages/PageCTABand";
+import PracticeAreasList from "@/components/pages/PracticeAreasList";
 
 export const metadata: Metadata = {
   title: "Practice Areas We Serve — Claude for Legal Workflows for Boutique Law Firms",
@@ -197,38 +198,7 @@ export default function PracticeAreasPage() {
           ]}
         />
 
-        {/* Practice areas */}
-        <section className="py-24 md:py-28 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-white via-neutral-50/30 to-white pointer-events-none" />
-          <div className="container-main relative space-y-12">
-            {areas.map((area, idx) => (
-              <article key={area.slug} id={area.slug} className="grid lg:grid-cols-12 gap-8 lg:gap-10 p-6 md:p-8 lg:p-10 rounded-2xl bg-white border border-neutral-200/80 shadow-subtle hover:shadow-elevated transition-all duration-500">
-                <div className="lg:col-span-4">
-                  <span className="text-[11px] font-mono font-bold uppercase tracking-[0.12em] text-navy mb-3 block">
-                    {String(idx + 1).padStart(2, "0")}
-                  </span>
-                  <h2 className="text-2xl md:text-3xl font-semibold text-neutral-900 leading-tight mb-4">{area.name}</h2>
-                  <p className="text-sm text-neutral-700 leading-relaxed">{area.framing}</p>
-                </div>
-                <div className="lg:col-span-8">
-                  <div className="p-5 rounded-xl bg-navy-50/70 border border-navy-100">
-                    <p className="text-[10px] font-mono font-bold uppercase tracking-[0.12em] text-navy mb-3">Workflows we typically build on Day 4</p>
-                    <ul className="space-y-3">
-                      {area.workflows.map((w) => (
-                        <li key={w} className="flex items-start gap-3">
-                          <svg className="w-4 h-4 text-emerald-500 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span className="text-sm text-neutral-800 leading-relaxed">{w}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
+        <PracticeAreasList areas={areas} />
 
         {/* Not on this list */}
         <section className="py-20 md:py-24 relative overflow-hidden">
