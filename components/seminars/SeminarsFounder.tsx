@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const credibility = [
   {
@@ -84,18 +85,16 @@ export default function SeminarsFounder() {
               <span aria-hidden="true" className="absolute -bottom-3 -right-3 z-10 h-8 w-8 border-b-2 border-r-2 border-gold" />
 
               <div className="relative rounded-2xl bg-white border border-neutral-200 shadow-elevated overflow-hidden">
-                <div className="aspect-[4/5] bg-gradient-to-br from-navy-900 via-navy-800 to-navy-950 relative flex items-end p-6">
-                  {/* Placeholder portrait surface — replace /public/founder-portrait.jpg with the AI-generated photo */}
-                  <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_30%,rgba(212,165,116,0.18),transparent)]" />
-                  <div className="absolute inset-0 grain opacity-[0.04]" />
-                  <div className="relative">
-                    <p className="text-[10px] font-mono font-bold uppercase tracking-[0.14em] text-gold/80 mb-1">
-                      Founder portrait — placeholder
-                    </p>
-                    <p className="text-sm text-neutral-200 leading-relaxed">
-                      Replace <code className="font-mono text-xs text-gold-200">/public/founder-portrait.jpg</code> with the AI-generated photo (prompt in the project README).
-                    </p>
-                  </div>
+                <div className="relative aspect-[4/5] bg-neutral-100">
+                  <Image
+                    src="/images/founder-jinwoong-lee.jpg"
+                    alt="Portrait of Jinwoong Lee, founder of Sidebar AI"
+                    fill
+                    sizes="(min-width: 1024px) 40vw, 100vw"
+                    className="object-cover"
+                    priority
+                    quality={88}
+                  />
                 </div>
                 <div className="px-6 py-4 border-t border-neutral-100 bg-neutral-50/60">
                   <p className="text-sm font-semibold text-neutral-900">Jinwoong Lee</p>

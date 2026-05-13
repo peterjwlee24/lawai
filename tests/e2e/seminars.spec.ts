@@ -21,11 +21,27 @@ test.describe("/seminars page", () => {
     await expect(page.getByText("ABA Model Rule 5.3 · Supervision")).toBeVisible();
   });
 
-  test("founder section mentions Jinwoong Lee", async ({ page }) => {
+  test("founder section mentions Jinwoong Lee + renders portrait photo", async ({ page }) => {
     await page.goto("/seminars");
     await expect(page.getByRole("heading", { name: /Jinwoong Lee/ })).toBeVisible();
     await expect(page.getByText(/Berkeley · Cognitive Science/)).toBeVisible();
     await expect(page.getByText(/7\+ years at Amazon/)).toBeVisible();
+    // Verify the real founder photo is rendered (not the navy placeholder gradient).
+    const portrait = page.getByAltText(/Portrait of Jinwoong Lee/i);
+    await expect(portrait).toBeVisible();
+  });
+
+  test("nav anchor links route back to home from /seminars", async ({ page }) => {
+    await page.goto("/seminars");
+    // The bug we're locking in a fix for: clicking "How it works" on /seminars
+    // used to do nothing because document.querySelector("#how-it-works") was null.
+    // The fix routes via /#how-it-works so the click navigates home + scrolls.
+    const howItWorksLink = page.getByRole("link", { name: "How it works" }).first();
+    await expect(howItWorksLink).toHaveAttribute("href", "/#how-it-works");
+    await howItWorksLink.click();
+    await expect(page).toHaveURL(/\/#how-it-works/);
+    // The home page should now be loaded with the How It Works section visible.
+    await expect(page.getByRole("heading", { name: /From a live call/i })).toBeVisible({ timeout: 10_000 });
   });
 
   test("seminar inquiry form requires firmRole + seminarFormat + phone", async ({ page }) => {

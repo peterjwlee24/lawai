@@ -44,6 +44,8 @@
 
 @layer base {
   html {
+    /* Use scoped scroll-behavior so Next 16 route transitions don't fight it.
+     * Set via data-scroll-behavior on <html> in layout for Next-aware control. */
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

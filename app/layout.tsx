@@ -78,7 +78,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${dmSans.variable} ${instrumentSerif.variable}`}>
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      className={`${dmSans.variable} ${instrumentSerif.variable}`}
+    >
       <body className="font-sans antialiased">
         <ErrorBoundary>{children}</ErrorBoundary>
       </body>

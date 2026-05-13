@@ -90,11 +90,11 @@ const customizationPillars = [
     title: "Custom connections to your firm's bespoke software",
     subtitle: "If the off-the-shelf integrations don't reach a system that matters, we write the connection ourselves.",
     description:
-      "Most firms run on standard systems and the connectors that ship with Claude for Legal cover them. But every firm has at least one piece of software that's idiosyncratic — a partner-built matter tracker, a custom intake form, a billing add-on, a deal-document repository nobody else uses. We write secure custom connections to those systems as part of the sprint when the build is small, or scope them separately if it's deeper. Same engineering work your IT consultancy would do, if they happened to be Claude-fluent.",
+      "Most firms run on standard systems and the off-the-shelf connections cover them. But every firm has at least one piece of software that's idiosyncratic — a partner-built matter tracker, a custom intake form, a billing add-on, a deal-document repository nobody else uses. We build secure custom bridges to those systems as part of the sprint when the work is small, or scope them separately if it's deeper. Same engineering posture your IT team would insist on — read-only where it should be read-only, locked down to your firm's network, audited.",
     example: {
       label: "What this looks like for your firm",
       content:
-        "A firm's twenty-year-old matter tracker has no public API — but it speaks SQL. We write a secure read-only connection that lets Claude pull conflict-check data straight from it during a matter intake, without exposing the database to the wider internet. Same security posture your IT team would insist on, implemented in two days instead of two months.",
+        "A firm's twenty-year-old matter tracker wasn't built to talk to other software. We build a careful one-way bridge that lets Claude read conflict-check information from it during a new matter intake — without changing the original system, exposing it to the wider internet, or asking anyone on staff to learn anything new. Same caution your IT consultant would apply, done in two days instead of two months.",
     },
     color: "navy" as const,
   },

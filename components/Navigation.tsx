@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface NavigationProps {
   brandName?: string;
@@ -10,21 +11,38 @@ interface NavigationProps {
   darkHero?: boolean;
 }
 
+/* All nav links are routed through Next.js Link so they work from any page.
+ * Anchor links use the /#hash form — on the home page Next handles this as a
+ * smooth-scroll-to-hash; on other pages it navigates to home first and the
+ * browser's native hash handling scrolls. This is the documented Next 15+/16
+ * pattern and resolves the bug where #how-it-works/#tiers/#faq were dead
+ * clicks on /seminars and /sprint.                                          */
+
+interface NavLink {
+  label: string;
+  /** anchor-on-home routes (e.g. /#how-it-works) OR full route paths (/seminars) */
+  href: string;
+  /** the bare anchor (e.g. #how-it-works) used for the on-home IntersectionObserver */
+  homeAnchor?: string;
+}
+
+const NAV_LINKS: NavLink[] = [
+  { label: "How it works", href: "/#how-it-works", homeAnchor: "#how-it-works" },
+  { label: "Engagements",  href: "/#tiers",        homeAnchor: "#tiers" },
+  { label: "Seminars",     href: "/seminars" },
+  { label: "Sprint",       href: "/sprint" },
+  { label: "Why now",      href: "/why-now" },
+  { label: "FAQ",          href: "/#faq",          homeAnchor: "#faq" },
+];
+
 export default function Navigation({ brandName = "Sidebar AI", darkHero = true }: NavigationProps) {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  const isHome = pathname === "/";
   const useDark = scrolled || !darkHero;
-
-  // Mix of anchor-scroll and full-page links. Anchors are smooth-scrolled on
-  // the homepage; cross-page links route via Next Link.
-  const navLinks: Array<{ label: string; href: string; external?: boolean }> = [
-    { label: "How it works", href: "#how-it-works" },
-    { label: "Engagements",  href: "#tiers" },
-    { label: "Seminars",     href: "/seminars", external: true },
-    { label: "FAQ",          href: "#faq" },
-  ];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -32,9 +50,16 @@ export default function Navigation({ brandName = "Sidebar AI", darkHero = true }
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // IntersectionObserver only meaningful on the home page (the only place the
+  // hash sections exist). On other routes the activeSection state is unused.
   useEffect(() => {
-    const hrefs = ["#how-it-works", "#tiers", "#faq"];
-    const sections = hrefs.map((href) => document.querySelector(href));
+    if (!isHome) return;
+    const anchors = NAV_LINKS.filter((l) => l.homeAnchor).map((l) => l.homeAnchor as string);
+    const sections = anchors
+      .map((href) => document.querySelector(href))
+      .filter((el): el is Element => el !== null);
+    if (sections.length === 0) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -43,27 +68,37 @@ export default function Navigation({ brandName = "Sidebar AI", darkHero = true }
       },
       { rootMargin: "-40% 0px -50% 0px" },
     );
-    sections.forEach((section) => { if (section) observer.observe(section); });
+    sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
-  }, []);
+  }, [isHome]);
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [mobileOpen]);
 
-  const scrollToSection = (href: string) => {
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+  // For on-home anchor clicks, smooth-scroll without triggering a full route push.
+  // For cross-page links, fall through to the default Link behavior.
+  const handleLinkClick = (link: NavLink, e: React.MouseEvent) => {
     setMobileOpen(false);
+    if (isHome && link.homeAnchor) {
+      e.preventDefault();
+      const el = document.querySelector(link.homeAnchor);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+      // Keep the URL in sync so back-button works.
+      if (typeof window !== "undefined") {
+        history.pushState(null, "", link.homeAnchor);
+      }
+    }
   };
 
-  const handleNavClick = (link: { href: string; external?: boolean }) => {
-    if (link.external) {
-      setMobileOpen(false);
-      return; // Let Link handle routing.
+  const ctaHref = isHome ? "#contact" : "/#contact";
+  const handleCtaClick = (e: React.MouseEvent) => {
+    setMobileOpen(false);
+    if (isHome) {
+      e.preventDefault();
+      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
     }
-    scrollToSection(link.href);
   };
 
   return (
@@ -92,48 +127,48 @@ export default function Navigation({ brandName = "Sidebar AI", darkHero = true }
 
             {/* Desktop Nav Links */}
             <div className="hidden md:flex items-center gap-1">
-              {navLinks.map((link) => {
-                const base = `relative px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-lg ${
-                  activeSection === link.href
-                    ? useDark ? "text-neutral-900" : "text-white"
-                    : useDark ? "text-neutral-500 hover:text-neutral-900" : "text-white/70 hover:text-white"
-                }`;
-                if (link.external) {
-                  return (
-                    <Link key={link.href} href={link.href} className={base}>
-                      {link.label}
-                    </Link>
-                  );
-                }
+              {NAV_LINKS.map((link) => {
+                const isActive =
+                  // anchor active when on home and observer says so
+                  (isHome && link.homeAnchor && activeSection === link.homeAnchor) ||
+                  // cross-page active when pathname matches
+                  (!link.homeAnchor && pathname === link.href);
+
                 return (
-                  <button
+                  <Link
                     key={link.href}
-                    onClick={() => handleNavClick(link)}
-                    className={base}
+                    href={link.href}
+                    onClick={(e) => handleLinkClick(link, e)}
+                    className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-lg ${
+                      isActive
+                        ? useDark ? "text-neutral-900" : "text-white"
+                        : useDark ? "text-neutral-500 hover:text-neutral-900" : "text-white/70 hover:text-white"
+                    }`}
                   >
                     {link.label}
-                    {activeSection === link.href && (
+                    {isActive && (
                       <motion.div
                         layoutId="activeNav"
                         className={`absolute bottom-0 left-3 right-3 h-0.5 rounded-full ${useDark ? "bg-navy" : "bg-gold"}`}
                         transition={{ type: "spring", stiffness: 380, damping: 30 }}
                       />
                     )}
-                  </button>
+                  </Link>
                 );
               })}
             </div>
 
             {/* Desktop CTA */}
             <div className="hidden md:flex items-center gap-3">
-              <button
-                onClick={() => scrollToSection("#contact")}
+              <Link
+                href={ctaHref}
+                onClick={handleCtaClick}
                 className={`px-5 py-2.5 text-sm font-medium rounded-lg transition-all duration-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 ${
                   useDark ? "text-white bg-navy hover:bg-navy-900" : "text-navy-900 bg-gold hover:bg-gold-hover"
                 }`}
               >
                 Book a consultation
-              </button>
+              </Link>
             </div>
 
             {/* Mobile Hamburger */}
@@ -188,41 +223,26 @@ export default function Navigation({ brandName = "Sidebar AI", darkHero = true }
                 </div>
 
                 <div className="flex-1 p-5 space-y-1 overflow-y-auto">
-                  {navLinks.map((link) => {
-                    const className = `block w-full text-left px-4 py-3 rounded-lg text-base font-medium transition-colors ${
-                      activeSection === link.href ? "bg-accent-subtle text-navy" : "text-neutral-700 hover:bg-neutral-50"
-                    }`;
-                    if (link.external) {
-                      return (
-                        <Link
-                          key={link.href}
-                          href={link.href}
-                          className={className}
-                          onClick={() => setMobileOpen(false)}
-                        >
-                          {link.label}
-                        </Link>
-                      );
-                    }
-                    return (
-                      <button
-                        key={link.href}
-                        onClick={() => handleNavClick(link)}
-                        className={className}
-                      >
-                        {link.label}
-                      </button>
-                    );
-                  })}
+                  {NAV_LINKS.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={(e) => handleLinkClick(link, e)}
+                      className="block w-full text-left px-4 py-3 rounded-lg text-base font-medium text-neutral-700 hover:bg-neutral-50 transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
                 </div>
 
                 <div className="p-5 border-t border-neutral-100">
-                  <button
-                    onClick={() => scrollToSection("#contact")}
-                    className="w-full py-3 text-base font-semibold text-white bg-navy rounded-xl hover:bg-navy-900 transition-colors"
+                  <Link
+                    href={ctaHref}
+                    onClick={handleCtaClick}
+                    className="block w-full text-center py-3 text-base font-semibold text-white bg-navy rounded-xl hover:bg-navy-900 transition-colors"
                   >
                     Book a consultation
-                  </button>
+                  </Link>
                 </div>
               </div>
             </motion.div>

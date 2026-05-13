@@ -61,10 +61,10 @@ export default function Footer(_props?: FooterProps) {
             </ul>
           </div>
 
-          {/* Programs */}
+          {/* Programs + sub-pages */}
           <div>
             <h4 className="text-sm font-semibold text-neutral-200 uppercase tracking-wider mb-4">
-              Programs
+              Programs &amp; pages
             </h4>
             <ul className="space-y-3">
               <li>
@@ -73,14 +73,24 @@ export default function Footer(_props?: FooterProps) {
                 </Link>
               </li>
               <li>
-                <button onClick={() => scrollToSection("contact")} className="text-sm text-neutral-300 hover:text-white transition-colors">
-                  Initial consultation
-                </button>
+                <Link href="/sprint" className="text-sm text-neutral-300 hover:text-white transition-colors">
+                  The five-day sprint
+                </Link>
               </li>
               <li>
-                <button onClick={() => scrollToSection("contact")} className="text-sm text-neutral-300 hover:text-white transition-colors">
-                  Implementation sprint
-                </button>
+                <Link href="/why-now" className="text-sm text-neutral-300 hover:text-white transition-colors">
+                  Why now — Claude for Legal briefing
+                </Link>
+              </li>
+              <li>
+                <Link href="/bar-ethics" className="text-sm text-neutral-300 hover:text-white transition-colors">
+                  Bar ethics &amp; confidentiality
+                </Link>
+              </li>
+              <li>
+                <Link href="/practice-areas" className="text-sm text-neutral-300 hover:text-white transition-colors">
+                  Practice areas
+                </Link>
               </li>
             </ul>
           </div>
