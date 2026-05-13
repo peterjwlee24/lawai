@@ -45,15 +45,15 @@ export default function Hero(_props?: HeroProps) {
   };
 
   const trustItems = [
-    "Your data stays in your systems — we never store it",
-    "Every output verified with citations",
-    "Live in weeks, not months",
+    "Live working sessions — a real engineer, not a chatbot or a deck",
+    "Anthropic's Claude for Legal — configured to your firm",
+    "Five days from kickoff to a working firm",
   ];
 
   const stats = [
-    { value: 80, suffix: "%+", label: "faster first-pass contract review" },
-    { value: 100, suffix: "+", label: "page documents triaged in minutes" },
-    { value: 0, suffix: "", label: "unverified outputs shipped" },
+    { value: 5, suffix: " days", label: "from initial consultation to a working firm" },
+    { value: 12, suffix: "", label: "practice-area workflows turned on — Corporate, M&A, IP, Employment, more" },
+    { value: 20, suffix: "+", label: "secure connections into iManage, NetDocuments, Clio, Outlook, Word" },
   ];
 
   return (
@@ -92,7 +92,7 @@ export default function Hero(_props?: HeroProps) {
               >
                 <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.06] border border-white/[0.1] text-xs font-semibold text-gold/90 uppercase tracking-[0.15em]">
                   <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-                  AI Consulting &amp; Integration for Law Firms
+                  Claude for Legal — Implementation Partner
                 </span>
               </motion.div>
 
@@ -103,9 +103,9 @@ export default function Hero(_props?: HeroProps) {
                 transition={{ duration: 0.4, delay: 0.1 }}
                 className="text-4xl md:text-5xl lg:text-[3.5rem] xl:text-display font-semibold text-white tracking-tight leading-[1.08]"
               >
-                Your attorneys practice law.
+                Anthropic launched Claude for Legal.
                 <br />
-                <span className="font-serif italic font-normal text-gold">We build the AI behind it.</span>
+                <span className="font-serif italic font-normal text-gold">Your firm could be running on it in a week.</span>
               </motion.h1>
 
               {/* Subheadline */}
@@ -115,7 +115,7 @@ export default function Hero(_props?: HeroProps) {
                 transition={{ duration: 0.4, delay: 0.15 }}
                 className="mt-6 text-lg md:text-xl text-neutral-200 max-w-xl leading-relaxed"
               >
-                We consult on your workflows, build AI tools that read your contracts and flag what matters, and connect everything to iManage, Clio, or NetDocuments. Then we train your team to run it all. No coding. No disruption.
+                We&apos;re a fully remote implementation partner for boutique law firms — live working sessions, never async chat or generic decks. We meet your team live to understand your work, set up Anthropic&apos;s new legal AI to match how your firm runs matters, connect it to the software you already use (iManage, Clio, NetDocuments, Outlook, Word), write any custom connections your firm needs, and train your team live — in five business days. No coding required on your side. Your firm owns it on Friday.
               </motion.p>
 
               {/* CTAs */}
@@ -126,19 +126,19 @@ export default function Hero(_props?: HeroProps) {
                 className="mt-10 flex flex-wrap gap-4"
               >
                 <button
-                  onClick={() => scrollToSection("demo")}
+                  onClick={() => scrollToSection("contact")}
                   className="group px-8 py-4 text-lg font-semibold text-navy-900 bg-gold rounded-xl hover:bg-gold-hover transition-all shadow-[0_4px_20px_rgba(212,165,116,0.3)] hover:shadow-[0_8px_30px_rgba(212,165,116,0.4)] hover:-translate-y-0.5 flex items-center gap-2"
                 >
-                  See How It Works
+                  Book an initial consultation
                   <svg className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
                 </button>
                 <button
-                  onClick={() => scrollToSection("contact")}
+                  onClick={() => scrollToSection("how-it-works")}
                   className="px-8 py-4 text-lg font-semibold text-white/90 bg-white/[0.06] border border-white/[0.12] rounded-xl hover:bg-white/[0.1] hover:border-white/[0.2] transition-all backdrop-blur-sm"
                 >
-                  Schedule a Consultation
+                  See the five-day plan
                 </button>
               </motion.div>
 
@@ -162,7 +162,7 @@ export default function Hero(_props?: HeroProps) {
               </motion.div>
             </div>
 
-            {/* Right: Product Preview Card — Redline Summary */}
+            {/* Right: Product Preview Card — The Week, Visualized */}
             <motion.div
               initial={{ opacity: 0, y: 20, scale: 0.97 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -182,94 +182,51 @@ export default function Hero(_props?: HeroProps) {
                       <div className="w-3 h-3 rounded-full bg-amber-400/70" />
                       <div className="w-3 h-3 rounded-full bg-emerald-400/70" />
                     </div>
-                    <span className="text-xs font-medium text-neutral-300 ml-2">Sidebar AI — Contract Review</span>
+                    <span className="text-xs font-medium text-neutral-300 ml-2">Sidebar AI — Implementation Sprint</span>
                   </div>
 
-                  {/* User message — shows it's a conversation */}
-                  <div className="px-5 pt-4 pb-2">
-                    <div className="flex items-start gap-2.5">
-                      <div className="w-6 h-6 rounded-full bg-gold/20 border border-gold/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-[9px] font-bold text-gold">JL</span>
-                      </div>
-                      <div className="space-y-1.5">
-                        <div className="flex items-center gap-2">
-                          <span className="text-[11px] font-medium text-neutral-200">You</span>
-                        </div>
-                        <div className="flex flex-wrap gap-1.5 mb-1">
-                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-white/[0.06] border border-white/[0.08] text-[10px] text-neutral-300">
-                            <svg className="w-3 h-3 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M18.375 12.739l-7.693 7.693a4.5 4.5 0 01-6.364-6.364l10.94-10.94A3 3 0 1119.5 7.372L8.552 18.32m.009-.01l-.01.01m5.699-9.941l-7.81 7.81a1.5 1.5 0 002.112 2.13" />
-                            </svg>
-                            SupplyAgreement_v3.docx
-                          </span>
-                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-white/[0.06] border border-white/[0.08] text-[10px] text-neutral-300">
-                            <svg className="w-3 h-3 text-neutral-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M18.375 12.739l-7.693 7.693a4.5 4.5 0 01-6.364-6.364l10.94-10.94A3 3 0 1119.5 7.372L8.552 18.32m.009-.01l-.01.01m5.699-9.941l-7.81 7.81a1.5 1.5 0 002.112 2.13" />
-                            </svg>
-                            SupplyAgreement_v4.docx
-                          </span>
-                        </div>
-                        <p className="text-[11px] text-neutral-300 leading-relaxed">Compare these — I&apos;m representing the Buyer.</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mx-5 border-t border-white/[0.06]" />
-
-                  {/* AI response */}
-                  <div className="p-5 space-y-3">
+                  {/* Day-by-day plan */}
+                  <div className="p-5 space-y-2.5">
                     <div className="flex items-center gap-2 mb-1">
                       <svg className="w-4 h-4 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
                       </svg>
-                      <span className="text-xs font-semibold text-gold uppercase tracking-wider">AI Analysis Complete</span>
+                      <span className="text-xs font-semibold text-gold uppercase tracking-wider">The Five-Day Sprint</span>
                     </div>
 
-                    {/* Red flag item */}
-                    <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/20">
-                      <div className="flex items-center gap-2 mb-1.5">
-                        <span className="px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-red-300 bg-red-500/20 rounded-full">HIGH RISK</span>
-                        <span className="text-[10px] text-neutral-400">§4.2 Indemnification</span>
+                    {[
+                      { day: "Mon", phase: "Discovery", note: "Live working session with your team — interview partners, watch your workflows, capture how your firm actually runs matters", color: "bg-violet-500/15 border-violet-500/30 text-violet-200" },
+                      { day: "Tue", phase: "Foundation", note: "Set up your Claude account, single sign-on, the practice areas your firm needs, and a bar-compliant usage policy", color: "bg-indigo-500/15 border-indigo-500/30 text-indigo-200" },
+                      { day: "Wed", phase: "Integration", note: "Connect Claude to your document system, billing, calendar, email, plus Word and Outlook — including custom connections if your firm runs bespoke software", color: "bg-sky-500/15 border-sky-500/30 text-sky-200" },
+                      { day: "Thu", phase: "Customization", note: "Build up to five one-click workflows around your firm's playbook — contract review, intake, conflict checks", color: "bg-emerald-500/15 border-emerald-500/30 text-emerald-200" },
+                      { day: "Fri", phase: "Training & Handover", note: "Two live training sessions, a printed runbook, and 30/60/90-day check-ins on your calendar", color: "bg-amber-500/15 border-amber-500/30 text-amber-200" },
+                    ].map((row) => (
+                      <div key={row.day} className={`flex items-start gap-3 p-3 rounded-lg border ${row.color}`}>
+                        <span className="flex-shrink-0 w-9 text-center font-mono text-[11px] font-bold uppercase tracking-wider">{row.day}</span>
+                        <div className="min-w-0">
+                          <p className="text-xs font-semibold text-white leading-tight">{row.phase}</p>
+                          <p className="text-[11px] text-neutral-300 leading-relaxed mt-0.5">{row.note}</p>
+                        </div>
                       </div>
-                      <p className="text-xs text-neutral-200 leading-relaxed">Liability cap removed entirely. Previous draft capped at 2x contract value. <span className="text-red-300 font-medium">Exposure now unlimited.</span></p>
-                      <p className="text-[11px] text-neutral-400 mt-1.5 italic">Suggested response: Reinstate cap at 2x or propose mutual carve-outs for gross negligence only.</p>
-                    </div>
-
-                    {/* Yellow flag item */}
-                    <div className="p-3 rounded-lg bg-amber-500/10 border border-amber-500/20">
-                      <div className="flex items-center gap-2 mb-1.5">
-                        <span className="px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-amber-300 bg-amber-500/20 rounded-full">REVIEW</span>
-                        <span className="text-[10px] text-neutral-400">§7.1 Termination</span>
-                      </div>
-                      <p className="text-xs text-neutral-200 leading-relaxed">Cure period shortened from 30 days to 10 days. <span className="text-amber-300 font-medium">May be insufficient for complex breaches.</span></p>
-                    </div>
-
-                    {/* Green item */}
-                    <div className="p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
-                      <div className="flex items-center gap-2 mb-1.5">
-                        <span className="px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-emerald-300 bg-emerald-500/20 rounded-full">STANDARD</span>
-                        <span className="text-[10px] text-neutral-400">§2.1 Payment Terms</span>
-                      </div>
-                      <p className="text-xs text-neutral-200 leading-relaxed">Net 30 → Net 45. Minor change, favorable to client.</p>
-                    </div>
+                    ))}
                   </div>
 
                   {/* Footer */}
                   <div className="px-5 py-3 bg-[#0d1c33] border-t border-white/[0.1] flex items-center justify-between">
                     <div className="flex items-center gap-4">
                       <div>
-                        <p className="text-[10px] text-neutral-400 uppercase tracking-wider">Changes found</p>
-                        <p className="text-sm font-bold text-gold">14 changes</p>
+                        <p className="text-[10px] text-neutral-400 uppercase tracking-wider">Built on</p>
+                        <p className="text-sm font-bold text-gold">Anthropic Claude for Legal</p>
                       </div>
                       <div className="w-px h-6 bg-white/15" />
                       <div>
-                        <p className="text-[10px] text-neutral-400 uppercase tracking-wider">First-pass time saved</p>
-                        <p className="text-sm font-bold text-white">~80%</p>
+                        <p className="text-[10px] text-neutral-400 uppercase tracking-wider">Bar-compliant</p>
+                        <p className="text-sm font-bold text-white">ABA 1.1 · 1.6 · 5.3</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-1.5">
                       <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                      <span className="text-[10px] text-emerald-400 font-medium">All citations verified</span>
+                      <span className="text-[10px] text-emerald-400 font-medium">Working firm by Friday</span>
                     </div>
                   </div>
                 </div>

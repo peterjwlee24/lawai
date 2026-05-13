@@ -3,10 +3,30 @@
 import { motion } from "framer-motion";
 
 const results = [
-  { stat: "2-4 wks", label: "Phase 1 deployment", detail: "Contract analysis and Smart Skim live in your environment within weeks", icon: "clock" },
-  { stat: "80%+", label: "faster first-pass review", detail: "Contract change analysis drops from hours of manual review to minutes with full risk explanations", icon: "bolt" },
-  { stat: "100+ pg", label: "contracts triaged in minutes", detail: "Smart Skim reads the full document and tells your team which 20% of pages need attention", icon: "doc" },
-  { stat: "0", label: "hallucinations shipped", detail: "Multi-pass verification, mandatory citations, and uncertainty flags on every output", icon: "shield" },
+  {
+    stat: "5 days",
+    label: "from initial consultation to handover",
+    detail: "Monday live discovery, Friday live training — no scope creep, no rolling timelines, fully remote",
+    icon: "clock",
+  },
+  {
+    stat: "12",
+    label: "Claude for Legal plugins activated to your practice",
+    detail: "Corporate, M&A, IP, Employment, Litigation, Tax, Privacy, AI Governance, Regulatory, Product, Law Student, Legal Clinic",
+    icon: "stack",
+  },
+  {
+    stat: "8 connectors",
+    label: "into the software your firm already uses",
+    detail: "iManage, NetDocuments, Clio, SharePoint, Outlook, Word, Thomson Reuters CoCounsel, DocuSign — verified on real matter data",
+    icon: "plug",
+  },
+  {
+    stat: "90 days",
+    label: "of post-handoff support",
+    detail: "Email support included; 30 / 60 / 90-day check-ins scheduled in your calendar on Friday afternoon",
+    icon: "shield",
+  },
 ];
 
 const iconComponents: Record<string, React.ReactNode> = {
@@ -15,14 +35,14 @@ const iconComponents: Record<string, React.ReactNode> = {
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
     </svg>
   ),
-  bolt: (
+  stack: (
     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3" />
     </svg>
   ),
-  doc: (
+  plug: (
     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
     </svg>
   ),
   shield: (
@@ -50,14 +70,14 @@ export default function SocialProof(_props?: SocialProofProps) {
           className="text-center mb-16"
         >
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-xs font-semibold text-emerald-700 uppercase tracking-wider mb-4">
-            What To Expect
+            What you walk away with
           </span>
           <h2 className="text-headline text-neutral-900">
-            The impact on{" "}
-            <span className="font-serif italic font-normal">your firm</span>
+            One week.{" "}
+            <span className="font-serif italic font-normal">A working firm.</span>
           </h2>
           <p className="mt-3 text-body-lg text-neutral-600 max-w-2xl mx-auto">
-            Here&apos;s what law firms gain when they put these systems in place.
+            Every sprint ends the same way — your firm operating on a configured, integrated, bar-compliant Claude for Legal, with your team trained and your runbook in hand.
           </p>
         </motion.div>
 
@@ -72,10 +92,10 @@ export default function SocialProof(_props?: SocialProofProps) {
               className="group relative p-6 rounded-2xl bg-white border border-neutral-100 shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] transition-all duration-500 text-center"
             >
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-navy-50 text-navy mb-4 group-hover:scale-110 transition-transform duration-300">
-                {iconComponents[result.icon] || iconComponents.bolt}
+                {iconComponents[result.icon] || iconComponents.clock}
               </div>
 
-              <p className="text-3xl md:text-4xl font-bold text-navy tracking-tight">{result.stat}</p>
+              <p className="text-2xl md:text-3xl font-bold text-navy tracking-tight">{result.stat}</p>
               <p className="mt-1.5 text-sm font-semibold text-neutral-800">{result.label}</p>
               <p className="mt-2 text-xs text-neutral-600 leading-relaxed">{result.detail}</p>
 

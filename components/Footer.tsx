@@ -21,46 +21,36 @@ export default function Footer(_props?: FooterProps) {
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2.5 mb-4">
               <div className="w-8 h-8 bg-navy rounded-lg flex items-center justify-center">
-                <svg
-                  className="w-4 h-4 text-gold-300"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"
-                  />
+                <svg className="w-4 h-4 text-gold-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8 3H5a2 2 0 00-2 2v3m18 0V5a2 2 0 00-2-2h-3m0 18h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3" />
                 </svg>
               </div>
               <span className="text-lg font-semibold text-white">Sidebar AI</span>
             </Link>
             <p className="text-sm text-neutral-300 leading-relaxed">
-              AI consulting, custom tools, and integrations for law firms.
+              Claude for Legal implementation partner for boutique law firms. Five-day sprints. Live remote handoff. Bar-compliant by design.
             </p>
           </div>
 
           {/* Product */}
           <div>
             <h4 className="text-sm font-semibold text-neutral-200 uppercase tracking-wider mb-4">
-              Product
+              Engagement
             </h4>
             <ul className="space-y-3">
               <li>
                 <button onClick={() => scrollToSection("how-it-works")} className="text-sm text-neutral-300 hover:text-white transition-colors">
-                  How It Works
+                  The five-day sprint
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection("what-we-build")} className="text-sm text-neutral-300 hover:text-white transition-colors">
+                  What ships
                 </button>
               </li>
               <li>
                 <button onClick={() => scrollToSection("features")} className="text-sm text-neutral-300 hover:text-white transition-colors">
-                  Services
-                </button>
-              </li>
-              <li>
-                <button onClick={() => scrollToSection("demo")} className="text-sm text-neutral-300 hover:text-white transition-colors">
-                  Interactive Demo
+                  Bar-compliant safeguards
                 </button>
               </li>
               <li>
@@ -71,30 +61,25 @@ export default function Footer(_props?: FooterProps) {
             </ul>
           </div>
 
-          {/* Solutions */}
+          {/* Programs */}
           <div>
             <h4 className="text-sm font-semibold text-neutral-200 uppercase tracking-wider mb-4">
-              Solutions
+              Programs
             </h4>
             <ul className="space-y-3">
               <li>
-                <button onClick={() => scrollToSection("what-we-build")} className="text-sm text-neutral-300 hover:text-white transition-colors">
-                  Contract Analysis
+                <Link href="/seminars" className="text-sm text-neutral-300 hover:text-white transition-colors">
+                  Partner-grade AI seminars
+                </Link>
+              </li>
+              <li>
+                <button onClick={() => scrollToSection("contact")} className="text-sm text-neutral-300 hover:text-white transition-colors">
+                  Initial consultation
                 </button>
               </li>
               <li>
-                <button onClick={() => scrollToSection("what-we-build")} className="text-sm text-neutral-300 hover:text-white transition-colors">
-                  Smart Skim
-                </button>
-              </li>
-              <li>
-                <button onClick={() => scrollToSection("what-we-build")} className="text-sm text-neutral-300 hover:text-white transition-colors">
-                  Closing Automation
-                </button>
-              </li>
-              <li>
-                <button onClick={() => scrollToSection("what-we-build")} className="text-sm text-neutral-300 hover:text-white transition-colors">
-                  Integrations
+                <button onClick={() => scrollToSection("contact")} className="text-sm text-neutral-300 hover:text-white transition-colors">
+                  Implementation sprint
                 </button>
               </li>
             </ul>
@@ -112,7 +97,10 @@ export default function Footer(_props?: FooterProps) {
                 </a>
               </li>
               <li className="text-sm text-neutral-400">
-                Response within 24 hours
+                Live remote consultations
+              </li>
+              <li className="text-sm text-neutral-400">
+                Response within one business day
               </li>
             </ul>
           </div>
@@ -128,13 +116,13 @@ export default function Footer(_props?: FooterProps) {
               <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
               </svg>
-              Your Data Never Leaves Your Systems
+              Built on Anthropic Claude for Legal
             </span>
             <span className="flex items-center gap-1.5 text-xs text-neutral-500">
               <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              Zero Unverified Outputs
+              ABA Model Rules 1.1 · 1.6 · 5.3
             </span>
           </div>
         </div>

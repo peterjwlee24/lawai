@@ -4,35 +4,35 @@ import { motion } from "framer-motion";
 
 const steps = [
   {
-    title: "Map",
+    title: "Initial Consultation",
     description:
-      "We spend 1-2 days with your team mapping how documents move through your firm — contract review, due diligence, closings. We identify where AI creates the biggest impact.",
-    detail: "1-2 day workflow audit",
+      "A live working call with your team to understand your matter playbook, the systems you use today, and the workflows that eat the most partner and associate time. No slide deck — just a working conversation. Fully remote, live with a senior engineer, scheduled on your calendar.",
+    detail: "Live remote call · scope captured the same day",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
       </svg>
     ),
   },
   {
-    title: "Build",
+    title: "Five-Day Build",
     description:
-      "We build your AI tools and connect them to iManage, Clio, or NetDocuments. Every output runs through our verification pipeline before it reaches an attorney.",
-    detail: "Custom tools + software integration",
+      "Monday discovery · Tuesday foundation · Wednesday integration · Thursday customization · Friday training. By Friday afternoon your firm has Claude for Legal configured to your matter playbook, wired into your DMS, and a written runbook in your hands.",
+    detail: "Monday → Friday · five days",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17l-5.1-5.1m0 0L11.42 4.97m-5.1 5.1H21M3 12a9 9 0 1118 0 9 9 0 01-18 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
       </svg>
     ),
   },
   {
-    title: "Deploy & Hand Off",
+    title: "Live Handover",
     description:
-      "We deploy into your environment, walk every role through their tools, and hand over complete documentation. Your team runs it independently.",
-    detail: "Hands-on training + 30-day support",
+      "Two live training sessions on Friday — one for attorneys, one for staff. Every team member finishes the call knowing exactly what to do, with a written runbook in their inbox, a usage dashboard bookmarked, and 90 days of email support. Your firm runs it independently from week two.",
+    detail: "Live handoff · 30/60/90-day check-ins",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
       </svg>
     ),
   },
@@ -67,14 +67,14 @@ export default function HowItWorks(_props?: HowItWorksProps) {
           className="text-center mb-16"
         >
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.06] border border-white/[0.1] text-xs font-semibold text-gold/90 uppercase tracking-[0.15em] mb-4">
-            Our Process
+            How a sprint runs
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-headline font-semibold text-white tracking-tight">
-            How we get your firm{" "}
-            <span className="font-serif italic font-normal text-gold">up and running</span>
+            From a live call{" "}
+            <span className="font-serif italic font-normal text-gold">to a working firm in a week.</span>
           </h2>
-          <p className="mt-3 text-body-lg text-neutral-300">
-            A simple three-step process. Most firms are live within 2-4 weeks.
+          <p className="mt-3 text-body-lg text-neutral-300 max-w-2xl mx-auto">
+            One live consultation. Five business days. A configured, integrated, bar-compliant Claude for Legal deployment your team owns. Fully remote — never async, always with a senior engineer on the call.
           </p>
         </motion.div>
 

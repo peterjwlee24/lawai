@@ -2,61 +2,67 @@
 
 import { motion } from "framer-motion";
 
-const differentiators = [
+const safeguards = [
   {
-    title: "Multi-Pass Verification",
-    description: "Every output cross-references source documents. Dollar amounts, dates, and obligations are verified in a separate pass before anything reaches an attorney.",
+    title: "Built to the rules your bar already enforces",
+    description:
+      "Every deployment is built to ABA Model Rules 1.1 (competence), 1.6 (confidentiality), and 5.3 (supervision of non-lawyer assistance). Your state's professional conduct rules are mapped during discovery — Illinois, New York, California, Delaware, and others.",
   },
   {
-    title: "Mandatory Citations",
-    description: "Every claim references a specific section and page. No unsourced statements.",
+    title: "Strict matter-by-matter access",
+    description:
+      "Conflict walls are enforced inside the integration itself, not just on the screen. Client A's matters are sealed off from Client B — verifiable, auditable, defensible if a partner is ever asked.",
   },
   {
-    title: "Ethical Wall Enforcement",
-    description: "Per-client data isolation. Client A's information never surfaces in Client B's context.",
+    title: "Your data never trains the AI",
+    description:
+      "Anthropic guarantees Claude does not train on your data. Enterprise-grade privacy settings, no-retention modes, and customer-managed keys are configured to your firm's confidentiality posture.",
   },
   {
-    title: "Direct Integration With Your Tools",
-    description: "Processed documents flow back into iManage, Clio, or NetDocuments automatically via custom software connectors. No copying, no exporting.",
+    title: "Workflows built around your firm's actual playbook",
+    description:
+      "Not a generic prompt pack from the internet. Your standard contract positions, your conflict-check process, your intake summary style — captured during discovery, turned into one-click workflows by Friday.",
   },
   {
-    title: "Your Data Stays Yours",
-    description: "Your documents never leave your firm's systems. We never store, access, or train AI on your data. Attorney-client privilege stays intact.",
+    title: "Lives inside Word, Outlook, and your DMS",
+    description:
+      "Your team uses Claude where they already work — Microsoft Word, Outlook, iManage, NetDocuments, Clio, Centerbase, SharePoint, plus Thomson Reuters CoCounsel and DocuSign. No new app to learn. No tabs to juggle.",
   },
   {
-    title: "Deploy and Hand Off",
-    description: "We build it, deploy it, train your team, and hand over everything. No ongoing dependency.",
+    title: "We hand it over — your firm owns it",
+    description:
+      "Friday is training day. You leave with a 25–40 page printed runbook, every configuration documented, a designated firm champion, and 30/60/90-day check-ins booked. No retainer required to keep the lights on.",
   },
 ];
 
-const beforeAfter = [
+const sprintImpact = [
   {
-    task: "Contract change analysis",
-    before: "2-3 hours",
-    after: "5 minutes",
-    savings: "up to 96%",
-    howItWorks: "AI explains why each change matters, not just what changed",
+    task: "Reviewing a contract against your firm's standard positions",
+    before: "2–3 partner hours",
+    after: "10 minutes, with drafted pushback",
+    savings: "~93% faster",
+    howItWorks: "Your firm's playbook saved as a one-click workflow — pulls your standard indemnity cap, your termination cure window, your governing-law preference",
   },
   {
-    task: "100-page document triage",
-    before: "Hours of attorney time",
-    after: "45 min guided read",
-    savings: "~80%",
-    howItWorks: "Attorneys focus on the 20% of pages that actually need attention",
+    task: "Drafting the matter-intake summary",
+    before: "1–2 hours of associate time",
+    after: "Drafted while the intake call is still happening",
+    savings: "~90% faster",
+    howItWorks: "Outlook and Claude triage the email, the workflow pulls your intake template, and the conflict check runs against your document system in parallel",
   },
   {
-    task: "Closing checklist from purchase agreement",
-    before: "1-2 hours",
-    after: "2 minutes",
-    savings: "~97%",
-    howItWorks: "AI reads the purchase agreement and generates the full list",
+    task: "Building the closing checklist from a purchase agreement",
+    before: "1–2 hours, items easy to miss",
+    after: "2 minutes, every condition tagged",
+    savings: "~97% faster",
+    howItWorks: "Anthropic's Corporate-law toolset reads the agreement; your firm's Closing workflow maps each condition to a responsible party with a deadline",
   },
   {
-    task: "Cross-document impact check",
-    before: "Currently impossible",
-    after: "30 seconds",
-    savings: "New",
-    howItWorks: "Change a term in the purchase agreement, see every affected document instantly",
+    task: "Tracking the impact of a defined-term change across every deal document",
+    before: "Manual fire-drill, often missed",
+    after: "30 seconds across every related document",
+    savings: "New capability",
+    howItWorks: "Every deal document lives in a shared Claude folder; a custom workflow surfaces every reference that needs updating",
   },
 ];
 
@@ -78,20 +84,19 @@ export default function ServicesFeatures(_props?: ServicesFeaturesProps) {
           className="text-center mb-14"
         >
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy-50 border border-navy-100 text-xs font-semibold text-navy uppercase tracking-wider mb-4">
-            How We&apos;re Different
+            Bar-compliant by design
           </span>
           <h2 className="text-headline text-neutral-900">
-            Built-in safeguards.{" "}
+            Partner-grade safeguards.{" "}
             <span className="font-serif italic font-normal">Real time savings.</span>
           </h2>
           <p className="mt-3 text-body-lg text-neutral-600 max-w-2xl mx-auto">
-            Every tool we build includes verification, citations, and data isolation.
-            Here&apos;s what that means in practice.
+            Every sprint ships with ABA-aligned controls, your playbook codified into Claude, and the verification posture your malpractice carrier wants to see.
           </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
-          {/* Left: What's built into every tool */}
+          {/* Left: What's built into every sprint */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -106,13 +111,13 @@ export default function ServicesFeatures(_props?: ServicesFeaturesProps) {
                 </svg>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-neutral-900">What&apos;s Built Into Every Tool</h3>
-                <p className="text-xs text-neutral-600">Cross-cutting safeguards and integrations</p>
+                <h3 className="text-lg font-semibold text-neutral-900">Every sprint ships with</h3>
+                <p className="text-xs text-neutral-600">The standard configuration — non-negotiable</p>
               </div>
             </div>
 
             <div className="space-y-4">
-              {differentiators.map((feature, i) => (
+              {safeguards.map((feature, i) => (
                 <motion.div
                   key={feature.title}
                   initial={{ opacity: 0, x: -10 }}
@@ -154,13 +159,13 @@ export default function ServicesFeatures(_props?: ServicesFeaturesProps) {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-white">Before &amp; After</h3>
-                  <p className="text-xs text-neutral-300">Time savings your team will see</p>
+                  <h3 className="text-lg font-semibold text-white">Where the hours come back</h3>
+                  <p className="text-xs text-neutral-300">Time your team gets back on week one</p>
                 </div>
               </div>
 
               <div className="space-y-3">
-                {beforeAfter.map((item, i) => (
+                {sprintImpact.map((item, i) => (
                   <motion.div
                     key={item.task}
                     initial={{ opacity: 0, y: 10 }}
@@ -172,7 +177,7 @@ export default function ServicesFeatures(_props?: ServicesFeaturesProps) {
                     <div className="flex items-center justify-between mb-1.5">
                       <p className="font-medium text-white text-sm">{item.task}</p>
                       <span className="text-xs font-bold text-navy-900 bg-gold px-2.5 py-0.5 rounded-full shadow-[0_2px_8px_rgba(212,165,116,0.3)]">
-                        {item.savings === "New" ? "NEW" : `${item.savings} faster`}
+                        {item.savings}
                       </span>
                     </div>
                     <p className="text-xs text-neutral-300 mb-3 leading-relaxed">{item.howItWorks}</p>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Inquiry — Sidebar AI</title>
+  <style>
+    @media only screen and (max-width: 600px) {
+      .email-container { border-radius: 0 !important; margin: 0 !important; }
+      .header { padding: 30px 15px 25px 15px !important; }
+      .header h1 { font-size: 24px !important; }
+      .content { padding: 30px 18px 24px 18px !important; }
+      .content h2 { font-size: 20px !important; }
+      .content p { font-size: 15px !important; }
+      .submission-box { padding: 20px 15px !important; }
+      .submission-box .lead-name { font-size: 18px !important; }
+      .field-table th { width: 44% !important; }
+      .cta-button { padding: 14px 30px !important; font-size: 15px !important; }
+      .footer { padding: 20px 15px !important; }
+      .badge-row { flex-direction: column !important; gap: 6px !important; }
+    }
+  </style>
+</head>
+<body style="margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background-color:#F5F2EB;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+
+  <div class="email-wrapper" style="width:100%;background-color:#F5F2EB;padding:20px 0;">
+    <div class="email-container" style="max-width:600px;margin:0 auto;background-color:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(11,14,31,0.08);">
+
+      <!-- Header — navy + gold gradient to match the sidebarai.us palette -->
+      <div class="header" style="background:linear-gradient(135deg,#0A1929 0%,#1E3A5F 50%,#243B53 100%);padding:42px 20px 34px 20px;text-align:center;border-bottom:3px solid #D4A574;">
+        <p style="margin:0;color:#D4A574;font-family:'SF Mono',Menlo,Consolas,monospace;font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;">Sidebar AI · sidebarai.us</p>
+        <h1 style="margin:10px 0 4px 0;color:#FAFAF7;font-family:Georgia,'Times New Roman',serif;font-size:28px;font-weight:600;letter-spacing:0.5px;">New Inquiry</h1>
+        <p style="margin:6px 0 0 0;color:rgba(255,255,255,0.6);font-family:'SF Mono',Menlo,Consolas,monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;">{{inquiryTypeLabel}}</p>
+      </div>
+
+      <!-- Content -->
+      <div class="content" style="padding:45px 30px 30px 30px;">
+        <h2 style="margin:0 0 14px 0;color:#0A1929;font-family:Georgia,'Times New Roman',serif;font-size:24px;font-weight:600;line-height:1.25;">
+          You have a new {{inquiryTypeLabel}}.
+        </h2>
+
+        {{#if isConsultation}}
+        <p style="margin:0 0 25px 0;color:#334155;font-size:16px;line-height:1.6;">
+          <strong>{{fullName}}</strong> just submitted a consultation request on sidebarai.us for <strong>{{firmName}}</strong>. They&rsquo;re asking about an <strong>initial consultation</strong>{{#if practiceAreaLabel}} for <strong>{{practiceAreaLabel}}</strong>{{/if}}. Hit Reply to respond directly to <strong>{{email}}</strong>.
+        </p>
+        {{else if isImplementationSprint}}
+        <p style="margin:0 0 25px 0;color:#334155;font-size:16px;line-height:1.6;">
+          <strong>{{fullName}}</strong> just requested information about the <strong>five-day Claude for Legal implementation sprint</strong> for <strong>{{firmName}}</strong>{{#if practiceAreaLabel}} ({{practiceAreaLabel}}){{/if}}. Phone follow-up recommended &mdash; hit Reply to email or call <strong>{{phoneNumber}}</strong>.
+        </p>
+        {{else if isSeminar}}
+        <p style="margin:0 0 25px 0;color:#334155;font-size:16px;line-height:1.6;">
+          <strong>{{fullName}}</strong> ({{firmRoleLabel}} at <strong>{{firmName}}</strong>) requested a <strong>partner-grade AI seminar</strong> &mdash; preferred format: <strong>{{seminarFormatLabel}}</strong>. Schedule the thirty-minute intake call within one business day. Reply to <strong>{{email}}</strong> or call <strong>{{phoneNumber}}</strong>.
+        </p>
+        {{else}}
+        <p style="margin:0 0 25px 0;color:#334155;font-size:16px;line-height:1.6;">
+          <strong>{{fullName}}</strong> just submitted an inquiry on sidebarai.us for <strong>{{firmName}}</strong>. Hit Reply to respond directly to <strong>{{email}}</strong>.
+        </p>
+        {{/if}}
+
+        <!-- Submission Box -->
+        <div class="submission-box" style="background-color:#FAFAF7;border:2px solid #1E3A5F;border-radius:12px;padding:25px;margin:30px 0;">
+          <p style="margin:0 0 4px 0;font-family:'SF Mono',Menlo,Consolas,monospace;font-size:11px;color:#94A3B8;text-transform:uppercase;letter-spacing:0.12em;font-weight:600;">
+            Inquiry From
+          </p>
+          <p class="lead-name" style="margin:0 0 4px 0;font-family:Georgia,'Times New Roman',serif;font-size:22px;font-weight:600;color:#0A1929;line-height:1.2;">{{fullName}}</p>
+
+          <!-- Badges -->
+          <div class="badge-row" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;">
+            <span style="display:inline-block;background-color:#D4A574;color:#0A1929;padding:5px 14px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:0.06em;">{{inquiryTypeLabel}}</span>
+            {{#if firmSizeLabel}}
+            <span style="display:inline-block;background-color:#0A1929;color:#FAFAF7;padding:5px 14px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:0.06em;">{{firmSizeLabel}}</span>
+            {{/if}}
+            {{#if practiceAreaLabel}}
+            <span style="display:inline-block;background-color:#1E3A5F;color:#ffffff;padding:5px 14px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:0.06em;">{{practiceAreaLabel}}</span>
+            {{/if}}
+            {{#if isSeminar}}
+            <span style="display:inline-block;background-color:#8B5CF6;color:#ffffff;padding:5px 14px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:0.06em;">{{firmRoleLabel}}</span>
+            <span style="display:inline-block;background-color:#2DD4BF;color:#0A1929;padding:5px 14px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:0.06em;">{{seminarFormatLabel}}</span>
+            {{/if}}
+          </div>
+
+          <table role="presentation" class="field-table" style="width:100%;border-collapse:collapse;margin:22px 0 0 0;">
+            <tr>
+              <th style="text-align:left;padding:12px 0;border-bottom:1px solid #E2E8F0;font-size:11px;vertical-align:top;width:38%;color:#94A3B8;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;font-family:'SF Mono',Menlo,Consolas,monospace;">Name</th>
+              <td style="text-align:left;padding:12px 0;border-bottom:1px solid #E2E8F0;font-size:14px;vertical-align:top;color:#0A1929;font-weight:500;">{{fullName}}</td>
+            </tr>
+            <tr>
+              <th style="text-align:left;padding:12px 0;border-bottom:1px solid #E2E8F0;font-size:11px;vertical-align:top;width:38%;color:#94A3B8;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;font-family:'SF Mono',Menlo,Consolas,monospace;">Firm</th>
+              <td style="text-align:left;padding:12px 0;border-bottom:1px solid #E2E8F0;font-size:14px;vertical-align:top;color:#0A1929;font-weight:500;">{{firmName}}</td>
+            </tr>
+            <tr>
+              <th style="text-align:left;padding:12px 0;border-bottom:1px solid #E2E8F0;font-size:11px;vertical-align:top;width:38%;color:#94A3B8;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;font-family:'SF Mono',Menlo,Consolas,monospace;">Email</th>
+              <td style="text-align:left;padding:12px 0;border-bottom:1px solid #E2E8F0;font-size:14px;vertical-align:top;color:#0A1929;font-weight:500;"><a href="mailto:{{email}}" style="color:#1E3A5F;text-decoration:underline;">{{email}}</a></td>
+            </tr>
+            {{#if phoneNumber}}
+            <tr>
+              <th style="text-align:left;padding:12px 0;border-bottom:1px solid #E2E8F0;font-size:11px;vertical-align:top;width:38%;color:#94A3B8;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;font-family:'SF Mono',Menlo,Consolas,monospace;">Phone</th>
+              <td style="text-align:left;padding:12px 0;border-bottom:1px solid #E2E8F0;font-size:14px;vertical-align:top;color:#0A1929;font-weight:500;"><a href="tel:{{phoneNumber}}" style="color:#1E3A5F;text-decoration:underline;">{{phoneNumber}}</a></td>
+            </tr>
+            {{/if}}
+            {{#if firmSizeLabel}}
+            <tr>
+              <th style="text-align:left;padding:12px 0;border-bottom:1px solid #E2E8F0;font-size:11px;vertical-align:top;width:38%;color:#94A3B8;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;font-family:'SF Mono',Menlo,Consolas,monospace;">Firm Size</th>
+              <td style="text-align:left;padding:12px 0;border-bottom:1px solid #E2E8F0;font-size:14px;vertical-align:top;color:#0A1929;font-weight:500;">{{firmSizeLabel}}</td>
+            </tr>
+            {{/if}}
+            {{#if practiceAreaLabel}}
+            <tr>
+              <th style="text-align:left;padding:12px 0;border-bottom:1px solid #E2E8F0;font-size:11px;vertical-align:top;width:38%;color:#94A3B8;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;font-family:'SF Mono',Menlo,Consolas,monospace;">Practice Area</th>
+              <td style="text-align:left;padding:12px 0;border-bottom:1px solid #E2E8F0;font-size:14px;vertical-align:top;color:#0A1929;font-weight:500;">{{practiceAreaLabel}}</td>
+            </tr>
+            {{/if}}
+            {{#if isSeminar}}
+            <tr>
+              <th style="text-align:left;padding:12px 0;border-bottom:1px solid #E2E8F0;font-size:11px;vertical-align:top;width:38%;color:#94A3B8;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;font-family:'SF Mono',Menlo,Consolas,monospace;">Role at Firm</th>
+              <td style="text-align:left;padding:12px 0;border-bottom:1px solid #E2E8F0;font-size:14px;vertical-align:top;color:#0A1929;font-weight:500;">{{firmRoleLabel}}</td>
+            </tr>
+            <tr>
+              <th style="text-align:left;padding:12px 0;font-size:11px;vertical-align:top;width:38%;color:#94A3B8;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;font-family:'SF Mono',Menlo,Consolas,monospace;">Seminar Format</th>
+              <td style="text-align:left;padding:12px 0;font-size:14px;vertical-align:top;color:#0A1929;font-weight:500;">{{seminarFormatLabel}}</td>
+            </tr>
+            {{/if}}
+          </table>
+        </div>
+
+        {{#if message}}
+        <div style="background-color:#FAFAF7;border-left:4px solid #D4A574;padding:18px 22px;border-radius:4px;margin:0 0 28px 0;">
+          <p style="margin:0 0 6px 0;font-family:'SF Mono',Menlo,Consolas,monospace;font-size:10px;color:#94A3B8;text-transform:uppercase;letter-spacing:0.12em;font-weight:600;">
+            Their question / message
+          </p>
+          <p style="margin:0;color:#334155;font-size:14px;line-height:1.6;">&ldquo;{{message}}&rdquo;</p>
+        </div>
+        {{/if}}
+
+        <!-- Reply CTA -->
+        <div style="text-align:center;">
+          <a href="mailto:{{email}}?subject=Re%3A%20Your%20Sidebar%20AI%20inquiry" class="cta-button" style="display:inline-block;background:linear-gradient(135deg,#1E3A5F 0%,#0A1929 100%);color:#FAFAF7 !important;text-decoration:none;padding:16px 40px;border-radius:999px;font-size:16px;font-weight:600;margin:25px 0 0 0;box-shadow:0 8px 20px rgba(30,58,95,0.25);">Reply to {{fullName}}</a>
+        </div>
+        <p style="margin:18px 0 0 0;color:#94A3B8;font-size:13px;text-align:center;">
+          ⏰ Submitted {{createdDate}} at {{createdTime}} CT
+        </p>
+
+        <!-- Divider -->
+        <div style="border-top:1px solid #E2E8F0;margin:35px 0;"></div>
+
+        <!-- Notice -->
+        <div style="background-color:#FAFAF7;border-left:4px solid #1E3A5F;padding:16px 20px;border-radius:4px;margin-bottom:25px;">
+          <p style="margin:0;color:#334155;font-size:14px;line-height:1.5;">
+            <strong>Reply directly</strong> to send a message back to the firm &mdash; this email&rsquo;s Reply-To is already set to <strong>{{email}}</strong>. The submission has also been logged with ID <code style="font-family:'SF Mono',Menlo,Consolas,monospace;background:#E2E8F0;padding:1px 6px;border-radius:3px;font-size:12px;color:#0A1929;">{{inquiryId}}</code>.
+          </p>
+        </div>
+
+        <p style="margin:0;color:#94A3B8;font-size:13px;line-height:1.5;">
+          Status: <strong>{{status}}</strong>.
+        </p>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer" style="background-color:#FAFAF7;padding:28px 20px;border-top:1px solid #E2E8F0;text-align:center;">
+        <p style="margin:0 0 8px 0;color:#94A3B8;font-size:12px;line-height:1.6;">© 2026 Sidebar AI &mdash; Claude for Legal Implementation Partner</p>
+        <p style="margin:0;color:#94A3B8;font-size:12px;line-height:1.6;">Questions? Contact <a href="mailto:{{supportEmail}}" style="color:#1E3A5F;text-decoration:none;">{{supportEmail}}</a></p>
+      </div>
+
+    </div>
+
+    <!-- Extra Footer -->
+    <div style="max-width:600px;margin:18px auto 0;padding:0 20px;text-align:center;">
+      <p style="margin:0;color:#94A3B8;font-size:11px;line-height:1.5;">This is an automated notification from the sidebarai.us inquiry form.</p>
+    </div>
+  </div>
+</body>
+</html>

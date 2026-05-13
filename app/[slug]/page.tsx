@@ -25,9 +25,14 @@ import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 
 export function generateStaticParams() {
-  return industries.map((industry) => ({
-    slug: industry.slug,
-  }));
+  // Sidebarai is now exclusively a Claude for Legal implementation partner
+  // for law firms. The legacy multi-industry slug system is preserved at the
+  // code level (data/industries.ts still has multi-vertical content for the
+  // [slug] template) but only the law-firms hub is publicly built. Other
+  // slugs 404 by default.
+  return industries
+    .filter((industry) => industry.slug === "law-firms")
+    .map((industry) => ({ slug: industry.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {

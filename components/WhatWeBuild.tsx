@@ -2,85 +2,101 @@
 
 import { motion } from "framer-motion";
 
-const phase1 = [
+const sprintPillars = [
   {
     number: "01",
-    title: "Contract Change Analysis",
-    subtitle: "AI explains why each change matters — not just what changed.",
+    title: "The right practice-area tools, turned on",
+    subtitle: "Anthropic shipped twelve practice-area workflows. We turn on the three to five your firm actually needs.",
     description:
-      "Other tools detect redlines. We explain the risk direction, exposure impact, and draft pushback language for every change. Your attorneys get a plain-English brief on what shifted, why it matters, and what to push back on — before they read a single page.",
+      "Claude for Legal comes with built-in tools for Corporate, M&A, IP, Litigation, Employment, Privacy, Tax, Regulatory, AI Governance, and Product — plus Law Student and Legal Clinic add-ons. Generic out of the box, useful only when customized. We pick the ones that match your practice areas and tune them with your firm's actual playbooks, your drafting library, your house style.",
     example: {
-      label: "What you see",
-      content: "\"§4.2 Indemnification — Liability cap removed. Previous draft capped at 2x contract value. Exposure now unlimited. Suggested response: reinstate cap or propose mutual carve-outs for gross negligence.\"",
+      label: "What this looks like for your firm",
+      content:
+        "An estate planning firm walks away with the Corporate toolset tuned to their trust-funding workflow, their beneficiary-intake template, their state-specific drafting library, and a conflict-check workflow that handles multigenerational client families.",
     },
     color: "navy" as const,
   },
   {
     number: "02",
-    title: "Smart Skim",
-    subtitle: "AI reads 100+ pages and tells your team which sections need attention.",
+    title: "Securely connected to the software your firm already uses",
+    subtitle: "Up to eight connections into your DMS, billing, calendar, email, and research tools — verified on real matter data.",
     description:
-      "Standard tools don't tell you which pages to read first. AI reads the full document and marks each section: red (needs careful review), yellow (non-standard language), or green (standard boilerplate — skim). Your attorneys focus on the 20% of pages that actually matter.",
+      "Claude reads and writes inside the apps your team already lives in — iManage, NetDocuments, Clio, Microsoft 365 (Word + Outlook), Thomson Reuters CoCounsel, DocuSign, Box, Everlaw, Ironclad, plus your billing and practice management system. No copy-pasting between apps. Your existing matter-level permissions and ethical walls carry over.",
     example: {
-      label: "What you see",
-      content: "\"§7.1 Termination (RED) — Non-standard cure period. §12.4 Governing Law (GREEN) — Standard Delaware choice of law. §9.2 Non-Compete (YELLOW) — Broader geographic scope than typical.\"",
+      label: "What this looks like for your firm",
+      content:
+        "An associate drafts in Word; Claude flags a non-standard indemnity removal; the matter notes update in iManage; the timer pushes into your billing system. The associate never left Word.",
     },
     color: "gold" as const,
   },
 ];
 
-const phase2 = [
+const customizationPillars = [
   {
     number: "03",
-    title: "Deal Context Graph",
-    subtitle: "Maps cross-document relationships across your entire deal.",
+    title: "Up to five one-click workflows, built around your playbook",
+    subtitle: "The actions your team runs ten times a day, captured as named workflows anyone can trigger.",
     description:
-      "When a defined term changes in the purchase agreement, the system flags every related document affected — transition services agreement, escrow agreement, IP license, employment agreements. Tracks dependencies across the full deal that no manual review catches.",
+      "On Thursday we build the workflows that move the needle for your firm: contract review against your standard positions, matter-intake summaries, conflict checks, billing narratives, deposition prep memos, due-diligence chronologies. Each one is built around your firm's playbook — your standard positions, your house style, your typical pushback language — not a generic prompt library off the internet.",
     example: {
-      label: "What you see",
-      content: "\"'Material Adverse Effect' definition changed in Purchase Agreement §1.1 → Impacts: Escrow Agreement §3.2, Transition Services Agreement §5.1(b), IP License §2.4. 3 documents need updates.\"",
+      label: "What this looks like for your firm",
+      content:
+        "An associate types \"run the indemnity check\" — and gets back your firm's standard positions, your typical pushback language, and a drafted email to opposing counsel in your partner's voice. Two minutes instead of two hours.",
     },
-    note: "Includes a one-time security review with your firm's IT team (typically 1-3 weeks)",
+    note: "Anthropic's General Counsel said on launch day: \"Don't use it out of the box — it's at its best when you customize it with your own legal playbooks.\"",
     color: "navy" as const,
   },
   {
     number: "04",
-    title: "Client Intelligence",
-    subtitle: "Per-client knowledge with ethical wall isolation.",
+    title: "Lives inside Word and Outlook",
+    subtitle: "Your team uses Claude the same way they already use Word and Outlook — no new app to learn.",
     description:
-      "We build per-client knowledge bases — past arguments, negotiation positions, opposing counsel history — with strict ethical wall enforcement. Each client's context stays sealed from every other. Your attorneys walk into every meeting with complete background.",
+      "Drafting a contract in Word? A button in Word runs your firm's review workflow. Triaging email in Outlook? A button in Outlook drafts the intake summary. No one has to learn a new application or copy text between apps. Your team works in the tools they already know.",
     example: {
-      label: "What you see",
-      content: "\"Acme Corp — 12 past matters, prefers arbitration over litigation, last 3 deals included accelerated payment terms. Opposing counsel (Baker & Sterling) typically concedes on indemnity caps.\"",
+      label: "What this looks like for your firm",
+      content:
+        "An associate redlines a supply agreement in Word, clicks \"run review\" in the toolbar, and Claude flags the indemnity change, drafts the pushback paragraph, and updates the matter notes — all without leaving Word.",
     },
-    note: "Includes a one-time security review with your firm's IT team (typically 1-3 weeks)",
     color: "gold" as const,
   },
   {
     number: "05",
-    title: "Negotiation Playbooks",
-    subtitle: "AI learns how opposing counsel negotiates — before your next round.",
+    title: "A bar-compliant usage policy your carrier can sign off on",
+    subtitle: "Mapped to ABA Model Rules 1.1, 1.6, 5.3 — plus your state's bar rules.",
     description:
-      "AI analyzes how opposing counsel has negotiated across past deals — their patterns, concessions, holdouts, and typical negotiation timeline. Generates a deal-specific strategy with predicted pushback points before your team sits down.",
+      "Every engagement ships with a firm-specific AI usage policy that covers attorney competence, client confidentiality, supervision of non-lawyer assistance, and your state's professional conduct rules. Matter-level access controls, ethical walls, document retention, and a confidentiality posture review are all baked in. Your malpractice carrier reviews the policy before you sign.",
     example: {
-      label: "What you see",
-      content: "\"Baker & Sterling: Avg 4 rounds. Typically concedes on representations, holds firm on indemnity. Pattern: aggressive initial position, significant movement in round 3.\"",
+      label: "What this looks like for your firm",
+      content:
+        "A 25–40 page runbook that documents every setting, every connection, every workflow — plus a written usage policy your bar counsel and malpractice carrier can sign off on without back-and-forth.",
     },
-    note: "Includes a one-time security review with your firm's IT team (typically 1-3 weeks)",
     color: "navy" as const,
   },
   {
     number: "06",
-    title: "M&A Closing Automation",
-    subtitle: "AI reads the purchase agreement and generates the complete closing checklist.",
+    title: "On-site training and a clean handover",
+    subtitle: "Two 90-minute sessions Friday afternoon — one for attorneys, one for staff.",
     description:
-      "AI extracts every closing condition, deliverable, and required signature from the purchase agreement. Tracks what's done, what's missing, and who needs to act. Current tools are manual checklists — this is AI-generated and continuously updated.",
+      "Friday afternoon is live training over a screen-share. Every team member runs their first real workflow on a real matter while we&apos;re on the call with them. You walk away with a written runbook in your inbox, a usage dashboard bookmarked, and 30/60/90-day check-ins already on the calendar — so the wheels stay on after the sprint ends.",
     example: {
-      label: "What you see",
-      content: "\"12/18 conditions satisfied. Missing: antitrust approval (Buyer), landlord consents for 3 leases (Seller), employment agreements for 2 key employees (Target). Next deadline: Jan 15.\"",
+      label: "What this looks like for your firm",
+      content:
+        "By Friday evening your firm has a designated AI champion, every attorney has run their first workflow on a real matter, and your operations lead has the dashboard pulled up on Monday morning.",
     },
-    note: "Includes a one-time security review with your firm's IT team (typically 1-3 weeks)",
     color: "gold" as const,
+  },
+  {
+    number: "07",
+    title: "Custom connections to your firm's bespoke software",
+    subtitle: "If the off-the-shelf integrations don't reach a system that matters, we write the connection ourselves.",
+    description:
+      "Most firms run on standard systems and the connectors that ship with Claude for Legal cover them. But every firm has at least one piece of software that's idiosyncratic — a partner-built matter tracker, a custom intake form, a billing add-on, a deal-document repository nobody else uses. We write secure custom connections to those systems as part of the sprint when the build is small, or scope them separately if it's deeper. Same engineering work your IT consultancy would do, if they happened to be Claude-fluent.",
+    example: {
+      label: "What this looks like for your firm",
+      content:
+        "A firm's twenty-year-old matter tracker has no public API — but it speaks SQL. We write a secure read-only connection that lets Claude pull conflict-check data straight from it during a matter intake, without exposing the database to the wider internet. Same security posture your IT team would insist on, implemented in two days instead of two months.",
+    },
+    color: "navy" as const,
   },
 ];
 
@@ -99,7 +115,15 @@ const colorMap = {
   },
 };
 
-function DeliverableCard({ item, index, badgeText }: { item: typeof phase1[0] & { note?: string }; index: number; badgeText: string }) {
+function DeliverableCard({
+  item,
+  index,
+  badgeText,
+}: {
+  item: (typeof sprintPillars)[0] & { note?: string };
+  index: number;
+  badgeText: string;
+}) {
   const colors = colorMap[item.color];
   return (
     <motion.div
@@ -140,7 +164,8 @@ function DeliverableCard({ item, index, badgeText }: { item: typeof phase1[0] & 
         </div>
 
         {item.note && (
-          <p className="mt-4 text-xs text-neutral-400 italic">
+          <p className="mt-4 text-xs text-neutral-500 italic leading-relaxed">
+            <span className="font-semibold text-navy not-italic">From Anthropic on launch day —</span>{" "}
             {item.note}
           </p>
         )}
@@ -163,18 +188,18 @@ export default function WhatWeBuild() {
           className="max-w-2xl mb-16"
         >
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy-50 border border-navy-100 text-xs font-semibold text-navy uppercase tracking-wider mb-5">
-            What We Build For Your Firm
+            What ships in a sprint
           </span>
           <h2 className="text-3xl md:text-headline font-semibold text-neutral-900 tracking-tight">
-            Tools that don&apos;t exist yet.{" "}
+            Anthropic shipped the platform.{" "}
+            <span className="font-serif italic font-normal">We bring the furniture.</span>
           </h2>
           <p className="mt-4 text-body-lg text-neutral-600 leading-relaxed">
-            Harvey handles research and drafting. iManage and Clio handle storage. We build the legal intelligence
-            layer that sits between them — the tools no one else has built.
+            Claude for Legal launched with twelve practice-area plugins and twenty-plus connectors — all included with any paying Claude subscription. The product is cheap and powerful. The configuration is the bottleneck. That&apos;s where we come in.
           </p>
         </motion.div>
 
-        {/* Phase 1 */}
+        {/* Pillars 1-2 — The platform */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -183,19 +208,19 @@ export default function WhatWeBuild() {
         >
           <div className="flex items-center gap-3 mb-6">
             <span className="px-3 py-1.5 rounded-lg bg-emerald-50 border border-emerald-100 text-xs font-bold text-emerald-700 uppercase tracking-wider">
-              Phase 1 — Start Here
+              Platform · activated
             </span>
-            <span className="text-sm text-neutral-500">Deploy in weeks — no infrastructure changes required</span>
+            <span className="text-sm text-neutral-500">What we light up first — the surfaces Anthropic shipped, configured to your firm</span>
           </div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6 mb-12">
-          {phase1.map((item, index) => (
-            <DeliverableCard key={item.number} item={item} index={index} badgeText="Deploy in weeks" />
+          {sprintPillars.map((item, index) => (
+            <DeliverableCard key={item.number} item={item} index={index} badgeText="Day 1–3" />
           ))}
         </div>
 
-        {/* Phase 2 */}
+        {/* Pillars 3-6 — The customization */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -204,19 +229,19 @@ export default function WhatWeBuild() {
         >
           <div className="flex items-center gap-3 mb-6">
             <span className="px-3 py-1.5 rounded-lg bg-navy-50 border border-navy-100 text-xs font-bold text-navy uppercase tracking-wider">
-              Phase 2 — Deep Integration
+              Customization · the wedge
             </span>
-            <span className="text-sm text-neutral-500">Built to order — includes security review with your IT team</span>
+            <span className="text-sm text-neutral-500">What boutique firms can&apos;t build alone — your playbook, codified into Claude</span>
           </div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {phase2.map((item, index) => (
-            <DeliverableCard key={item.number} item={item} index={index} badgeText="Custom build" />
+          {customizationPillars.map((item, index) => (
+            <DeliverableCard key={item.number} item={item} index={index} badgeText="Day 3–5" />
           ))}
         </div>
 
-        {/* Bottom comparison */}
+        {/* Bottom comparison — Sprint vs DIY */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -226,18 +251,18 @@ export default function WhatWeBuild() {
           <div className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
             <div className="p-5 rounded-xl bg-neutral-50 border border-neutral-200">
               <span className="text-xs font-semibold uppercase tracking-wider text-neutral-500 block mb-3">
-                What Harvey does well
+                If you self-implement
               </span>
               <ul className="space-y-2">
                 {[
-                  "Research and case law",
-                  "Drafting and summarization",
-                  "Firm-wide document search",
-                  "Basic redline detection",
+                  "Three to nine months of partner time on integrations",
+                  "An IT generalist learning MCP on your firm's clock",
+                  "No bar-compliant usage policy reviewed by counsel",
+                  "Generic out-of-the-box plugins, not your playbook",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-2 text-sm text-neutral-500">
                     <svg className="w-4 h-4 text-neutral-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                     {item}
                   </li>
@@ -247,15 +272,15 @@ export default function WhatWeBuild() {
 
             <div className="p-5 rounded-xl bg-navy-50 border border-navy-100">
               <span className="text-xs font-semibold uppercase tracking-wider text-navy block mb-3">
-                What we build (that Harvey doesn&apos;t)
+                With a five-day sprint
               </span>
               <ul className="space-y-2">
                 {[
-                  "Per-client intelligence with ethical walls",
-                  "Opposing counsel profiling",
-                  "Deal relationship mapping",
-                  "AI-powered change analysis",
-                  "Document triage reading guides",
+                  "Working firm by Friday afternoon",
+                  "Five custom skills built to your playbook",
+                  "Bar-compliant usage policy your carrier can review",
+                  "Up to eight MCP connectors verified on real matter data",
+                  "Two live training sessions + a written runbook",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-2 text-sm text-neutral-800">
                     <svg className="w-4 h-4 text-navy flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
