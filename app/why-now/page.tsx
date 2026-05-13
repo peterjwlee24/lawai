@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/pages/PageHero";
@@ -88,6 +89,46 @@ export default function WhyNowPage() {
             "Bar-ethics-literate analysis",
           ]}
         />
+
+        {/* The week-of moment — what every managing partner did when the news broke */}
+        <section className="py-16 md:py-20 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-neutral-50/40 to-white pointer-events-none" />
+          <div className="container-main relative">
+            <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+              <div className="lg:col-span-7">
+                <div className="relative">
+                  <span aria-hidden="true" className="absolute -left-3 -top-3 z-10 h-8 w-8 border-l-2 border-t-2 border-navy" />
+                  <span aria-hidden="true" className="absolute -bottom-3 -right-3 z-10 h-8 w-8 border-b-2 border-r-2 border-gold" />
+                  <div className="relative aspect-[16/10] rounded-2xl overflow-hidden border border-neutral-200 bg-neutral-100 shadow-elevated">
+                    <Image
+                      src="/images/why-now-hero.jpg"
+                      alt="Over-the-shoulder view of a managing partner at a breakfast table, holding a tablet showing a soft-focus legal news article with a hero photograph of a classical-columned institutional building. A stoneware mug, French press, half-eaten croissant on a small plate, leather portfolio with a black fountain pen with gold trim, and a folded broadsheet newspaper are staged on the warm walnut surface. A brick wall is visible through the window beyond — soft morning daylight."
+                      fill
+                      sizes="(min-width: 1024px) 58vw, 100vw"
+                      className="object-cover"
+                      quality={88}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="lg:col-span-5">
+                <span className="text-[11px] font-mono font-bold uppercase tracking-[0.12em] text-amber-700 mb-3 block">
+                  The week of May 12, 2026
+                </span>
+                <h2 className="text-3xl md:text-headline font-semibold text-neutral-900 leading-tight tracking-tight">
+                  Every managing partner you know{" "}
+                  <span className="font-serif italic font-normal">had this exact morning.</span>
+                </h2>
+                <p className="mt-5 text-body-lg text-neutral-700 leading-relaxed">
+                  Bloomberg, Reuters, TechCrunch, the <em>LawSites</em> blog, and <em>Artificial Lawyer</em> all covered the Claude for Legal launch the same morning. Across Chicagoland, every managing partner of a boutique firm either read one of those pieces before their first call, or got an email from a colleague who did. The question changed that day from <em>&ldquo;should we look at legal AI&rdquo;</em> to <em>&ldquo;why don&apos;t we already have a plan&rdquo;</em>.
+                </p>
+                <p className="mt-4 text-sm text-neutral-500 italic leading-relaxed">
+                  The five sections below are the briefing you wish landed in your inbox instead.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Section 1: What launched */}
         <section className="py-24 md:py-28 relative overflow-hidden">
