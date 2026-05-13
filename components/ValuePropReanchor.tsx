@@ -25,7 +25,7 @@ export default function ValuePropReanchor() {
                 What we sell, in one paragraph
               </span>
               <p className="text-xl md:text-2xl font-serif font-normal text-neutral-900 leading-snug">
-                A five-day, fully remote, live-with-a-senior-engineer sprint that turns Anthropic&apos;s Claude for Legal into your firm&apos;s working operating system — configured to your matter playbook, securely wired into the software you already use, mapped to your bar&apos;s rules,{" "}
+                A two-phase engagement — up to three weeks of async prep + one live Mon–Fri integration sprint with a senior engineer — that turns Anthropic&apos;s Claude for Legal into your firm&apos;s working operating system. Configured to your matter playbook, securely wired into the software you already use, mapped to your bar&apos;s rules,{" "}
                 <span className="font-serif italic text-navy">and handed over with everything documented.</span>
               </p>
               <p className="mt-5 text-sm text-neutral-600 leading-relaxed">

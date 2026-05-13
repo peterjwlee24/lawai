@@ -75,13 +75,13 @@ const customizationPillars = [
   {
     number: "06",
     title: "On-site training and a clean handover",
-    subtitle: "Two 90-minute sessions Friday afternoon — one for attorneys, one for staff.",
+    subtitle: "Two 90-minute live sessions on the Friday of sprint week — one for attorneys, one for staff.",
     description:
-      "Friday afternoon is live training over a screen-share. Every team member runs their first real workflow on a real matter while we&apos;re on the call with them. You walk away with a written runbook in your inbox, a usage dashboard bookmarked, and 30/60/90-day check-ins already on the calendar — so the wheels stay on after the sprint ends.",
+      "Friday of sprint week is live training over a screen-share. Every team member runs their first real workflow on a real matter while we&apos;re on the call with them. You walk away with a written runbook in your inbox, a usage dashboard bookmarked, and 30/60/90-day check-ins already on the calendar — so the wheels stay on after the sprint ends.",
     example: {
       label: "What this looks like for your firm",
       content:
-        "By Friday evening your firm has a designated AI champion, every attorney has run their first workflow on a real matter, and your operations lead has the dashboard pulled up on Monday morning.",
+        "By the Friday of sprint week your firm has a designated AI champion, every attorney has run their first workflow on a real matter, and your operations lead has the dashboard pulled up the following Monday morning.",
     },
     color: "gold" as const,
   },
@@ -208,7 +208,7 @@ export default function WhatWeBuild() {
         >
           <div className="flex items-center gap-3 mb-6">
             <span className="px-3 py-1.5 rounded-lg bg-emerald-50 border border-emerald-100 text-xs font-bold text-emerald-700 uppercase tracking-wider">
-              Platform · activated
+              Async prep · what we ready before sprint week
             </span>
             <span className="text-sm text-neutral-500">What we light up first — the surfaces Anthropic shipped, configured to your firm</span>
           </div>
@@ -216,7 +216,7 @@ export default function WhatWeBuild() {
 
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           {sprintPillars.map((item, index) => (
-            <DeliverableCard key={item.number} item={item} index={index} badgeText="Day 1–3" />
+            <DeliverableCard key={item.number} item={item} index={index} badgeText="Prep weeks 1–3" />
           ))}
         </div>
 
@@ -229,7 +229,7 @@ export default function WhatWeBuild() {
         >
           <div className="flex items-center gap-3 mb-6">
             <span className="px-3 py-1.5 rounded-lg bg-navy-50 border border-navy-100 text-xs font-bold text-navy uppercase tracking-wider">
-              Customization · the wedge
+              Sprint week · what goes live with your team
             </span>
             <span className="text-sm text-neutral-500">What boutique firms can&apos;t build alone — your playbook, codified into Claude</span>
           </div>
@@ -237,7 +237,7 @@ export default function WhatWeBuild() {
 
         <div className="grid md:grid-cols-2 gap-6">
           {customizationPillars.map((item, index) => (
-            <DeliverableCard key={item.number} item={item} index={index} badgeText="Day 3–5" />
+            <DeliverableCard key={item.number} item={item} index={index} badgeText="Sprint week" />
           ))}
         </div>
 
@@ -272,11 +272,11 @@ export default function WhatWeBuild() {
 
             <div className="p-5 rounded-xl bg-navy-50 border border-navy-100">
               <span className="text-xs font-semibold uppercase tracking-wider text-navy block mb-3">
-                With a five-day sprint
+                With async prep + a live sprint week
               </span>
               <ul className="space-y-2">
                 {[
-                  "Working firm by Friday afternoon",
+                  "Working firm by the end of sprint week",
                   "Five custom skills built to your playbook",
                   "Bar-compliant usage policy your carrier can review",
                   "Up to eight MCP connectors verified on real matter data",

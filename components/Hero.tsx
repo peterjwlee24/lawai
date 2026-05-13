@@ -45,13 +45,13 @@ export default function Hero(_props?: HeroProps) {
   };
 
   const trustItems = [
-    "Live working sessions — a real engineer, not a chatbot or a deck",
-    "Anthropic's Claude for Legal — configured to your firm",
-    "Five days from kickoff to a working firm",
+    "Up to three weeks of async prep — often less; no calendar pile-up on your partners",
+    "One live Mon–Fri integration sprint — senior engineer on every call",
+    "Working firm in a matter of weeks, not months",
   ];
 
   const stats = [
-    { value: 5, suffix: " days", label: "from initial consultation to a working firm" },
+    { value: 4, suffix: " weeks", label: "typical end-to-end — up to 3 weeks async prep, 1 week live integration sprint" },
     { value: 12, suffix: "", label: "practice-area workflows turned on — Corporate, M&A, IP, Employment, more" },
     { value: 20, suffix: "+", label: "secure connections into iManage, NetDocuments, Clio, Outlook, Word" },
   ];
@@ -105,7 +105,7 @@ export default function Hero(_props?: HeroProps) {
               >
                 Anthropic launched Claude for Legal.
                 <br />
-                <span className="font-serif italic font-normal text-gold">Your firm could be running on it in a week.</span>
+                <span className="font-serif italic font-normal text-gold">Your firm runs on it weeks later — not months.</span>
               </motion.h1>
 
               {/* Subheadline */}
@@ -115,7 +115,7 @@ export default function Hero(_props?: HeroProps) {
                 transition={{ duration: 0.4, delay: 0.15 }}
                 className="mt-6 text-lg md:text-xl text-neutral-200 max-w-xl leading-relaxed"
               >
-                We&apos;re a fully remote implementation partner for boutique law firms — live working sessions, never async chat or generic decks. We meet your team live to understand your work, set up Anthropic&apos;s new legal AI to match how your firm runs matters, connect it to the software you already use (iManage, Clio, NetDocuments, Outlook, Word), write any custom connections your firm needs, and train your team live — in five business days. No coding required on your side. Your firm owns it on Friday.
+                We&apos;re a fully remote implementation partner for boutique law firms. The work splits into two phases: up to three weeks of async prep — discovery, custom integrations coded, workflows drafted, bar-compliant policy prepared, training videos recorded — followed by a single live Mon–Fri integration sprint where we put everything into your firm&apos;s environment, test it on your real matter data, and train your team live. Simpler stacks finish faster. No coding on your side. Your firm owns it on Friday of sprint week.
               </motion.p>
 
               {/* CTAs */}
@@ -138,7 +138,7 @@ export default function Hero(_props?: HeroProps) {
                   onClick={() => scrollToSection("how-it-works")}
                   className="px-8 py-4 text-lg font-semibold text-white/90 bg-white/[0.06] border border-white/[0.12] rounded-xl hover:bg-white/[0.1] hover:border-white/[0.2] transition-all backdrop-blur-sm"
                 >
-                  See the five-day plan
+                  See the plan
                 </button>
               </motion.div>
 
@@ -182,7 +182,7 @@ export default function Hero(_props?: HeroProps) {
                       <div className="w-3 h-3 rounded-full bg-amber-400/70" />
                       <div className="w-3 h-3 rounded-full bg-emerald-400/70" />
                     </div>
-                    <span className="text-xs font-medium text-neutral-300 ml-2">Sidebar AI — Implementation Sprint</span>
+                    <span className="text-xs font-medium text-neutral-300 ml-2">Sidebar AI — Implementation plan</span>
                   </div>
 
                   {/* Day-by-day plan */}
@@ -191,15 +191,15 @@ export default function Hero(_props?: HeroProps) {
                       <svg className="w-4 h-4 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
                       </svg>
-                      <span className="text-xs font-semibold text-gold uppercase tracking-wider">The Five-Day Sprint</span>
+                      <span className="text-xs font-semibold text-gold uppercase tracking-wider">Async prep + live sprint</span>
                     </div>
 
                     {[
-                      { day: "Mon", phase: "Discovery", note: "Live working session with your team — interview partners, watch your workflows, capture how your firm actually runs matters", color: "bg-violet-500/15 border-violet-500/30 text-violet-200" },
-                      { day: "Tue", phase: "Foundation", note: "Set up your Claude account, single sign-on, the practice areas your firm needs, and a bar-compliant usage policy", color: "bg-indigo-500/15 border-indigo-500/30 text-indigo-200" },
-                      { day: "Wed", phase: "Integration", note: "Connect Claude to your document system, billing, calendar, email, plus Word and Outlook — including custom connections if your firm runs bespoke software", color: "bg-sky-500/15 border-sky-500/30 text-sky-200" },
-                      { day: "Thu", phase: "Customization", note: "Build up to five one-click workflows around your firm's playbook — contract review, intake, conflict checks", color: "bg-emerald-500/15 border-emerald-500/30 text-emerald-200" },
-                      { day: "Fri", phase: "Training & Handover", note: "Two live training sessions, a printed runbook, and 30/60/90-day check-ins on your calendar", color: "bg-amber-500/15 border-amber-500/30 text-amber-200" },
+                      { day: "01", phase: "Async Discovery", note: "Intake form, sanitized matter samples, screen-recorded workflow walkthroughs. We learn how your firm runs without scheduling a single call.", color: "bg-violet-500/15 border-violet-500/30 text-violet-200" },
+                      { day: "02", phase: "Async Build", note: "Custom integration code written, workflows authored against your playbook, bar-compliant usage policy drafted to your jurisdiction.", color: "bg-indigo-500/15 border-indigo-500/30 text-indigo-200" },
+                      { day: "03", phase: "Async Prep", note: "Training video course recorded on your configured tenant. Policy reviewed by your malpractice carrier. Final scope confirmed.", color: "bg-sky-500/15 border-sky-500/30 text-sky-200" },
+                      { day: "04", phase: "Live Sprint · Mon–Fri", note: "Five live days — integration go-live, real-matter-data testing, refinement, live training, handover. The sprint week.", color: "bg-amber-500/15 border-amber-500/30 text-amber-200" },
+                      { day: "05", phase: "Working firm", note: "30/60/90-day async check-ins. Email support. Your firm running independently on Claude for Legal.", color: "bg-emerald-500/15 border-emerald-500/30 text-emerald-200" },
                     ].map((row) => (
                       <div key={row.day} className={`flex items-start gap-3 p-3 rounded-lg border ${row.color}`}>
                         <span className="flex-shrink-0 w-9 text-center font-mono text-[11px] font-bold uppercase tracking-wider">{row.day}</span>
@@ -226,7 +226,7 @@ export default function Hero(_props?: HeroProps) {
                     </div>
                     <div className="flex items-center gap-1.5">
                       <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                      <span className="text-[10px] text-emerald-400 font-medium">Working firm by Friday</span>
+                      <span className="text-[10px] text-emerald-400 font-medium">Weeks, not months</span>
                     </div>
                   </div>
                 </div>

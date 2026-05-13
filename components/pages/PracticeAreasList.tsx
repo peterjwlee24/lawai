@@ -134,7 +134,7 @@ export default function PracticeAreasList({ areas }: PracticeAreasListProps) {
                         </p>
                         <div className="p-5 rounded-xl bg-navy-50/70 border border-navy-100">
                           <p className="text-[10px] font-mono font-bold uppercase tracking-[0.12em] text-navy mb-3">
-                            Workflows we typically build on Day 4
+                            Workflows we typically author for this practice
                           </p>
                           <ul className="space-y-3">
                             {area.workflows.map((w) => (

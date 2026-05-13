@@ -22,7 +22,7 @@ test.describe("Homepage", () => {
     await page.goto("/");
     // FAQ questions are rendered as buttons (with span text), not headings.
     await expect(page.getByRole("button", { name: /What is Claude for Legal\?/i })).toBeVisible();
-    await expect(page.getByRole("button", { name: /five-day sprint actually deliver/i })).toBeVisible();
+    await expect(page.getByRole("button", { name: /full engagement actually deliver/i })).toBeVisible();
   });
 
   test("Contact form is present and routes inquiryType", async ({ page }) => {

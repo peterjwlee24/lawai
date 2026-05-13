@@ -160,12 +160,12 @@ const legalFaqItems: FAQItem[] = [
   {
     question: "Can't we just configure this ourselves?",
     answer:
-      "Technically yes. In practice, no boutique firm has the time. Anthropic's own AGC, Mark Pike, said on launch day that the plugins are at their best when customized with the firm's playbooks. A 2–20 attorney firm with partners billing $400–$800 an hour, no in-house AI lead, and a part-time IT contractor cannot do this in a reasonable window. We've done it before. We do it in a week — Monday discovery through Friday training, with a 25–40 page runbook you own.",
+      "Technically yes. In practice, no boutique firm has the time. Anthropic's own AGC, Mark Pike, said on launch day that the plugins are at their best when customized with the firm's playbooks. A 2–20 attorney firm with partners billing $400–$800 an hour, no in-house AI lead, and a part-time IT contractor cannot do this in a reasonable window. We've done it before. We do it in up to three weeks of async prep + one live Mon–Fri integration sprint — with a 25–40 page runbook you own at the end.",
   },
   {
-    question: "What does a five-day sprint actually deliver?",
+    question: "What does the full engagement actually deliver?",
     answer:
-      "Monday: live discovery call, partner interviews, and workflow shadowing over screen-share. Tuesday: Claude account, single sign-on, bar-compliant usage policy, practice-area tools activated. Wednesday: secure connections wired into your document system, billing, calendar, email, and Microsoft 365 — including custom connections if your firm runs bespoke software. Thursday: up to five custom one-click workflows built around your firm's playbook. Friday: two live training sessions (attorneys, then staff), a written runbook, and 30/60/90-day check-ins booked. By Friday afternoon your firm has a working, integrated, bar-compliant Claude for Legal deployment.",
+      "Two phases. Phase 1 — async prep, up to three weeks (often less for simpler stacks): async discovery (intake form + screen-recorded workflow walkthroughs), Claude account provisioned with single sign-on, bar-compliant usage policy drafted to your jurisdiction, practice-area tools selected and tuned, custom integration code written for any bespoke firm software, up to five custom workflows authored against your firm's playbook, a custom training video course recorded on your configured tenant, and your malpractice carrier's policy review. Phase 2 — the live sprint week (Mon–Fri): Monday integration go-live, Tuesday–Thursday connections wired and tested against your real matter data, Friday two live training sessions (attorneys, then staff), written runbook handed over, 30/60/90-day check-ins booked. Your firm runs independently from the following Monday.",
   },
   {
     question: "How does the initial consultation work?",
@@ -185,7 +185,7 @@ const legalFaqItems: FAQItem[] = [
   {
     question: "What about ongoing support?",
     answer:
-      "Ninety days of email support is included with every sprint, plus 30/60/90-day check-ins booked on Friday afternoon. After that you can convert to a monthly retainer for ongoing skill development, new plugin rollouts, and quarterly tune-ups — or run independently. Your firm owns everything.",
+      "Ninety days of email support is included with every engagement, plus 30/60/90-day check-ins booked on the Friday of sprint week. After that you can convert to a monthly retainer for ongoing skill development, new plugin rollouts, and quarterly tune-ups — or run independently. Your firm owns everything.",
   },
   {
     question: "How is this different from Harvey, Legora, or CoCounsel?",
@@ -230,7 +230,7 @@ export default function Home() {
             "@type": "ProfessionalService",
             name: "Sidebar AI",
             description:
-              "Claude for Legal implementation partner for boutique law firms. Five-day implementation sprints, fully remote and live with a senior engineer. Customized Claude workflows, integration into iManage, NetDocuments, and Clio (plus custom connections to your bespoke software), Microsoft 365 embedding, and a bar-compliant usage policy mapped to ABA Model Rules 1.1, 1.6, and 5.3.",
+              "Claude for Legal implementation partner for boutique law firms. Up to three weeks of async prep followed by one live Mon–Fri integration sprint, fully remote with a senior engineer. Customized Claude workflows, integration into iManage, NetDocuments, and Clio (plus custom connections to your bespoke software), Microsoft 365 embedding, and a bar-compliant usage policy mapped to ABA Model Rules 1.1, 1.6, and 5.3.",
             url: "https://sidebarai.us",
             email: "hello@sidebarai.us",
             serviceType: "Claude for Legal Implementation Partner",
@@ -261,7 +261,7 @@ export default function Home() {
               },
               {
                 "@type": "Offer",
-                name: "Five-day Claude for Legal implementation sprint",
+                name: "Claude for Legal implementation engagement — async prep + live sprint week",
                 description:
                   "Fully remote Monday-through-Friday engagement that delivers a configured, integrated, and firm-customized Claude for Legal deployment — including custom secure connections to bespoke firm software — with live attorney and staff training and a 90-day support window.",
                 category: "Implementation",

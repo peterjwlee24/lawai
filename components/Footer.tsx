@@ -28,7 +28,7 @@ export default function Footer(_props?: FooterProps) {
               <span className="text-lg font-semibold text-white">Sidebar AI</span>
             </Link>
             <p className="text-sm text-neutral-300 leading-relaxed">
-              Claude for Legal implementation partner for boutique law firms. Five-day sprints. Live remote handoff. Bar-compliant by design.
+              Claude for Legal implementation partner for boutique law firms. Up to three weeks of async prep + one live Mon–Fri sprint week. Bar-compliant by design.
             </p>
           </div>
 
@@ -40,7 +40,7 @@ export default function Footer(_props?: FooterProps) {
             <ul className="space-y-3">
               <li>
                 <button onClick={() => scrollToSection("how-it-works")} className="text-sm text-neutral-300 hover:text-white transition-colors">
-                  The five-day sprint
+                  The implementation sprint
                 </button>
               </li>
               <li>
@@ -74,7 +74,7 @@ export default function Footer(_props?: FooterProps) {
               </li>
               <li>
                 <Link href="/sprint" className="text-sm text-neutral-300 hover:text-white transition-colors">
-                  The five-day sprint
+                  The implementation sprint
                 </Link>
               </li>
               <li>

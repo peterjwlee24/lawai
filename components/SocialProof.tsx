@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 
 const results = [
   {
-    stat: "5 days",
-    label: "from initial consultation to handover",
-    detail: "Monday live discovery, Friday live training — no scope creep, no rolling timelines, fully remote",
+    stat: "Weeks, not months",
+    label: "from kickoff to handover",
+    detail: "Up to three weeks of async prep + one live Mon–Fri integration sprint — no scope creep, no rolling timelines, fully remote",
     icon: "clock",
   },
   {
@@ -73,11 +73,11 @@ export default function SocialProof(_props?: SocialProofProps) {
             What you walk away with
           </span>
           <h2 className="text-headline text-neutral-900">
-            One week.{" "}
+            Weeks, not months.{" "}
             <span className="font-serif italic font-normal">A working firm.</span>
           </h2>
           <p className="mt-3 text-body-lg text-neutral-600 max-w-2xl mx-auto">
-            Every sprint ends the same way — your firm operating on a configured, integrated, bar-compliant Claude for Legal, with your team trained and your runbook in hand.
+            Every engagement ends the same way — your firm operating on a configured, integrated, bar-compliant Claude for Legal, with your team trained and your runbook in hand. Up to three weeks of async prep, then one live sprint week.
           </p>
         </motion.div>
 

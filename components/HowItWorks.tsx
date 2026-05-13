@@ -6,8 +6,8 @@ const steps = [
   {
     title: "Initial Consultation",
     description:
-      "A live working call with your team to understand your matter playbook, the systems you use today, and the workflows that eat the most partner and associate time. No slide deck — just a working conversation. Fully remote, live with a senior engineer, scheduled on your calendar.",
-    detail: "Live remote call · scope captured the same day",
+      "A live twenty-minute call with your managing partner and operations lead to understand your matter playbook, the systems you use today, and the workflows that eat the most partner and associate time. No slide deck — just a working conversation. Fully remote, scheduled on your calendar.",
+    detail: "Live remote call · 20 minutes · scope captured the same day",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
@@ -15,24 +15,24 @@ const steps = [
     ),
   },
   {
-    title: "Five-Day Build",
+    title: "Async Prep Phase",
     description:
-      "Monday discovery · Tuesday foundation · Wednesday integration · Thursday customization · Friday training. By Friday afternoon your firm has Claude for Legal configured to your matter playbook, wired into your DMS, and a written runbook in your hands.",
-    detail: "Monday → Friday · five days",
+      "All the work that doesn't need your partners' calendars happens here, async — typically completes in two to three weeks; simpler stacks finish faster. Three things in sequence: discovery (intake form, screen-recorded workflow walkthroughs, system inventory) → build (custom integration code, workflows authored to your playbook, bar-compliant usage policy drafted) → prep (training videos recorded on your tenant, policy reviewed by your carrier, final scope confirmed).",
+    detail: "Up to three weeks · async-first · no calendar pile-up on partners",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
       </svg>
     ),
   },
   {
-    title: "Live Handover",
+    title: "Live Integration Sprint",
     description:
-      "Two live training sessions on Friday — one for attorneys, one for staff. Every team member finishes the call knowing exactly what to do, with a written runbook in their inbox, a usage dashboard bookmarked, and 90 days of email support. Your firm runs it independently from week two.",
-    detail: "Live handoff · 30/60/90-day check-ins",
+      "Once prep is complete, we lock a single Mon–Fri sprint on your calendar — senior engineer on the call every day. Monday: kickoff and integration go-live. Tuesday–Thursday: connections wired, workflows deployed, everything tested against your real matter data. Friday: two live training sessions (attorneys, then staff), written runbook handed over, 30/60/90-day check-ins booked. Your firm runs independently from the following Monday.",
+    detail: "Mon–Fri live · senior engineer on every call · once prep is complete",
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
       </svg>
     ),
   },
@@ -71,10 +71,10 @@ export default function HowItWorks(_props?: HowItWorksProps) {
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-headline font-semibold text-white tracking-tight">
             From a live call{" "}
-            <span className="font-serif italic font-normal text-gold">to a working firm in a week.</span>
+            <span className="font-serif italic font-normal text-gold">to a working firm — weeks, not months.</span>
           </h2>
           <p className="mt-3 text-body-lg text-neutral-300 max-w-2xl mx-auto">
-            One live consultation. Five business days. A configured, integrated, bar-compliant Claude for Legal deployment your team owns. Fully remote — never async, always with a senior engineer on the call.
+            Up to three weeks of async prep so your partners aren&apos;t hosting consultants — often less. Then one live Mon–Fri integration sprint to put everything into your firm. A configured, integrated, bar-compliant Claude for Legal deployment your team owns.
           </p>
         </motion.div>
 

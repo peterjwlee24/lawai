@@ -6,9 +6,9 @@ const comparisons = [
   {
     challenge: "Why not just set this up ourselves?",
     description:
-      "You can. In practice, no boutique firm has the time. Anthropic's own General Counsel said on launch day that the new legal tools are at their best when customized with the firm's own playbooks. We've done that for other firms — we do it in a week, so your partners stay billable.",
-    stat: "5 days",
-    statLabel: "Mon → Fri, working firm",
+      "You can. In practice, no boutique firm has the time. Anthropic's own General Counsel said on launch day that the new legal tools are at their best when customized with the firm's own playbooks. We do that in up to three weeks of async prep + one live integration sprint, so your partners stay billable the whole time.",
+    stat: "Weeks, not months",
+    statLabel: "Up to 3 weeks async + 1 live sprint week",
     color: "from-navy/10 to-navy/5",
     borderColor: "border-navy-200/50",
     accentColor: "text-navy",

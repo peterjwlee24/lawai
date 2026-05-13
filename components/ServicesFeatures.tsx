@@ -21,7 +21,7 @@ const safeguards = [
   {
     title: "Workflows built around your firm's actual playbook",
     description:
-      "Not a generic prompt pack from the internet. Your standard contract positions, your conflict-check process, your intake summary style — captured during discovery, turned into one-click workflows by Friday.",
+      "Not a generic prompt pack from the internet. Your standard contract positions, your conflict-check process, your intake summary style — captured during async discovery, authored during the async build phase, deployed live in sprint week.",
   },
   {
     title: "Lives inside Word, Outlook, and your DMS",

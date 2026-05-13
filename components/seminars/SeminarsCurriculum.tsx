@@ -58,7 +58,7 @@ const modules = [
     title: "The decision on the call — sprint, pilot, or wait",
     deliverable: "A one-page written plan: sprint, pilot, or wait",
     bullets: [
-      "Honest assessment of whether your firm should run a five-day implementation sprint this quarter",
+      "Honest assessment of whether your firm should run a full implementation engagement this quarter",
       "If yes: a written plan, calendar dates, and the sprint scope captured before we leave",
       "If pilot: a thirty-day pilot scope you can run with your current Claude subscription",
       "If wait: a list of what would change the recommendation in six months — and we follow up at that mark",

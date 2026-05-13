@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s · Sidebar AI",
   },
   description:
-    "Sidebar AI is the Claude for Legal implementation partner for boutique law firms — fully remote, live with a senior engineer. We configure Claude for Legal to your matter playbook, wire it into iManage, Clio, or NetDocuments, write custom secure connections to your bespoke firm software, and hand it over fully trained — in five business days. Bar-compliant by design.",
+    "Sidebar AI is the Claude for Legal implementation partner for boutique law firms — fully remote, live with a senior engineer. We configure Claude for Legal to your matter playbook, wire it into iManage, Clio, or NetDocuments, write custom secure connections to your bespoke firm software, and hand it over fully trained — up to three weeks of async prep + one live Mon–Fri integration sprint. Bar-compliant by design.",
   keywords: [
     "Claude for Legal",
     "Claude for Legal implementation",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sidebar AI — Claude for Legal Implementation Partner",
     description:
-      "Boutique law firms get a working Claude for Legal deployment in five business days. In-person consultation. Bar-compliant by design. ABA Model Rules 1.1, 1.6, 5.3 mapped and documented.",
+      "Boutique law firms get a working Claude for Legal deployment in weeks, not months — up to three weeks of async prep, one live Mon–Fri integration sprint. Live consultation. Bar-compliant by design. ABA Model Rules 1.1, 1.6, 5.3 mapped and documented.",
     url: "https://sidebarai.us",
     siteName: "Sidebar AI",
     type: "website",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sidebar AI — Claude for Legal Implementation Partner",
     description:
-      "Five-day Claude for Legal sprints for boutique law firms. In-person consultation, configured to your matter playbook, bar-compliant by design.",
+      "Async-first Claude for Legal implementation for boutique law firms — up to three weeks of async prep + one live Mon–Fri sprint week. Configured to your matter playbook, bar-compliant by design.",
   },
   icons: {
     icon: "/icon.svg",

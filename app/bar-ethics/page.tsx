@@ -38,7 +38,7 @@ const rules = [
     body: "The most-asked question, and the one with the most defensible answer. Anthropic does not train Claude on customer data — that's contractual, verifiable, and enforceable. The harder questions are about who inside your firm sees what, how a matter is sealed off from another matter, and whether the safeguards are evidence-able to your bar counsel and your malpractice carrier.",
     howWeBuild: [
       "Matter-level access controls enforced inside the integration layer, not just on the screen — your existing iManage or NetDocuments permissions carry over",
-      "Confidentiality posture review during Monday discovery, mapped to your specific carrier's questionnaire",
+      "Confidentiality posture review during async discovery, mapped to your specific carrier's questionnaire",
       "Anthropic's zero-retention and customer-managed-keys modes configured where your firm's posture warrants",
       "Usage policy template references the specific contract clause that prohibits training and where in the Anthropic Trust Center you find it",
       "Every workflow we build runs a confidentiality scan before output — no inadvertent client identification across matter walls",
@@ -59,7 +59,7 @@ const rules = [
   {
     rule: "Your state's rules",
     name: "Illinois, New York, California, and other state RPCs",
-    body: "Most states' professional conduct rules are aligned with the ABA Model Rules, but the specifics matter. Illinois RPC 7.1 governs attorney advertising (relevant if you build a LinkedIn skill that drafts posts). California's confidentiality rule is stricter than ABA 1.6 on prospective clients. New York's 22 NYCRR has technology-specific provisions. We map your specific jurisdiction during Monday discovery.",
+    body: "Most states' professional conduct rules are aligned with the ABA Model Rules, but the specifics matter. Illinois RPC 7.1 governs attorney advertising (relevant if you build a LinkedIn skill that drafts posts). California's confidentiality rule is stricter than ABA 1.6 on prospective clients. New York's 22 NYCRR has technology-specific provisions. We map your specific jurisdiction during async discovery.",
     howWeBuild: [
       "Jurisdiction-specific usage policy — Illinois RPC, New York 22 NYCRR, California RPC, Texas Rules, Delaware RPC, Florida Bar Rules, others on request",
       "If your firm practices in multiple jurisdictions, the policy maps the strictest applicable rule",

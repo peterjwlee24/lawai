@@ -189,12 +189,12 @@ export default function PracticeAreasPage() {
           eyebrow="Practice areas we serve"
           headline="Twelve practice areas."
           accentHeadline="Your firm's workflow, not a generic toolkit."
-          subheadline="Anthropic ships practice-area tools that are generic on day one. We turn them into workflows your firm actually runs — built around your standard positions, your house style, your conflict-check ritual, your jurisdictional posture. Twelve practice areas where we've done this work; the framing for each below covers the workflows we typically build on Day 4 of a sprint."
+          subheadline="Anthropic ships practice-area tools that are generic on day one. We turn them into workflows your firm actually runs — built around your standard positions, your house style, your conflict-check ritual, your jurisdictional posture. Twelve practice areas where we've done this work; the framing for each below covers the workflows we typically author during the async prep phase and deploy live in sprint week."
           primaryCta={{ label: "Book the consultation", href: "/#contact" }}
           secondaryCta={{ label: "See the sprint", href: "/sprint" }}
           trustItems={[
             "Workflows built around your firm's playbook",
-            "Customized during the five-day sprint",
+            "Customized during async prep, deployed in sprint week",
             "Re-usable across every matter in the practice area",
           ]}
         />
@@ -229,7 +229,7 @@ export default function PracticeAreasPage() {
                   <span className="font-serif italic font-normal">one sprint shape.</span>
                 </h2>
                 <p className="mt-5 text-body-lg text-neutral-700 leading-relaxed">
-                  The sprint framework is identical across practice areas — Monday discovery, Friday handover. What changes is the playbook we capture on Monday and the workflows we build on Thursday. Each of the twelve folders below opens to the workflows we typically build for that practice.
+                  The engagement shape is identical across practice areas — async discovery, async build, then a live Mon–Fri sprint week. What changes is the playbook we capture during async discovery and the workflows we author during async build. Each of the twelve folders below opens to the workflows we typically build for that practice.
                 </p>
               </div>
             </div>
@@ -257,7 +257,7 @@ export default function PracticeAreasPage() {
         </section>
 
         <PageCTABand
-          headline="Same five-day sprint. Built to your practice area."
+          headline="Same engagement shape. Built to your practice area."
           body="The platform Anthropic ships is generic on day one. The version your firm runs on day five is your firm. Book the consultation to scope which workflows we&rsquo;d build during your sprint."
           primaryLabel="Book the consultation"
           primaryHref="/#contact"

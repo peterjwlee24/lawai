@@ -148,7 +148,7 @@ export default function ServiceTiers() {
           <div className="relative grid md:grid-cols-4 gap-6">
             <div className="md:col-span-1">
               <span className="text-[11px] font-mono font-bold uppercase tracking-[0.12em] text-gold mb-2 block">Why async-first</span>
-              <h3 className="text-2xl font-semibold leading-tight text-white">No consultants in your office. Working firm by Friday.</h3>
+              <h3 className="text-2xl font-semibold leading-tight text-white">No consultants in your office. Working firm in weeks, not months.</h3>
             </div>
             <div className="md:col-span-3 grid sm:grid-cols-2 gap-4 text-sm text-neutral-200">
               <div>

@@ -317,7 +317,7 @@ export default function WhyNowPage() {
 
         <PageCTABand
           headline="Want to skip the twelve months of figuring this out yourself?"
-          body="Book the twenty-minute consultation. We&rsquo;ll tell you straight whether a five-day sprint fits your firm right now — or what to do instead."
+          body="Book the twenty-minute consultation. We&rsquo;ll tell you straight whether a full implementation engagement fits your firm right now — or what to do instead."
           primaryLabel="Book the consultation"
           primaryHref="/#contact"
           secondaryLabel="Or attend a seminar first"

@@ -224,7 +224,7 @@ export default function ContactForm({
                 <span className="font-serif italic font-normal">A straight answer.</span>
               </h2>
               <p className="text-xl text-neutral-300 mb-6 leading-relaxed">
-                This isn&apos;t a sales pitch. We&apos;ll meet your team live over a screen-share, walk one of your highest-volume workflows together, and tell you straight whether a five-day Claude for Legal sprint is the right move — or not yet.
+                This isn&apos;t a sales pitch. We&apos;ll meet your team live over a screen-share, walk one of your highest-volume workflows together, and tell you straight whether the Claude for Legal implementation engagement is the right move — or not yet.
               </p>
 
               <div className="flex items-center gap-3 mb-10 px-4 py-3 rounded-xl bg-amber-500/10 border border-amber-500/20">
@@ -302,7 +302,7 @@ export default function ContactForm({
                     className={selectClasses}
                   >
                     <option value="consultation">An initial consultation</option>
-                    <option value="implementation-sprint">The five-day Claude for Legal sprint</option>
+                    <option value="implementation-sprint">The Claude for Legal implementation engagement</option>
                   </select>
                 </div>
 
